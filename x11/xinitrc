@@ -1,0 +1,6 @@
+#!/bin/bash
+
+start-pulseaudio-x11
+syndaemon -t -k -i 2 &
+xrdb -merge ~/.Xresources
+exec i3
