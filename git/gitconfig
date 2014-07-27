@@ -1,0 +1,19 @@
+[user]
+	name = wooken
+	email = kenny@kennywoo.com
+[color]
+	ui = true
+[core]
+	editor = vim
+	pager = less
+[push]
+	default = simple
+[alias]
+	lg = log --color --pretty=format:'%Cred%h%Creset -%Cgreen%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --no-merges
+	gg = log --color --pretty=oneline --abbrev-commit --no-merges
+	ri = rebase --interactive
+	rc = rebase --continue
+	c = commit
+	b = branch
+	co = checkout
+	sf = show --pretty="format:" --name-only
