@@ -1,0 +1,9 @@
+[submodule "vim/dotvim/bundle/vim-airline"]
+	path = vim/dotvim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "vim/dotvim/bundle/base16-vim"]
+	path = vim/dotvim/bundle/base16-vim
+	url = https://github.com/chriskempson/base16-vim.git
+[submodule "vim/dotvim/bundle/LaTeX-Box"]
+	path = vim/dotvim/bundle/LaTeX-Box
+	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
