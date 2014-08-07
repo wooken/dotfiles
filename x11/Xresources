@@ -22,9 +22,10 @@ URxvt*scrollBar:                      false
 ! URxvt*scrollTtyKeypress:              boolean
 ! URxvt*scrollWithBuffer:               boolean
 ! URxvt*inheritPixmap:                  boolean
-! URxvt*transparent:                    boolean
+URxvt*transparent:                    true
 ! URxvt*tintColor:                      color
-! URxvt*shading:                        number
+!URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*shading:                        25
 ! URxvt*blurRadius:                     HxV
 ! URxvt*fading:                         number
 ! URxvt*fadeColor:                      color
@@ -107,7 +108,7 @@ URxvt*modifier:                       C-S
 ! URxvt*secondaryScroll:                boolean
 ! URxvt*perl-lib:                       string
 ! URxvt*perl-eval:                      perl-eval
-URxvt*perl-ext-common:                default,clipboard
+URxvt*perl-ext-common:                default,clipboard,selection-to-clipboard
 ! URxvt*perl-ext:                       string
 URxvt*iso14755:                       false
 URxvt*iso14755_52:                    false
@@ -189,6 +190,10 @@ URxvt*iso14755_52:                    false
 ! ctrl-c copy ctrl-v paste
 ! Uses https://github.com/muennich/urxvt-perls
 
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+!URxvt.keysym.M-c: perl:clipboard:copy
+!URxvt.keysym.M-v: perl:clipboard:paste
+!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.C-A-V: perl:clipboard:paste_escaped
