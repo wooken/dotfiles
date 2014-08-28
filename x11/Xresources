@@ -18,9 +18,9 @@ URxvt*scrollBar:                      false
 ! URxvt*scrollBar_floating:             boolean
 ! URxvt*scrollBar_align:                mode
 ! URxvt*thickness:                      number
-! URxvt*scrollTtyOutput:                boolean
-! URxvt*scrollTtyKeypress:              boolean
-! URxvt*scrollWithBuffer:               boolean
+URxvt*scrollTtyOutput:                false
+URxvt*scrollTtyKeypress:              true
+URxvt*scrollWithBuffer:               true
 ! URxvt*inheritPixmap:                  boolean
 URxvt*transparent:                    true
 ! URxvt*tintColor:                      color
@@ -60,7 +60,7 @@ URxvt*shading:                        25
 ! URxvt*color15:                        color
 ! URxvt*colorBD:                        color
 ! URxvt*colorIT:                        color
-! URxvt*colorUL:                        color
+URxvt*colorUL:                        #4682B4
 ! URxvt*colorRV:                        color
 ! URxvt*underlineColor:                 color
 ! URxvt*scrollColor:                    color
@@ -108,7 +108,7 @@ URxvt*modifier:                       C-S
 ! URxvt*secondaryScroll:                boolean
 ! URxvt*perl-lib:                       string
 ! URxvt*perl-eval:                      perl-eval
-URxvt*perl-ext-common:                default,clipboard,selection-to-clipboard
+URxvt*perl-ext-common:                default,clipboard,selection-to-clipboard,matcher
 ! URxvt*perl-ext:                       string
 URxvt*iso14755:                       false
 URxvt*iso14755_52:                    false
@@ -118,7 +118,7 @@ URxvt*iso14755_52:                    false
 ! URxvt*background.expr:                string
 ! URxvt*background.interval:            seconds
 ! URxvt*bell-command:                   string
-! URxvt*matcher.button:                 string
+URxvt*matcher.button:                 1
 ! URxvt*matcher.launcher:               string
 ! URxvt*matcher.launcher.*:             string
 ! URxvt*matcher.pattern.*:              string
@@ -134,7 +134,7 @@ URxvt*iso14755_52:                    false
 ! URxvt*tab-fg:                         colour
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
-! URxvt*url-launcher:                   string
+URxvt*url-launcher:                   /usr/bin/xdg-open
 
 ! Base16 Monokai
 ! Scheme: Wimer Hazenberg (http://www.monokai.nl)
