@@ -84,7 +84,7 @@ URxvt*boldFont:                       xft:Inconsolata\ for\ Powerline:bold:pixel
 ! URxvt*imFont:                         fontname
 ! URxvt*title:                          string
 ! URxvt*iconName:                       string
-! URxvt*saveLines:                      number
+URxvt*saveLines:                      8192
 ! URxvt*buffered:                       boolean
 ! URxvt*depth:                          number
 ! URxvt*visual:                         number

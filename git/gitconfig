@@ -6,6 +6,8 @@
 [core]
 	editor = vim
 	pager = less
+[log]
+    decorate = auto
 [push]
 	default = simple
 [alias]
