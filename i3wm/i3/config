@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Ubuntu Mono 10
+font pango:Ubuntu 10
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -150,9 +150,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position        top
-    status_command  i3status
-    font            xft:Ubuntu Mono 10
+    font            xft:Ubuntu 10
     tray_output     primary
+#status_command  i3status
+    status_command  ~/.dotfiles/bin/conky-i3bar
 }
 
 # No window borders
@@ -196,8 +197,10 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 #bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec ~/.i3/brightup.sh
+bindsym XF86MonBrightnessDown exec ~/.i3/brightdown.sh
 
 # Keyboard brightness controls
 #bindsym XF86KbdBrightnessUp
