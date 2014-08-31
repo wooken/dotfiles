@@ -3,4 +3,5 @@
 start-pulseaudio-x11
 syndaemon -t -k -i 2 &
 xrdb -merge ~/.Xresources
+dunst &
 exec i3
