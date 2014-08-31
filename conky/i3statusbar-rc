@@ -38,21 +38,8 @@ override_utf8_locale no
 # set to 1 to disable averaging
 cpu_avg_samples 1
 
-#mdp password
-#mpd_password mpdPassword
-
-#templates
-template0 0
-template1 1
-template2 100
-template3 Playing
-
 # Stuff after 'TEXT' will be formatted on screen
 TEXT
-# send user activity when on youtube (IP 4 antik)
-${if_match ${template0} < ${exec netstat -an | grep 88.212.9.[0-9][0-9].*:80 | grep -c ESTABLISHED}}${execi 180 xdotool key Control_L}${endif}
-# send user activity when vlc is running
-${if_running vlc}${execi 180 xdotool key Control_L}${endif}
 
 # JSON for i3bar
 
