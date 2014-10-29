@@ -82,10 +82,13 @@ TEXT
 
 # Date
     {
-        "full_text" : " ${execi 5 date +"%a %b %d %r"}",
+        "full_text" : " ${time %a %b %d}",
         "color" : "\#ff00ff"
     },
-
+    {
+        "full_text" : " ${time %r}",
+        "color" : "\#ff00ff"
+    },
 # Volume
     {
         "full_text" : "${if_match "${exec amixer get Master | grep "Left:" | awk '{print $6}' | tr -d '[]'}"=="on"}  ${exec amixer get Master | grep "Left:" | awk '{print $5}' | tr -d '[]'} ${else}  off ${endif}",
