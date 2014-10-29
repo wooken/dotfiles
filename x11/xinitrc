@@ -3,5 +3,7 @@
 start-pulseaudio-x11
 syndaemon -t -k -i 2 &
 xrdb -merge ~/.Xresources
+xrandr --output eDP1 --primary
 dunst &
+nm-applet &
 exec i3
