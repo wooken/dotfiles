@@ -96,3 +96,5 @@ map \v :w<CR>:!make clean;make;valgrind ./test<CR>
 map \o :w<CR>:!go test<CR>
 map \g :w<CR>:!go run %<CR>
 map \p :w<CR>:!python %<CR>
+map \t :w<CR>:!go run main.go<CR>
+map \c :w<CR>:!make clean;make;./test<CR>
