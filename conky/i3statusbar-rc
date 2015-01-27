@@ -58,8 +58,8 @@ TEXT
 
 # Wireless
     {
-        "full_text" : "${if_up wlp2s0}${wireless_link_qual_perc wlp2s0}% @ ${wireless_essid wlp2s0} ${addr wlp2s0}${else} down${endif}",
-        "color" : ${if_up wlp2s0} "\#00ff00"${else}"\#ff0000"${endif}
+        "full_text" : "${if_up wlp2s0b1}${wireless_link_qual_perc wlp2s0b1}% @ ${wireless_essid wlp2s0b1} ${addr wlp2s0b1}${else} down${endif}",
+        "color" : ${if_up wlp2s0b1} "\#00ff00"${else}"\#ff0000"${endif}
     },
 
 # Ethernet
