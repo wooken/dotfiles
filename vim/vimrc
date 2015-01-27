@@ -1,12 +1,19 @@
-filetype off
-filetype indent plugin off
-set runtimepath+=/usr/share/go/misc/vim
-filetype indent plugin on
-syntax on
-
+" Vundle setup
 set nocompatible
+filetype off
+
+call vundle#rc()
+
+Plugin 'chriskempson/base16-vim'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
+
+filetype indent plugin on
+
+"Settings
+syntax on
 set t_Co=16
-execute pathogen#infect()
 
 set showmatch               " Show matching brackets
 set ignorecase              " Ignore case in search patterns
