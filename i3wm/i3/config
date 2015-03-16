@@ -187,18 +187,18 @@ exec --no-startup-id xss-lock -- i3lock -c 000000
 bindsym $mod+l exec i3lock -c 000000
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3dB #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -3dB #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3dB
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -3dB
+#bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 # Alsa controls
-#bindsym XF86AudioRaiseVolume exec amixer -q set Master 1dB+ unmute
-#bindsym XF86AudioLowerVolume exec amixer -q set Master 1dB- unmute
-#bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 4%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 4%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Screen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec ~/.i3/brightup.sh
 bindsym XF86MonBrightnessDown exec ~/.i3/brightdown.sh
 
