@@ -12,6 +12,16 @@ fi
 
 # Customize to your needs...
 
+unsetopt autopushd
+
+# ZSH Vi mode
+bindkey '^r' history-incremental-search-backward
+export KEYTIMEOUT=1
+
+# default system editor
+export VISUAL=vim
+export EDITOR=vim
+
 # Omnibox Bin
 export PATH=$PATH:~/Omnibox/bin
 
