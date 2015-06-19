@@ -8,6 +8,8 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
+Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'avakhov/vim-yaml'
 
 filetype indent plugin on
 
@@ -96,6 +98,9 @@ let g:tex_flavor='xelatex'
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
 let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 
+" vim-go
+"let g:go_auto_type_info = 1             " on-the-fly type informa
+
 " Macros
 map \a :w<CR>:!make clean;make;./test<CR>
 map \s :w<CR>:!./%<CR>
@@ -105,3 +110,4 @@ map \g :w<CR>:!go run %<CR>
 map \p :w<CR>:!python %<CR>
 map \t :w<CR>:!go run main.go<CR>
 map \c :w<CR>:!make clean;make;./test<CR>
+map \m :w<CR>:!make<CR>

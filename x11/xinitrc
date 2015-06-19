@@ -7,3 +7,4 @@ xrandr --output eDP1 --primary
 dunst &
 nm-applet &
 exec i3
+exec ./master-mba-script.sh
