@@ -13,7 +13,7 @@ Plugin 'avakhov/vim-yaml'
 
 filetype indent plugin on
 
-"Settings
+" Editor
 syntax on
 set t_Co=16
 
@@ -29,7 +29,6 @@ set undolevels=1000
 set wildignore=*.pyc
 set pastetoggle=<F2>        " toggles auto-indent for pasting large blocks of text
 "set clipboard=unnamedplus   " Attaches X11 clipboard to Vim
-"set autowrite               " Automatically save before commands like :next and :make
 
 set showmatch               " When a bracket is inserted, briefly jump to the matching one
 set hlsearch                " highlighted search
