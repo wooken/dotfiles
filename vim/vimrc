@@ -100,6 +100,9 @@ let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 " vim-go
 "let g:go_auto_type_info = 1             " on-the-fly type informa
 
+" Ruby
+au FileType ruby setlocal shiftwidth=2 tabstop=2
+
 " Macros
 map \a :w<CR>:!make clean;make;./test<CR>
 map \s :w<CR>:!./%<CR>
