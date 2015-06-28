@@ -10,6 +10,7 @@ Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'avakhov/vim-yaml'
+Plugin 'vim-ruby/vim-ruby'
 
 filetype indent plugin on
 
@@ -110,3 +111,4 @@ map \p :w<CR>:!python %<CR>
 map \t :w<CR>:!go run main.go<CR>
 map \c :w<CR>:!make clean;make;./test<CR>
 map \m :w<CR>:!make<CR>
+map \r :w<CR>:!ruby %<CR>
