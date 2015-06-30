@@ -45,7 +45,7 @@ cfg_paths.each do |cfg|
              puts "Could not parse YAML: #{e.message}"
            end
   parsed.each do |file|
-    if cmd? file['cmd']
+    if cmd?(file['cmd'])
       old = File.dirname(File.expand_path(cfg)) + '/' + file['src']
       new = file['dest'].sub!('~', File.expand_path('~'))
       if !File.exists?(old)
