@@ -2,15 +2,17 @@
 set nocompatible
 filetype off
 
-call vundle#rc()
+call plug#begin('~/.vim/bundle')
 
-Plugin 'chriskempson/base16-vim'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'bling/vim-airline'
-Plugin 'fatih/vim-go'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'avakhov/vim-yaml'
-Plugin 'vim-ruby/vim-ruby'
+Plug 'chriskempson/base16-vim'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'bling/vim-airline'
+Plug 'fatih/vim-go'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'avakhov/vim-yaml'
+Plug 'vim-ruby/vim-ruby'
+
+call plug#end()
 
 filetype indent plugin on
 
