@@ -2,9 +2,11 @@
 
 require 'fileutils'
 require 'find'
-require 'mkmf' #find_executable
 require 'yaml'
 
+$VALID_ACTIONS = %w(new deploy)
+
+# helper functions
 def cmd?(cmd)
   print "checking for #{cmd}... "
   if system("which #{cmd} > /dev/null 2>&1")
@@ -19,6 +21,17 @@ end
 def error(msg)
   puts "ERROR: " + msg
 end
+
+def usage
+  puts "Usage: #{$PROGRAM_NAME} " + $VALID_ACTIONS.join('|')
+end
+
+# execute
+if ARGV.empty?
+  usage()
+  exit
+end
+action = ARGV.shift
 
 cfg_paths = []
 Find.find('.') do |path|
