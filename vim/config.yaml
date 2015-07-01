@@ -1,0 +1,10 @@
+vim:
+  - src: dotvim
+    dest: ~/.vim
+  - src: vimrc
+    dest: ~/.vimrc
+nvim:
+  - src: ~/.vim
+    dest: ~/.nvim
+  - src: ~/.vimrc
+    dest: ~/.nvimrc

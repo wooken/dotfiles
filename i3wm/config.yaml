@@ -1,0 +1,5 @@
+i3:
+  - src: i3
+    dest: ~/.i3
+  - src: i3status.conf
+    dest: ~/.i3status.conf
