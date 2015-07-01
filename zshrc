@@ -21,6 +21,10 @@ export KEYTIMEOUT=1
 # default system editor
 export VISUAL=vim
 export EDITOR=vim
+export PAGER='less -r'
+alias less='less -r'
+alias vi='nvim'
+alias vim='nvim'
 
 # Omnibox Bin
 export PATH=$PATH:~/Omnibox/bin
@@ -28,7 +32,7 @@ export PATH=$PATH:~/Omnibox/bin
 # Go
 #export GOROOT=~/Omnibox/go
 #export PATH=$PATH:$GOROOT/bin
-export GOPATH=~/Omnibox/go
+export GOPATH=~/go
 
 # Ruby
 export PATH=$PATH:~/.gem/ruby/2.1.0/bin
