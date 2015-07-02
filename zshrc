@@ -26,20 +26,8 @@ alias less='less -r'
 alias vi='nvim'
 alias vim='nvim'
 
-# Omnibox Bin
-export PATH=$PATH:~/Omnibox/bin
-
 # Go
-#export GOROOT=~/Omnibox/go
-#export PATH=$PATH:$GOROOT/bin
 export GOPATH=~/go
 
 # Ruby
-export PATH=$PATH:~/.gem/ruby/2.1.0/bin
-
-export EDITOR=vim
-unsetopt autopushd
-
-# bc with math lib
-alias bc='bc -l'
-alias vi='vim'
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin
