@@ -1,20 +1,16 @@
-" Vundle setup
-set nocompatible
-filetype off
-
 call plug#begin('~/.vim/bundle')
 
 Plug 'chriskempson/base16-vim'
-Plug 'LaTeX-Box-Team/LaTeX-Box'
+"Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'bling/vim-airline'
 Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'cespare/vim-toml'
 Plug 'avakhov/vim-yaml'
 Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
-
-filetype indent plugin on
 
 " Editor
 syntax on
@@ -103,17 +99,20 @@ let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 " vim-go
 "let g:go_auto_type_info = 1             " on-the-fly type informa
 
+" Rust
+au Filetype rust setlocal nocindent
+
 " Ruby
 au FileType ruby setlocal shiftwidth=2 tabstop=2
 
 " Macros
-map \a :w<CR>:!make clean;make;./test<CR>
 map \s :w<CR>:!./%<CR>
 map \v :w<CR>:!make clean;make;valgrind ./test<CR>
 map \o :w<CR>:!go test<CR>
 map \g :w<CR>:!go run %<CR>
 map \p :w<CR>:!python %<CR>
-map \t :w<CR>:!go run main.go<CR>
 map \c :w<CR>:!make clean;make;./test<CR>
 map \m :w<CR>:!make<CR>
-map \r :w<CR>:!ruby %<CR>
+map \b :w<CR>:!ruby %<CR>
+map \r :w<CR>:!cargo test<CR>
+map \u :w<CR>:!cargo run<CR>
