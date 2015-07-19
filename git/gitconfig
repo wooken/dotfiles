@@ -19,3 +19,4 @@
 	b = branch
 	co = checkout
 	sf = show --pretty="format:" --name-only
+    verbs = !git log --pretty=format:'%s' | cut -d \" \" -f 1 | sort | uniq -c | sort -nr
