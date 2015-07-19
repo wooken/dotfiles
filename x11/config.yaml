@@ -3,5 +3,5 @@ vim:
     dest: ~/.xinitrc
   - src: Xresources
     dest: ~/.Xresources
-  - src: Xmodmap
-    dest: ~/.Xmodmap
+  #- src: Xmodmap
+  #dest: ~/.Xmodmap

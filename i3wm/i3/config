@@ -15,7 +15,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Ubuntu 10
+#font pango:Ubuntu 10
+font otf:Latin Modern:12
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -150,27 +151,28 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position        top
-    font            xft:Ubuntu 10
+    #font            xft:Ubuntu 11
+    font            xft:Menlo for Powerline 10
     tray_output     primary
-#status_command  i3status
-    status_command  ~/.dotfiles/bin/conky-i3bar
+    status_command  i3status
+    #status_command  ~/.dotfiles/bin/conky-i3bar
 }
 
 # No window borders
-new_window normal 1 px
-new_float normal 1 px
+#new_window normal 1 px
+#new_float normal 1 px
 
 # nm-applet startup
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # gnome-sound-applet startup
 #exec --no-startup-id gnome-sound-applet
 
 # Synclient
-exec ~/Documents/scripts/config-synclient.sh
+#exec ~/Documents/scripts/config-synclient.sh
 
 # Keyboard
-exec --no-startup-id xmodmap .Xmodmap
+#exec --no-startup-id xmodmap .Xmodmap
 
 # Bluetooth
 exec --no-startup-id rfkill block bluetooth
@@ -186,32 +188,42 @@ exec --no-startup-id xset dpms 600 1200 0
 exec --no-startup-id xss-lock -- i3lock -c 000000
 bindsym $mod+l exec i3lock -c 000000
 
+# Parcellite (clipboard)
+exec --no-startup-id parcellite
+
+# Dunst (notifications)
+exec --no-startup-id dunst
+
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3dB
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -3dB
 #bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 # Alsa controls
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 4%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 4%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+#bindsym XF86AudioRaiseVolume exec amixer -q set Master 4%+ unmute
+#bindsym XF86AudioLowerVolume exec amixer -q set Master 4%- unmute
+#bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec ~/.i3/brightup.sh
-bindsym XF86MonBrightnessDown exec ~/.i3/brightdown.sh
+#bindsym XF86MonBrightnessUp exec ~/.i3/brightup.sh
+#bindsym XF86MonBrightnessDown exec ~/.i3/brightdown.sh
 
 # Keyboard brightness controls
 #bindsym XF86KbdBrightnessUp
 #bindsym XF86KbdBrightnessDown
 
 # # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+
+# Remove titlebar for certain programs
+#for_window [class="URxvt"] border 1pixel
+for_window [class="Google-chrome" title="Google Chrome"] border 1pixel

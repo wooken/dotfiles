@@ -73,8 +73,12 @@ URxvt*colorUL:                        #4682B4
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:                           xft:Inconsolata\ for\ Powerline:pixelsize=17:style=Medium
-URxvt*boldFont:                       xft:Inconsolata\ for\ Powerline:bold:pixelsize=17:style=Medium
+! URxvt*font:                           xft:Inconsolata\ for\ Powerline:pixelsize=17:style=Medium
+! URxvt*boldFont:                       xft:Inconsolata\ for\ Powerline:bold:pixelsize=17:style=Medium
+URxvt*font:                           xft:Menlo\ for\ Powerline:pixelsize=17:style=Medium
+URxvt*boldFont:                       xft:Menlo\ for\ Powerline:bold:pixelsize=17:style=Medium
+! URxvt*font:                           xft:Meslo\ LG\ S\ DZ\ for\ Powerline:pixelsize=17:style=Medium
+! URxvt*boldFont:                       xft:Meslo\ LG\ S\ DZ\ for\ Powerline:bold:pixelsize=17:style=Medium
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
 ! URxvt*intensityStyles:                boolean
@@ -190,10 +194,10 @@ URxvt*url-launcher:                   /usr/bin/xdg-open
 ! ctrl-c copy ctrl-v paste
 ! Uses https://github.com/muennich/urxvt-perls
 
-!URxvt.keysym.M-c: perl:clipboard:copy
-!URxvt.keysym.M-v: perl:clipboard:paste
-!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
-URxvt.keysym.C-C: perl:clipboard:copy
-URxvt.keysym.C-V: perl:clipboard:paste
-URxvt.keysym.C-A-V: perl:clipboard:paste_escaped
+!URxvt.keysym.C-C: perl:clipboard:copy
+!URxvt.keysym.C-V: perl:clipboard:paste
+!URxvt.keysym.C-A-V: perl:clipboard:paste_escaped

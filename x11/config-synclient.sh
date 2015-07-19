@@ -13,3 +13,5 @@ synclient TapButton3=2
 synclient ClickFinger1=1
 synclient ClickFinger2=3
 synclient ClickFinger3=2
+synclient RightButtonAreaLeft=0
+synclient RightButtonAreaTop=0

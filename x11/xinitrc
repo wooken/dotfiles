@@ -1,10 +1,8 @@
 #!/bin/bash
 
-start-pulseaudio-x11
-syndaemon -t -k -i 1 &
-xrdb -merge ~/.Xresources
-xrandr --output eDP1 --primary
-dunst &
-nm-applet &
+#syndaemon -t -k -i 1 &
+if [ -f ~/.Xresources ]; then
+    xrdb -merge ~/.Xresources
+fi
+xrandr --output eDP1 --primary # fixes i3 missing system tray
 exec i3
-exec ./master-mba-script.sh
