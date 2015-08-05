@@ -15,6 +15,7 @@ call plug#end()
 " Editor
 syntax on
 set t_Co=16
+set background=dark
 
 set showmatch               " Show matching brackets
 set ignorecase              " Ignore case in search patterns
