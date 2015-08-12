@@ -3,6 +3,7 @@
 require 'fileutils'
 require 'find'
 require 'yaml'
+require './colors-cli.rb'
 
 $VALID_ACTIONS = %w(new deploy)
 
@@ -13,7 +14,7 @@ def usage
 end
 
 def error(msg)
-  puts "ERROR: " + msg
+  puts "ERROR: #{msg}".red
 end
 
 def cmd?(cmd)
@@ -61,12 +62,14 @@ when 'deploy'
           else
             new = file['dest']
           end
+
+          print "creating symlink: "
           if !File.exists?(old)
             error "Could not find file: #{old}"
           elsif File.exists?(new)
             error "File already exists: #{new}"
           else
-            puts "Creating symlink: #{old} => #{new}"
+            puts "#{old} => #{new}".green
             FileUtils.ln_s(old, new) if File.exists?(old) and !File.exists?(new)
           end
         end
