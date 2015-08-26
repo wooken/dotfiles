@@ -49,6 +49,9 @@ set smarttab                " When on, a <Tab> in front of a line inserts blanks
                             " according to 'shiftwidth'. 'tabstop' is used in other
                             " places. A <BS> will delete a 'shiftwidth' worth of space
                             " at the start of the line
+set list
+set listchars=eol:~
+
 " Airline Setup {
 set laststatus=2
 "set noshowmode
