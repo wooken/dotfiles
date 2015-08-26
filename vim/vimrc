@@ -107,6 +107,9 @@ au Filetype rust setlocal nocindent
 " Ruby
 au FileType ruby setlocal shiftwidth=2 tabstop=2
 
+" HTML
+au FileType html setlocal shiftwidth=2 tabstop=2
+
 " Macros
 map \s :w<CR>:!./%<CR>
 map \v :w<CR>:!make clean;make;valgrind ./test<CR>
