@@ -50,7 +50,7 @@ set smarttab                " When on, a <Tab> in front of a line inserts blanks
                             " places. A <BS> will delete a 'shiftwidth' worth of space
                             " at the start of the line
 set list
-set listchars=tab:>-,trail:~
+set listchars=tab:!·,trail:~
 
 " Airline Setup {
 set laststatus=2
