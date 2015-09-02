@@ -1,25 +1,25 @@
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
-URxvt*scrollBar:                      false
-URxvt*scrollTtyOutput:                false
-URxvt*scrollTtyKeypress:              true
-URxvt*scrollWithBuffer:               true
-URxvt*transparent:                    true
+Xft.dpi:                            96
+Xft.antialias:                      true
+Xft.rgba:                           rgb
+Xft.hinting:                        true
+Xft.hintstyle:                      hintslight
+URxvt*scrollBar:                    false
+URxvt*scrollTtyOutput:              false
+URxvt*scrollTtyKeypress:            true
+URxvt*scrollWithBuffer:             true
+URxvt*transparent:                  true
 !URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*shading:                        25
-URxvt*locale: true
-URxvt*font:                           xft:Inconsolata\\-g for Powerline:pixelsize=17:style=g, \
+URxvt*shading:                      25
+URxvt*locale:                       true
+URxvt*font:                         xft:Inconsolata\\-g for Powerline:pixelsize=17:style=g, \
     xft:Menlo for Powerline:pixelsize=17:style=Medium
-URxvt*saveLines:                      8192
-URxvt*letterSpace:                    -2
-URxvt*perl-ext-common:                default,matcher
-URxvt*iso14755:                       false
-URxvt*iso14755_52:                    false
-URxvt*matcher.button:                 1
-URxvt*url-launcher:                   /usr/bin/xdg-open
+URxvt*saveLines:                    8192
+URxvt*letterSpace:                  -2
+URxvt*perl-ext-common:              default,matcher
+URxvt*iso14755:                     false
+URxvt*iso14755_52:                  false
+URxvt*matcher.button:               1
+URxvt*url-launcher:                 /usr/bin/xdg-open
 
 ! Base16 Monokai
 ! Scheme: Wimer Hazenberg (http://www.monokai.nl)
