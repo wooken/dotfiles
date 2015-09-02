@@ -124,3 +124,4 @@ map \m :w<CR>:!make<CR>
 map \b :w<CR>:!ruby %<CR>
 map \r :w<CR>:!cargo test<CR>
 map \u :w<CR>:!cargo run<CR>
+map \x :w<CR>:!xrdb -load ~/.Xresources<CR>
