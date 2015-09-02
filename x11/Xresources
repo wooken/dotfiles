@@ -14,7 +14,7 @@ URxvt*locale:                       true
 URxvt*font:                         xft:Inconsolata\\-g for Powerline:pixelsize=17:style=g, \
     xft:Menlo for Powerline:pixelsize=17:style=Medium
 URxvt*saveLines:                    8192
-URxvt*letterSpace:                  -2
+URxvt*letterSpace:                  -1
 URxvt*perl-ext-common:              default,matcher
 URxvt*iso14755:                     false
 URxvt*iso14755_52:                  false
