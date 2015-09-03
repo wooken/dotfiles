@@ -15,11 +15,17 @@ URxvt*font:                         xft:Inconsolata\\-g for Powerline:pixelsize=
     xft:Menlo for Powerline:pixelsize=17:style=Medium
 URxvt*saveLines:                    8192
 URxvt*letterSpace:                  -1
-URxvt*perl-ext-common:              default,matcher
-URxvt*iso14755:                     false
-URxvt*iso14755_52:                  false
+URxvt*perl-ext-common:              default,matcher,clipboard
 URxvt*matcher.button:               1
 URxvt*url-launcher:                 /usr/bin/xdg-open
+
+! requires urxvt-perls package from Arch repo
+URxvt*iso14755:                     false
+URxvt*iso14755_52:                  false
+URxvt.clipboard.copycmd:            xsel -ib
+URxvt.clipboard.pastecmd:           xsel -ob
+URxvt.keysym.Shift-Control-C:       perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:       perl:clipboard:paste
 
 ! Base16 Monokai
 ! Scheme: Wimer Hazenberg (http://www.monokai.nl)
