@@ -54,7 +54,7 @@ set listchars=tab:!·,trail:«
 
 " Airline Setup {
 set laststatus=2
-"set noshowmode
+set noshowmode
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
