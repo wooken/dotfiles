@@ -1,5 +1,6 @@
-vim:
+xrandr:
   - src: xinitrc
     dest: ~/.xinitrc
+urxvt:
   - src: Xresources
     dest: ~/.Xresources
