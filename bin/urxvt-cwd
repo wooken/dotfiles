@@ -16,10 +16,20 @@ which_cmd() {
     fi
 }
 
+find_zsh_proc() {
+    for i in $@; do
+        if [ $(ps -p $i -o comm=) == "zsh" ]; then
+            echo $i
+            return
+        fi
+    done
+}
+
 get_cwd() {
     local pid=$(xdotool getactivewindow getwindowpid)
-    local child_pid=$(pgrep -P $pid)
-    local cwd=$(readlink -e /proc/$child_pid/cwd)
+    local child_pids=$(pgrep -P $pid)
+    local zsh_pid=$(find_zsh_proc $child_pids)
+    local cwd=$(readlink -e /proc/$zsh_pid/cwd)
     if [ -d $cwd ]; then echo $cwd; fi
 }
 
