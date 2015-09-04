@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Packages required: xdotool
+#   - x window tool to obtain active window name and pid
+
+fallback_start_urxvt() {
+    urxvt &
+    exit 1
+}
+
+which_cmd() {
+    cmd=$(which $1 2>&1 > /dev/null)
+    result=$?
+    if [ $result -ne 0 ]; then
+        fallback_start_urxvt
+    fi
+}
+
+get_cwd() {
+    local pid=$(xdotool getactivewindow getwindowpid)
+    local child_pid=$(pgrep -P $pid)
+    local cwd=$(readlink -e /proc/$child_pid/cwd)
+    if [ -d $cwd ]; then echo $cwd; fi
+}
+
+which_cmd xdotool
+
+name=$(xdotool getactivewindow getwindowname)
+
+if [ $name == "urxvt" ]; then
+    cwd=$(get_cwd)
+    urxvt -cd $cwd &
+else
+    fallback_start_urxvt
+fi
