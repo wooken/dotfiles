@@ -1,8 +1,20 @@
 #!/bin/bash
 
-#syndaemon -t -k -i 1 &
+# enable trackpoint scroll
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.95
+
+# disable trackpad while typing
+syndaemon -k -d -i 0.2
+
 if [ -f ~/.Xresources ]; then
     xrdb -merge ~/.Xresources
 fi
-xrandr --output eDP1 --primary # fixes i3 missing system tray
+
+# fixes i3 missing system tray
+xrandr --output eDP1 --primary
+
 exec i3
