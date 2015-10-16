@@ -225,6 +225,13 @@ exec --no-startup-id dunst
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
+# enable trackpoint scroll
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.95
+
 # Remove titlebar for certain programs
 #for_window [class="URxvt"] border 1pixel
 for_window [class="Google-chrome" title="Google Chrome"] border 1pixel
