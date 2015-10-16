@@ -232,6 +232,9 @@ exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.95
 
+# disable trackpad while typing
+exec syndaemon -k -d -i 0.1
+
 # Remove titlebar for certain programs
 #for_window [class="URxvt"] border 1pixel
 for_window [class="Google-chrome" title="Google Chrome"] border 1pixel
