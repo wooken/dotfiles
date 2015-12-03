@@ -95,14 +95,17 @@ au FileType ruby setlocal shiftwidth=2 tabstop=2
 au FileType html setlocal shiftwidth=2 tabstop=2
 
 " Macros
-map \s :w<CR>:!./%<CR>
-map \v :w<CR>:!make clean;make;valgrind ./test<CR>
-map \o :w<CR>:!go test<CR>
-map \g :w<CR>:!go run %<CR>
-map \p :w<CR>:!python %<CR>
-map \c :w<CR>:!make clean;make;./test<CR>
-map \m :w<CR>:!make<CR>
-map \b :w<CR>:!ruby %<CR>
-map \r :w<CR>:!cargo test<CR>
-map \u :w<CR>:!cargo run<CR>
-map \x :w<CR>:!xrdb -load ~/.Xresources<CR>
+let mapleader=" "
+map <LEADER>s :w<CR>:!./%<CR>
+map <LEADER>v :w<CR>:!make clean;make;valgrind ./test<CR>
+map <LEADER>o :w<CR>:!go test<CR>
+map <LEADER>g :w<CR>:!go run %<CR>
+map <LEADER>p :w<CR>:!python %<CR>
+map <LEADER>c :w<CR>:!make clean;make;./test<CR>
+map <LEADER>m :w<CR>:!make<CR>
+map <LEADER>b :w<CR>:!ruby %<CR>
+map <LEADER>r :w<CR>:!cargo test<CR>
+map <LEADER>u :w<CR>:!cargo run<CR>
+map <LEADER>x :w<CR>:!xrdb -load ~/.Xresources<CR>
+map <LEADER>, :N<CR>
+map <LEADER>. :n<CR>
