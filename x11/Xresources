@@ -7,7 +7,7 @@ URxvt*scrollBar:                    false
 URxvt*scrollTtyOutput:              false
 URxvt*scrollTtyKeypress:            true
 URxvt*scrollWithBuffer:             true
-URxvt*transparent:                  true
+URxvt*transparent:                  false
 !0 to 99 darkens, 101 to 200 lightens
 URxvt*shading:                      25
 URxvt*locale:                       true
@@ -27,25 +27,25 @@ URxvt.clipboard.pastecmd:           xsel -ob
 URxvt.keysym.Shift-Control-C:       perl:clipboard:copy
 URxvt.keysym.Shift-Control-V:       perl:clipboard:paste
 
-! Base16 Monokai
-! Scheme: Wimer Hazenberg (http://www.monokai.nl)
+! Base16 Eighties
+! Scheme: Chris Kempson (http://chriskempson.com)
 
-#define base00 #272822
-#define base01 #383830
-#define base02 #49483e
-#define base03 #75715e
-#define base04 #a59f85
-#define base05 #f8f8f2
-#define base06 #f5f4f1
-#define base07 #f9f8f5
-#define base08 #f92672
-#define base09 #fd971f
-#define base0A #f4bf75
-#define base0B #a6e22e
-#define base0C #a1efe4
-#define base0D #66d9ef
-#define base0E #ae81ff
-#define base0F #cc6633
+#define base00 #2d2d2d
+#define base01 #393939
+#define base02 #515151
+#define base03 #747369
+#define base04 #a09f93
+#define base05 #d3d0c8
+#define base06 #e8e6df
+#define base07 #f2f0ec
+#define base08 #f2777a
+#define base09 #f99157
+#define base0A #ffcc66
+#define base0B #99cc99
+#define base0C #66cccc
+#define base0D #6699cc
+#define base0E #cc99cc
+#define base0F #d27b53
 
 *.foreground:   base05
 *.background:   base00
