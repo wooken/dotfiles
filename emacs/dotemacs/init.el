@@ -2,7 +2,6 @@
 (load "~/.emacs.d/custom.el")
 (load "~/.emacs.d/escape.el")
 (load "~/.emacs.d/helm.el")
-(load "~/.emacs.d/base16.el")
 (load "~/.emacs.d/powerline.el")
 (load "~/.emacs.d/which-key.el")
 (load "~/.emacs.d/leader.el")
