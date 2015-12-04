@@ -37,8 +37,3 @@
 
 ;; undo
 (setq evil-want-fine-undo nil)
-
-;; clipboard
-(setq x-select-enable-clipboard nil)
-(setq x-select-enable-primary t)
-(setq mouse-drag-copy-region t)
