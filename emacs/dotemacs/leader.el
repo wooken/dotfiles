@@ -5,3 +5,4 @@
 (evil-leader/set-key "c" 'mode-specific-command-prefix)
 (evil-leader/set-key "f" 'helm-find-files)
 (evil-leader/set-key "h" help-map)
+(evil-leader/set-key "x" 'helm-M-x)
