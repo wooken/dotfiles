@@ -2,8 +2,10 @@
 (evil-mode t)
 (setq evil-emacs-state "C-`")
 
-;; disable menu bar
+;; disable some visual bars
 (menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; enable syntax highlighting
 (global-font-lock-mode t)
