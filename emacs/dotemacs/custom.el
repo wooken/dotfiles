@@ -1,6 +1,9 @@
 (require 'evil)
 (evil-mode t)
 
+;; theme
+(load-theme 'spacemacs-dark t)
+
 ;; disable some visual bars
 (menu-bar-mode -1)
 (tool-bar-mode -1)

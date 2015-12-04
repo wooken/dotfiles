@@ -27,17 +27,18 @@ Return a list of installed packages or nil for every skipped package."
 (package-initialize)
 
 (ensure-package-installed
-'evil
-'evil-escape
-'evil-leader
-'evil-search-highlight-persist
-'go-mode
-'helm
-'markdown-mode
-'powerline
-'powerline-evil
-'python-mode
-'rust-mode
-'spaceline
-'which-key
-)
+  'evil
+  'evil-escape
+  'evil-leader
+  'evil-search-highlight-persist
+  'go-mode
+  'helm
+  'markdown-mode
+  'powerline
+  'powerline-evil
+  'python-mode
+  'rust-mode
+  'spaceline
+  'spacemacs-theme
+  'which-key
+  )
