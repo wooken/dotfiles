@@ -1,3 +1,4 @@
+(setq evil-want-C-u-scroll t) ; fix C-u scrolling for evil
 (require 'evil)
 (evil-mode t)
 
@@ -16,7 +17,6 @@
 (global-linum-mode t)
 
 ;; vi undo
-;(setq evil-want-fine-undo nil)
 (setq evil-want-fine-undo t)
 
 ;; persistent search hl
