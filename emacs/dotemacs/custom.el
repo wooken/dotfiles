@@ -1,6 +1,5 @@
 (require 'evil)
 (evil-mode t)
-(setq evil-emacs-state "C-`")
 
 ;; disable some visual bars
 (menu-bar-mode -1)
