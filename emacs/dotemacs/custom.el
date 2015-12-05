@@ -28,7 +28,7 @@
 (setq make-backup-files nil)
 
 ;; show matching parentheses
-(show-paren-mode t)
+(show-smartparens-global-mode t)
 
 ;; disable symlink question
 (setq vc-follow-symlinks nil)
