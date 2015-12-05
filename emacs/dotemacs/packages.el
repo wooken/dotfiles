@@ -38,6 +38,7 @@ Return a list of installed packages or nil for every skipped package."
   'powerline-evil
   'python-mode
   'rust-mode
+  'smartparens
   'spaceline
   'spacemacs-theme
   'which-key
