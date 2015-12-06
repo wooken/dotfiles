@@ -5,3 +5,5 @@
 (load "~/.emacs.d/powerline.el")
 (load "~/.emacs.d/which-key.el")
 (load "~/.emacs.d/leader.el")
+
+(load "~/.emacs.d/lang/rust-compile.el")
