@@ -4,6 +4,7 @@
 (evil-leader/set-key "f" 'helm-find-files)
 (evil-leader/set-key "h" help-map)
 (evil-leader/set-key "x" 'helm-M-x)
+(evil-leader/set-key "w" evil-window-map)
 
 (which-key-add-key-based-replacements "SPC b" "buffers")
 (which-key-add-key-based-replacements "SPC h" "help")

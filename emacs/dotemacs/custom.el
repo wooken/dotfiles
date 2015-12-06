@@ -1,13 +1,6 @@
 (require 'cl)
 
 (load "~/.emacs.d/packages.el")
-(load "~/.emacs.d/escape.el")
-(load "~/.emacs.d/helm.el")
-(load "~/.emacs.d/powerline.el")
-(load "~/.emacs.d/which-key.el")
-(load "~/.emacs.d/leader.el")
-
-(load "~/.emacs.d/lang/rust-compile.el")
 
 (setq evil-want-C-u-scroll t) ; fix C-u scrolling for evil
 (setq evil-want-C-i-jump nil) ; fix TAB for evil
@@ -16,11 +9,10 @@
 ;; theme
 (load-theme 'sanityinc-tomorrow-eighties t)
 
-;; tabs
+;; tabs and indents
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
-(setq-default tab-always-indent 'complete)
-(electric-indent-mode 0)
+;(setq-default tab-always-indent 'complete)
 
 ;; disable some visual bars
 (menu-bar-mode -1)
@@ -58,3 +50,11 @@
 
 ;; org mode
 (add-hook 'org-mode-hook (lambda () (org-indent-mode t)) t)
+
+(load "~/.emacs.d/escape.el")
+(load "~/.emacs.d/helm.el")
+(load "~/.emacs.d/powerline.el")
+(load "~/.emacs.d/which-key.el")
+(load "~/.emacs.d/leader.el")
+
+(load "~/.emacs.d/lang/rust.el")
