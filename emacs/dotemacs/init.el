@@ -1,3 +1,4 @@
+(require 'cl)
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/custom.el")
 (load "~/.emacs.d/escape.el")
