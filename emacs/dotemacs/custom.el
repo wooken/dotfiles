@@ -6,9 +6,6 @@
 ;; theme
 (load-theme 'sanityinc-tomorrow-eighties t)
 
-;; org mode
-(add-hook 'org-mode-hook (lambda () (org-indent-mode t)) t)
-
 ;; tabs
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -48,3 +45,6 @@
 
 ;; undo
 (setq evil-want-fine-undo nil)
+
+;; org mode
+(add-hook 'org-mode-hook (lambda () (org-indent-mode t)) t)
