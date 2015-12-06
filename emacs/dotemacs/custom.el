@@ -1,6 +1,5 @@
 (setq evil-want-C-u-scroll t) ; fix C-u scrolling for evil
 (setq evil-want-C-i-jump nil) ; fix TAB for evil
-(require 'evil)
 (evil-mode t)
 
 ;; theme
@@ -26,7 +25,6 @@
 (setq evil-want-fine-undo t)
 
 ;; persistent search hl
-(require 'evil-search-highlight-persist)
 (global-evil-search-highlight-persist t)
 
 ;; disable auto-save and auto-backup
