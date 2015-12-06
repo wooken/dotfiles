@@ -27,6 +27,7 @@ Return a list of installed packages or nil for every skipped package."
 (package-initialize)
 
 (ensure-package-installed
+  'color-theme-sanityinc-tomorrow
   'evil
   'evil-escape
   'evil-leader
@@ -40,6 +41,5 @@ Return a list of installed packages or nil for every skipped package."
   'rust-mode
   'smartparens
   'spaceline
-  'spacemacs-theme
   'which-key
   )

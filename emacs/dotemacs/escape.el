@@ -2,5 +2,5 @@
 (evil-escape-mode t)
 (global-set-key (kbd "C-c") 'evil-escape)
 (define-key evil-insert-state-map (kbd "C-c") 'evil-escape)
-(define-key evil-normal-state-map (kbd "C-c") 'evil-escape)
+;(define-key evil-normal-state-map (kbd "C-c") 'evil-escape)
 (define-key evil-visual-state-map (kbd "C-c") 'evil-escape)

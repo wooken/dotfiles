@@ -1,9 +1,18 @@
 (setq evil-want-C-u-scroll t) ; fix C-u scrolling for evil
+(setq evil-want-C-i-jump nil) ; fix TAB for evil
 (require 'evil)
 (evil-mode t)
 
 ;; theme
-(load-theme 'spacemacs-dark t)
+(load-theme 'sanityinc-tomorrow-eighties t)
+
+;; org mode
+(add-hook 'org-mode-hook (lambda () (org-indent-mode t)) t)
+
+;; tabs
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq-default tab-always-indent 'complete)
 
 ;; disable some visual bars
 (menu-bar-mode -1)
