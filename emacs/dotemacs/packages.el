@@ -35,6 +35,7 @@ Return a list of installed packages or nil for every skipped package."
   'go-mode
   'helm
   'markdown-mode
+  'nlinum ; faster line numbers
   'powerline
   'powerline-evil
   'python-mode

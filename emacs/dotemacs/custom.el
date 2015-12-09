@@ -23,7 +23,7 @@
 (global-font-lock-mode t)
 
 ;; enable line numbers
-(global-linum-mode t)
+(global-nlinum-mode t)
 
 ;; vi undo
 (setq evil-want-fine-undo t)
