@@ -4,5 +4,5 @@ vim:
   - src: dotvim/init.vim
     dest: ~/.vimrc
 nvim:
-  - src: ~/.vim
+  - src: dotvim
     dest: ~/.config/nvim
