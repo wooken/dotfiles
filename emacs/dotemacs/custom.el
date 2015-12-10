@@ -1,6 +1,7 @@
 (require 'cl)
 
 (load "~/.emacs.d/packages.el")
+(load "~/.emacs.d/leader.el")
 
 (setq evil-want-C-u-scroll t) ; fix C-u scrolling for evil
 (setq evil-want-C-i-jump nil) ; fix TAB for evil
@@ -55,6 +56,5 @@
 (load "~/.emacs.d/helm.el")
 (load "~/.emacs.d/powerline.el")
 (load "~/.emacs.d/which-key.el")
-(load "~/.emacs.d/leader.el")
 
 (load "~/.emacs.d/lang/rust.el")
