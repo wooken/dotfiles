@@ -1,10 +1,10 @@
 (require 'cl)
 
 (load "~/.emacs.d/packages.el")
-(load "~/.emacs.d/leader.el")
 
 (setq evil-want-C-u-scroll t) ; fix C-u scrolling for evil
 (setq evil-want-C-i-jump nil) ; fix TAB for evil
+(load "~/.emacs.d/leader.el")
 (evil-mode t)
 
 ;; theme
