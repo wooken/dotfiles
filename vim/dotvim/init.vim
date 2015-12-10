@@ -1,15 +1,15 @@
 call plug#begin('~/.vim/bundle')
 
-Plug 'chriskempson/base16-vim'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'avakhov/vim-yaml'
 Plug 'bling/vim-airline'
+Plug 'cespare/vim-toml'
+Plug 'chriskempson/base16-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'cespare/vim-toml'
-Plug 'avakhov/vim-yaml'
 Plug 'vim-ruby/vim-ruby'
-Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
