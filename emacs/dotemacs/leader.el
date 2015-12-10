@@ -1,10 +1,14 @@
+(setq evil-leader/in-all-states t)
 (global-evil-leader-mode t)
 (evil-leader/set-leader "<SPC>")
 
-(evil-leader/set-key "f" 'helm-find-files)
-(evil-leader/set-key "h" help-map)
-(evil-leader/set-key "x" 'helm-M-x)
-(evil-leader/set-key "w" evil-window-map)
+(evil-leader/set-key
+  "c" 'mode-specific-command-prefix
+  "f" 'helm-find-files
+  "h" help-map
+  "w" evil-window-map
+  "x" 'helm-M-x
+  )
 
 (which-key-add-key-based-replacements "SPC b" "buffers")
 (which-key-add-key-based-replacements "SPC h" "help")
