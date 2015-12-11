@@ -3,7 +3,6 @@
 (evil-leader/set-leader "<SPC>")
 
 (evil-leader/set-key
-  "c" 'mode-specific-command-prefix
   "f" 'helm-find-files
   "h" help-map
   "w" evil-window-map
@@ -11,6 +10,7 @@
   )
 
 (which-key-add-key-based-replacements "SPC b" "buffers")
+(which-key-add-key-based-replacements "SPC c" "fly-check")
 (which-key-add-key-based-replacements "SPC h" "help")
 
 ;; buffers
@@ -27,3 +27,8 @@
   "SPC y" "clipboard")
 (evil-leader/set-key "y p" 'paste-from-clipboard)
 (evil-leader/set-key "y y" 'copy-to-clipboard)
+
+;; fly-check
+(add-hook 'flycheck-mode-hook
+          (lambda ()
+            (evil-leader/set-key "c" flycheck-command-map)))

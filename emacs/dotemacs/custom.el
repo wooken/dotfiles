@@ -8,7 +8,8 @@
 (evil-mode t)
 
 ;; theme
-(load-theme 'sanityinc-tomorrow-eighties t)
+;(load-theme 'sanityinc-tomorrow-eighties t)
+(load-theme 'spacemacs-dark t)
 
 ;; tabs and indents
 (setq-default indent-tabs-mode nil)
@@ -56,5 +57,5 @@
 (load "~/.emacs.d/helm.el")
 (load "~/.emacs.d/powerline.el")
 (load "~/.emacs.d/which-key.el")
-
+(load "~/.emacs.d/flycheck.el")
 (load "~/.emacs.d/lang/rust.el")

@@ -32,6 +32,8 @@ Return a list of installed packages or nil for every skipped package."
   'evil-escape
   'evil-leader
   'evil-search-highlight-persist
+  'flycheck
+  'flycheck-rust
   'go-mode
   'helm
   'markdown-mode
@@ -41,6 +43,7 @@ Return a list of installed packages or nil for every skipped package."
   'python-mode
   'rust-mode
   'smartparens
+  'spacemacs-theme
   'spaceline
   'which-key
   )
