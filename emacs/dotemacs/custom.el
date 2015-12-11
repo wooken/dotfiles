@@ -8,7 +8,6 @@
 (evil-mode t)
 
 ;; theme
-;(load-theme 'sanityinc-tomorrow-eighties t)
 (load-theme 'spacemacs-dark t)
 
 ;; tabs and indents
