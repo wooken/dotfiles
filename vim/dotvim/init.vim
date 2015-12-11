@@ -82,9 +82,6 @@ let g:tex_flavor='xelatex'
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
 let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 
-" vim-go
-"let g:go_auto_type_info = 1             " on-the-fly type informa
-
 " Rust
 au Filetype rust setlocal nocindent
 
