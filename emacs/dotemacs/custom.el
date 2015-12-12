@@ -50,7 +50,11 @@
 (setq evil-want-fine-undo nil)
 
 ;; org mode
-(add-hook 'org-mode-hook (lambda () (org-indent-mode t)) t)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (org-indent-mode t)
+            )
+          )
 
 (load "~/.emacs.d/escape.el")
 (load "~/.emacs.d/helm.el")
