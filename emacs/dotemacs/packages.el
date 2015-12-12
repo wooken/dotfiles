@@ -35,6 +35,7 @@ Return a list of installed packages or nil for every skipped package."
   'flycheck-rust
   'go-mode
   'helm
+  'js2-mode
   'markdown-mode
   'nlinum ; faster line numbers
   'powerline
@@ -42,7 +43,7 @@ Return a list of installed packages or nil for every skipped package."
   'python-mode
   'rust-mode
   'smartparens
-  'spacemacs-theme
   'spaceline
+  'spacemacs-theme
   'which-key
   )

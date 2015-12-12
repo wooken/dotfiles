@@ -57,4 +57,6 @@
 (load "~/.emacs.d/powerline.el")
 (load "~/.emacs.d/which-key.el")
 (load "~/.emacs.d/flycheck.el")
+
+(load "~/.emacs.d/lang/js.el")
 (load "~/.emacs.d/lang/rust.el")
