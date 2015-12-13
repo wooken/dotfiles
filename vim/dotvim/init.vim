@@ -103,15 +103,15 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " Macros
 let mapleader=" "
 nmap <leader>h :map <lt>leader><CR>
-
-nmap <leader>t :TestSuite<CR>   " vim-test: run entire test suite
-nmap <leader>f :TestFile<CR>    " vim-test: run tests in current file
-
-nmap <leader>o :lopen<CR>       " neomake: open location window
-nmap <leader>c :lclose<CR>      " neomake: close location window
-nmap <leader>b :ll<CR>          " neomake: go to current error/warning
-nmap <leader>n :lnext<CR>       " neomake: next error/warning
-nmap <leader>p :lprev<CR>       " neomake: previous error/warning
-
-nmap <LEADER>, :N<CR>           " buffers: previous
-nmap <LEADER>. :n<CR>           " buffers: next
+" vim-test
+nmap <leader>t :TestSuite<CR>
+nmap <leader>f :TestFile<CR>
+" neomake
+nmap <leader>o :lopen<CR>
+nmap <leader>c :lclose<CR>
+nmap <leader>b :ll<CR>
+nmap <leader>n :lnext<CR>
+nmap <leader>p :lprev<CR>
+" buffers
+nmap <LEADER>, :N<CR>
+nmap <LEADER>. :n<CR>
