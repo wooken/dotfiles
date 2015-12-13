@@ -93,6 +93,9 @@ au FileType ruby setlocal shiftwidth=2 tabstop=2
 " HTML
 au FileType html setlocal shiftwidth=2 tabstop=2
 
+" Javascript
+au FileType javascript setlocal shiftwidth=2 tabstop=2 nocindent
+
 " Neomake
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
