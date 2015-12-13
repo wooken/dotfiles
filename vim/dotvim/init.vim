@@ -2,12 +2,14 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'avakhov/vim-yaml'
+Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'cespare/vim-toml'
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'fatih/vim-go'
+Plug 'janko-m/vim-test'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
 
@@ -91,18 +93,22 @@ au FileType ruby setlocal shiftwidth=2 tabstop=2
 " HTML
 au FileType html setlocal shiftwidth=2 tabstop=2
 
+" Neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+
 " Macros
 let mapleader=" "
-map <LEADER>s :w<CR>:!./%<CR>
-map <LEADER>v :w<CR>:!make clean;make;valgrind ./test<CR>
-map <LEADER>o :w<CR>:!go test<CR>
-map <LEADER>g :w<CR>:!go run %<CR>
-map <LEADER>p :w<CR>:!python %<CR>
-map <LEADER>c :w<CR>:!make clean;make;./test<CR>
-map <LEADER>m :w<CR>:!make<CR>
-map <LEADER>b :w<CR>:!ruby %<CR>
-map <LEADER>r :w<CR>:!cargo test<CR>
-map <LEADER>u :w<CR>:!cargo run<CR>
-map <LEADER>x :w<CR>:!xrdb -load ~/.Xresources<CR>
-map <LEADER>, :N<CR>
-map <LEADER>. :n<CR>
+nmap <leader>h :map <lt>leader><CR>
+
+nmap <leader>t :TestSuite<CR>   " vim-test: run entire test suite
+nmap <leader>f :TestFile<CR>    " vim-test: run tests in current file
+
+nmap <leader>o :lopen<CR>       " neomake: open location window
+nmap <leader>c :lclose<CR>      " neomake: close location window
+nmap <leader>b :ll<CR>          " neomake: go to current error/warning
+nmap <leader>n :lnext<CR>       " neomake: next error/warning
+nmap <leader>p :lprev<CR>       " neomake: previous error/warning
+
+nmap <LEADER>, :N<CR>           " buffers: previous
+nmap <LEADER>. :n<CR>           " buffers: next
