@@ -5,6 +5,7 @@
 (evil-leader/set-key
   "f" 'helm-find-files
   "h" help-map
+  "i" 'indent-region
   "w" evil-window-map
   "x" 'helm-M-x
   )
@@ -31,4 +32,6 @@
 ;; fly-check
 (add-hook 'flycheck-mode-hook
           (lambda ()
-            (evil-leader/set-key "c" flycheck-command-map)))
+            (evil-leader/set-key "c" flycheck-command-map)
+            )
+          )
