@@ -92,14 +92,15 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 let mapleader=" "
 nmap <leader>h :map <lt>leader><CR>
 " vim-test
-nmap <leader>t :TestSuite<CR>
-nmap <leader>f :TestFile<CR>
+nmap <leader>tt :TestSuite<CR>
+nmap <leader>tf :TestFile<CR>
 " neomake
-nmap <leader>o :lopen<CR>
-nmap <leader>c :lclose<CR>
-nmap <leader>b :ll<CR>
-nmap <leader>n :lnext<CR>
-nmap <leader>p :lprev<CR>
+nmap <leader>mo :lopen<CR>
+nmap <leader>mc :lclose<CR>
+nmap <leader>mb :ll<CR>
+nmap <leader>mn :lnext<CR>
+nmap <leader>mp :lprev<CR>
+nmap <leader>mm :Neomake<CR>
 " buffers
 nmap <LEADER>, :N<CR>
 nmap <LEADER>. :n<CR>
