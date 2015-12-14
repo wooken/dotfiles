@@ -84,18 +84,6 @@ let g:tex_flavor='xelatex'
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
 let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 
-" Rust
-au Filetype rust setlocal nocindent
-
-" Ruby
-au FileType ruby setlocal shiftwidth=2 tabstop=2
-
-" HTML
-au FileType html setlocal shiftwidth=2 tabstop=2
-
-" Javascript
-au FileType javascript setlocal shiftwidth=2 tabstop=2 nocindent
-
 " Neomake
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
