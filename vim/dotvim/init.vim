@@ -87,7 +87,7 @@ let g:LatexBox_latexmk_options = "-pvc -pdfps"
 let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 
 " Neomake
-autocmd! BufWritePost * Neomake
+autocmd! InsertLeave,BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_python_pep8_maker = {
             \ 'args': ['--ignore=E501'],
@@ -112,6 +112,9 @@ let mapleader=" "
 " buffers
 "nmap <LEADER>, :N<CR>
 "nmap <LEADER>. :n<CR>
+
+" Allows C-c to trigger InsertLeave
+inoremap <C-c> <ESC>
 
 " Vim Leader Guide
 let g:lmap = {}
