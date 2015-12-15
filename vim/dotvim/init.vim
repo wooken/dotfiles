@@ -94,6 +94,8 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_python_pep8_maker = {
             \ 'args': ['--ignore=E501'],
             \ }
+" Vim-test
+let test#strategy = "neovim"
 
 " Macros
 let mapleader=" "
