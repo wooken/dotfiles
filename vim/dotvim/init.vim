@@ -9,6 +9,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'fatih/vim-go'
+Plug 'hecal3/vim-leader-guide'
 Plug 'janko-m/vim-test'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'rust-lang/rust.vim'
@@ -19,7 +20,7 @@ call plug#end()
 
 " Editor
 syntax on
-set t_Co=16
+"set t_Co=16
 set background=dark
 
 set showmatch               " Show matching brackets
@@ -95,20 +96,44 @@ let g:neomake_python_pep8_maker = {
 
 " Macros
 let mapleader=" "
-nmap <LEADER>h :map <lt>leader><CR>
+"nmap <LEADER>h :map <lt>leader><CR>
 " quickfix
-nmap <LEADER>co :copen<CR>
-nmap <LEADER>cc :cclose<CR>
+"nmap <LEADER>qo :copen<CR>
+"nmap <LEADER>qc :cclose<CR>
 " vim-test
-nmap <LEADER>tt :TestSuite<CR>
-nmap <LEADER>tf :TestFile<CR>
+"nmap <LEADER>t :TestSuite<CR>
+"nmap <LEADER>f :TestFile<CR>
 " neomake
-nmap <LEADER>mo :lopen<CR>
-nmap <LEADER>mc :lclose<CR>
-nmap <LEADER>mb :ll<CR>
-nmap <LEADER>mn :lnext<CR>
-nmap <LEADER>mp :lprev<CR>
-nmap <LEADER>mm :Neomake<CR>
+"nmap <LEADER>o :lopen<CR>
+"nmap <LEADER>c :lclose<CR>
+"nmap <LEADER>b :ll<CR>
+"nmap <LEADER>n :lnext<CR>
+"nmap <LEADER>p :lprev<CR>
+"nmap <LEADER>m :Neomake<CR>
 " buffers
-nmap <LEADER>, :N<CR>
-nmap <LEADER>. :n<CR>
+"nmap <LEADER>, :N<CR>
+"nmap <LEADER>. :n<CR>
+
+" Vim Leader Guide
+let g:lmap = {}
+let g:lmap.m = {
+            \'name': 'Neomake',
+            \'c': ['lclose', 'close list of errors'],
+            \'o': ['lopen', 'open list of errors'],
+            \'l': ['ll', 'goto current error'],
+            \'n': ['lnext', 'goto next error'],
+            \'p': ['lprev', 'goto previous error'],
+            \'m': ['Neomake', 'neomake'],
+            \}
+let g:lmap.t = {
+            \'name': 'Testing',
+            \'t': ['TestSuite', 'suite'],
+            \'f': ['TestFile', 'file'],
+            \}
+
+let g:lmap[','] = ['N', 'previous buffer']
+let g:lmap['.'] = ['n', 'next buffer']
+
+call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
+nnoremap <silent> <leader> :LeaderGuide '<Space>'<CR>
+vnoremap <silent> <leader> :LeaderGuideVisual '<Space>'<CR>
