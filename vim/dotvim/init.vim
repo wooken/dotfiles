@@ -11,6 +11,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'fatih/vim-go'
 Plug 'janko-m/vim-test'
 Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
@@ -94,6 +95,9 @@ let g:neomake_python_pep8_maker = {
 " Macros
 let mapleader=" "
 nmap <LEADER>h :map <lt>leader><CR>
+" quickfix
+nmap <LEADER>co :copen<CR>
+nmap <LEADER>cc :cclose<CR>
 " vim-test
 nmap <LEADER>tt :TestSuite<CR>
 nmap <LEADER>tf :TestFile<CR>
