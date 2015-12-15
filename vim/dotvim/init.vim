@@ -89,7 +89,7 @@ let g:LatexBox_latexmk_options = "-pvc -pdfps"
 let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 
 " Neomake
-autocmd! InsertLeave,BufWritePost * Neomake
+autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_python_pep8_maker = {
             \ 'args': ['--ignore=E501'],
