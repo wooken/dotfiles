@@ -11,10 +11,11 @@ URxvt*transparent:                  false
 !0 to 99 darkens, 101 to 200 lightens
 URxvt*shading:                      25
 URxvt*locale:                       true
-URxvt*font:                         xft:Inconsolata\\-g for Powerline:pixelsize=17:style=g, \
+URxvt*font:                         xft:Inconsolata\\-g for Powerline:pixelsize=16:style=g, \
                                     xft:Menlo for Powerline:pixelsize=17:style=Medium
 URxvt*saveLines:                    8192
 URxvt*letterSpace:                  -1
+URxvt*lineSpace:                    -1
 URxvt*perl-ext-common:              default,matcher,clipboard
 URxvt*matcher.button:               1
 URxvt*url-launcher:                 /usr/bin/xdg-open
