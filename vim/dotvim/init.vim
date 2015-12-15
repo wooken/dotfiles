@@ -17,7 +17,9 @@ Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
 
-" Editor
+" Allows C-c to trigger InsertLeave
+inoremap <C-c> <ESC><ESC>
+
 syntax on
 "set t_Co=16
 set background=dark
@@ -112,9 +114,6 @@ let mapleader=" "
 " buffers
 "nmap <LEADER>, :N<CR>
 "nmap <LEADER>. :n<CR>
-
-" Allows C-c to trigger InsertLeave
-inoremap <C-c> <ESC>
 
 " Vim Leader Guide
 let g:lmap = {}
