@@ -1,1 +1,1 @@
-au Filetype rust setlocal nocindent
+setlocal nocindent
