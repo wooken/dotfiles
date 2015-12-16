@@ -21,7 +21,9 @@ call plug#end()
 inoremap <C-c> <ESC><ESC>
 
 syntax on
-"set t_Co=16
+set t_Co=16                 " neovim ignores this setting
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme base16-eighties
 set background=dark
 
 set showmatch               " Show matching brackets
