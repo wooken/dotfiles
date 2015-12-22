@@ -136,6 +136,12 @@ let g:lmap.t = {
             \'f': ['TestFile', 'file'],
             \}
 
+let g:lmap.g = {
+            \'name': 'Git',
+            \'b': ['Gblame', 'blame (open)'],
+            \'o': ['Gblame q', 'blame (close)'],
+            \}
+
 let g:lmap[','] = ['N', 'previous buffer']
 let g:lmap['.'] = ['n', 'next buffer']
 
