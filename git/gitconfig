@@ -1,22 +1,22 @@
 [user]
-	name = wooken
-	email = kenny@kenwoo.io
+    name = wooken
+    email = kenny@kenwoo.io
 [color]
-	ui = true
+    ui = true
 [core]
-	editor = nvim
-	pager = less
+    editor = vim
+    pager = less
 [log]
     decorate = auto
 [push]
-	default = simple
+    default = simple
 [alias]
-	lg = log --color --pretty=format:'%Cred%h%Creset -%Cgreen%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --no-merges
-	gg = log --color --pretty=oneline --abbrev-commit --no-merges
-	ri = rebase --interactive
-	rc = rebase --continue
-	c = commit
-	b = branch
-	co = checkout
-	sf = show --pretty="format:" --name-only
+    lg = log --color --pretty=format:'%Cred%h%Creset -%Cgreen%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --no-merges
+    gg = log --color --pretty=oneline --abbrev-commit --no-merges
+    ri = rebase --interactive
+    rc = rebase --continue
+    c = commit
+    b = branch
+    co = checkout
+    sf = show --pretty="format:" --name-only
     verbs = !git log --pretty=format:'%s' | cut -d \" \" -f 1 | sort | uniq -c | sort -nr
