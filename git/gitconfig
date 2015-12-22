@@ -10,6 +10,9 @@
     decorate = auto
 [push]
     default = simple
+[grep]
+    linenumber = true
+    extendedRegexp = true
 [alias]
     lg = log --color --pretty=format:'%Cred%h%Creset -%Cgreen%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --no-merges
     gg = log --color --pretty=oneline --abbrev-commit --no-merges
