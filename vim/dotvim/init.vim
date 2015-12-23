@@ -6,7 +6,7 @@ inoremap <C-c> <ESC><ESC>
 
 syntax on
 set t_Co=16                 " neovim ignores this setting
-if system('uname -a') =~? 'arch'
+if !empty(glob('/etc/arch-release'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
