@@ -1,30 +1,14 @@
-call plug#begin('~/.vim/bundle')
-
-Plug 'LaTeX-Box-Team/LaTeX-Box'
-Plug 'avakhov/vim-yaml'
-Plug 'benekastah/neomake'
-Plug 'bling/vim-airline'
-Plug 'cespare/vim-toml'
-Plug 'chriskempson/base16-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go'
-Plug 'hecal3/vim-leader-guide'
-Plug 'janko-m/vim-test'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-ruby/vim-ruby'
-
-call plug#end()
+let mapleader=" "
+source ~/.config/nvim/plugins.vim
 
 " Allows C-c to trigger InsertLeave
 inoremap <C-c> <ESC><ESC>
 
 syntax on
 set t_Co=16                 " neovim ignores this setting
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme base16-eighties
-set background=dark
+if system('uname -a') =~? 'arch'
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
 set showmatch               " Show matching brackets
 set ignorecase              " Ignore case in search patterns
@@ -60,91 +44,5 @@ set smarttab                " When on, a <Tab> in front of a line inserts blanks
 set list
 set listchars=tab:!·,trail:«
 
-" Airline Setup {
-set laststatus=2
-set noshowmode
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols = {}
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'bubblegum'
-
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-
-" powerline symbols
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-" } // Airline
-
 " Enable markdown syntax highlighting for md files
 au BufRead,BufNewFile *.md set filetype=markdown
-
-" LaTeX-BoX
-let g:tex_flavor='xelatex'
-let g:LatexBox_latexmk_options = "-pvc -pdfps"
-let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
-
-" Neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_python_pep8_maker = {
-            \ 'args': ['--ignore=E501'],
-            \ }
-" Vim-test
-let test#strategy = "neovim"
-
-" Macros
-let mapleader=" "
-"nmap <LEADER>h :map <lt>leader><CR>
-" quickfix
-"nmap <LEADER>qo :copen<CR>
-"nmap <LEADER>qc :cclose<CR>
-" vim-test
-"nmap <LEADER>t :TestSuite<CR>
-"nmap <LEADER>f :TestFile<CR>
-" neomake
-"nmap <LEADER>o :lopen<CR>
-"nmap <LEADER>c :lclose<CR>
-"nmap <LEADER>b :ll<CR>
-"nmap <LEADER>n :lnext<CR>
-"nmap <LEADER>p :lprev<CR>
-"nmap <LEADER>m :Neomake<CR>
-" buffers
-"nmap <LEADER>, :N<CR>
-"nmap <LEADER>. :n<CR>
-
-" Vim Leader Guide
-let g:lmap = {}
-let g:lmap.m = {
-            \'name': 'Neomake',
-            \'c': ['lclose', 'close list of errors'],
-            \'o': ['lopen', 'open list of errors'],
-            \'l': ['ll', 'goto current error'],
-            \'n': ['lnext', 'goto next error'],
-            \'p': ['lprev', 'goto previous error'],
-            \'m': ['Neomake', 'neomake'],
-            \}
-let g:lmap.t = {
-            \'name': 'Testing',
-            \'t': ['TestSuite', 'suite'],
-            \'f': ['TestFile', 'file'],
-            \}
-
-let g:lmap.g = {
-            \'name': 'Git',
-            \'b': ['Gblame', 'blame (open)'],
-            \'o': ['Gblame q', 'blame (close)'],
-            \}
-
-let g:lmap[','] = ['N', 'previous buffer']
-let g:lmap['.'] = ['n', 'next buffer']
-
-call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
-nnoremap <silent> <leader> :LeaderGuide '<Space>'<CR>
-vnoremap <silent> <leader> :LeaderGuideVisual '<Space>'<CR>
