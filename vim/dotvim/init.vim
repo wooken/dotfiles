@@ -19,8 +19,6 @@ if !has('nvim')
     set incsearch           " search while typing
     set langnoremap
     set laststatus=2        " status line always shown
-    set listchars=tab:>,trail:-,nbsp:+
-    "set listchars=tab:!·,trail:«
     set smarttab            " When on, a <Tab> in front of a line inserts blanks
                             " according to 'shiftwidth'. 'tabstop' is used in other
                             " places. A <BS> will delete a 'shiftwidth' worth of space
@@ -47,6 +45,7 @@ set tabstop=4               " Number of spaces that a <Tab> in the file counts f
 set shiftwidth=4            " Number of spaces to use for each step of (auto)indent
 set expandtab               " Use the appropriate number of spaces to insert a <Tab>
                             " <Ctrl>-V, <Tab> for real tab
+set listchars=tab:!·,trail:«,nbsp:+
 set list
 
 " Enable markdown syntax highlighting for md files
