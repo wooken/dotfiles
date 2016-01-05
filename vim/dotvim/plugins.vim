@@ -30,6 +30,12 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'hecal3/vim-leader-guide'
 let g:lmap = {}
+
+let g:lmap.h = {
+            \'name': 'Help',
+            \'l': ['help usr_41', 'VimL'],
+            \}
+
 let g:lmap.m = {
             \'name': 'Neomake',
             \'c': ['lclose', 'close list of errors'],
@@ -49,6 +55,21 @@ let g:lmap.g = {
             \'name': 'Git',
             \'b': ['Gblame', 'blame (open)'],
             \'o': ['Gblame q', 'blame (close)'],
+            \}
+
+let g:lmap.f = {
+            \'name': 'Find',
+            \'a': ['Ag', 'ag'],
+            \'b': ['Buffers', 'buffers'],
+            \'f': ['Files', 'files'],
+            \'g': ['GitFiles', 'git files'],
+            \}
+
+
+let g:lmap.r = {
+            \'name': 'Run Program',
+            \'c': ['SCCompile', 'compile'],
+            \'r': ['SCCompileRun', 'run'],
             \}
 
 let g:lmap[','] = ['N', 'previous buffer']
@@ -88,8 +109,13 @@ let g:neomake_python_pep8_maker = {
 " Disable rustc checker
 let g:neomake_rust_enabled_makers = []
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 Plug 'janko-m/vim-test'
 let test#strategy = "neovim"
+
+Plug 'xuhdev/SingleCompile'
 
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 let g:tex_flavor='xelatex'
