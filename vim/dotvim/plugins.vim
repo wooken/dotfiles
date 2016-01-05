@@ -98,7 +98,6 @@ let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 
 " Misc
 Plug 'chriskempson/base16-vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 
 " Syntax highlighting
