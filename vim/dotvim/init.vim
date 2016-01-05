@@ -50,4 +50,4 @@ set listchars=tab:!·,trail:«,nbsp:+
 set list
 
 " Enable markdown syntax highlighting for md files
-au BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.md set filetype=markdown
