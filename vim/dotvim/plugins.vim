@@ -36,6 +36,7 @@ let g:lmap.h = {
             \'l': ['help usr_41', 'VimL'],
             \}
 
+" Neomake
 let g:lmap.m = {
             \'name': 'Neomake',
             \'c': ['lclose', 'close list of errors'],
@@ -45,27 +46,32 @@ let g:lmap.m = {
             \'p': ['lprev', 'goto previous error'],
             \'m': ['Neomake', 'neomake'],
             \}
+
+" vim-test
 let g:lmap.t = {
             \'name': 'Testing',
             \'t': ['TestSuite', 'suite'],
             \'f': ['TestFile', 'file'],
             \}
 
+" vim-fugitive
 let g:lmap.g = {
             \'name': 'Git',
             \'b': ['Gblame', 'blame (open)'],
             \'o': ['Gblame q', 'blame (close)'],
             \}
 
+" fzf.vim
 let g:lmap.f = {
             \'name': 'Find',
             \'a': ['Ag', 'ag'],
             \'b': ['Buffers', 'buffers'],
+            \'c': ['Colors', 'color schemes'],
             \'f': ['Files', 'files'],
             \'g': ['GitFiles', 'git files'],
             \}
 
-
+" SimpleCompile
 let g:lmap.r = {
             \'name': 'Run Program',
             \'c': ['SCCompile', 'compile'],
@@ -113,7 +119,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'janko-m/vim-test'
-let test#strategy = "neovim"
+let test#strategy = "dispatch"
 
 Plug 'xuhdev/SingleCompile'
 
@@ -125,6 +131,7 @@ let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 " Misc
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
 
 " Syntax highlighting
 Plug 'avakhov/vim-yaml'
