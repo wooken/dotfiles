@@ -102,7 +102,7 @@ augroup neomake_after_save
     autocmd BufWritePost * Neomake
     autocmd BufWritePost *.rs if has('nvim') | Neomake! cargo | endif
 augroup END
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['standard']
 let g:neomake_python_pep8_maker = {
             \ 'args': ['--ignore=E501'],
             \ }
@@ -130,10 +130,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'avakhov/vim-yaml'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
-
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " Activate vim-leader-guide
