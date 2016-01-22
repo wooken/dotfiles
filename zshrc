@@ -40,9 +40,18 @@ export PATH=$PATH:~/bin
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
 alias em='emacs -nw'
 alias emacs='emacs -nw'
+
+# Termite dircolors
+# generate using: dircolors -p > ~/.dircolors
+# append to ~/.dircolors: TERM xterm-termite
+eval $(dircolors ~/.dircolors)
+
+# Termite: open new terminal in cwd
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -27,7 +27,7 @@ font pango:Ubuntu 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec sakura
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill

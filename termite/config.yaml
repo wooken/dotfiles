@@ -1,0 +1,3 @@
+termite:
+  - src: termite
+    dest: ~/.config/termite

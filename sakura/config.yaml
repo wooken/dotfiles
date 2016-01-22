@@ -1,3 +1,0 @@
-sakura:
-  - src: sakura.conf
-    dest: ~/.config/sakura/sakura.conf
