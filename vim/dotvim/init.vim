@@ -51,3 +51,12 @@ set list
 
 " Enable markdown syntax highlighting for md files
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" Auto resize splits
+autocmd VimResized * wincmd =
+
+" Split navigation
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>
