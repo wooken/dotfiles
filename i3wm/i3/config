@@ -52,10 +52,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+h move left
+#bindsym $mod+Shift+j move down
+#bindsym $mod+Shift+k move up
+#bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -150,11 +150,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position        top
-    #font            xft:Ubuntu 11
-    font            xft:Menlo for Powerline 10
+    font            xft:Fira Mono for Powerline 10
     tray_output     primary
     status_command  i3status
-    #status_command  ~/.dotfiles/bin/conky-i3bar
 
     # Light theme
     #colors {
@@ -238,6 +236,5 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Remove titlebar for certain programs
-for_window [class="Sakura"] border pixel 2
-for_window [class="URxvt"] border pixel 2
+for_window [class="Termite"] border pixel 2
 for_window [class="chromium"] border pixel 1
