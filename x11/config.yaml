@@ -1,6 +1,6 @@
 xrandr:
-  - src: xinitrc
-    dest: ~/.xinitrc
+  - src: xprofile
+    dest: ~/.xprofile
 urxvt:
   - src: Xresources
     dest: ~/.Xresources
