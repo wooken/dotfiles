@@ -78,8 +78,9 @@ let g:lmap.r = {
             \'r': ['SCCompileRun', 'run'],
             \}
 
-let g:lmap[','] = ['N', 'previous buffer']
-let g:lmap['.'] = ['n', 'next buffer']
+let g:lmap[','] = ['N', 'previous file']
+let g:lmap['.'] = ['n', 'next file']
+let g:lmap['p'] = ['b#', 'previous buffer']
 
 Plug 'bling/vim-airline'
 set laststatus=2
