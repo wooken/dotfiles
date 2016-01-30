@@ -39,6 +39,14 @@ def _print_msg(msg):
         print(msg)
 
 
+def _create_symlink(src, dest):
+    if os.path.islink(dest) or os.path.isfile(dest):
+        _print_already_exists(dest)
+    else:
+        _print_msg("Creating symlink: %s" % dest)
+        os.symlink(src, dest)
+
+
 def main():
     """
     main
@@ -55,8 +63,6 @@ def main():
             progs_exist_list.append(prog)
 
     home = os.getenv('HOME')
-    for i in ['dunst', 'vim', 'termite']:
-        progs_exist_list.remove(i)
     for directory in progs_exist_list:
         file_list = [f for f in os.listdir(directory)]
         for item in file_list:
@@ -65,18 +71,15 @@ def main():
                 if not os.path.isdir(dot_path):
                     os.makedirs(dot_path)
                 source_dir = os.path.realpath(os.path.join(CWD, directory, item))
-                print(source_dir)
-                # TODO: figure out why this is not returning a list of dirs
-                source_list = [f for f in os.listdir(source_dir) if os.path.isdir(f)]
-                path = ''
+                source_list = [f for f in os.listdir(source_dir)]
+                for source in source_list:
+                    abs_source = os.path.realpath(os.path.join(source_dir, source))
+                    path = os.path.join(dot_path, source)
+                    _create_symlink(abs_source, path)
             else:
+                source = os.path.realpath(os.path.join(CWD, directory, item))
                 path = os.path.join(home, item)
-                if os.path.islink(path) or os.path.isfile(path):
-                    _print_already_exists(path)
-                else:
-                    source = os.path.realpath(os.path.join(CWD, directory, item))
-                    _print_msg("Creating symlink: %s" % path)
-                    os.symlink(source, path)
+                _create_symlink(source, path)
 
 if __name__ == "__main__":
     DOTPATHS = ['.config', '.local']
