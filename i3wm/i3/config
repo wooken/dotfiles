@@ -153,35 +153,10 @@ bar {
     font            xft:Fira Mono for Powerline 10
     tray_output     primary
     status_command  i3status
-
-    # Light theme
-    #colors {
-            #background #E4E5E8
-            #statusline #788491
-            #separator #51c4d4
-
-            #focused_workspace  #E4E5E8 #E4E5E8 #71B2DE
-            #active_workspace   #E4E5E8 #E4E5E8 #71B2DE
-            #inactive_workspace #E4E5E8 #E4E5E8 #94AAAB
-            #urgent_workspace   #E4E5E8 #E4E5E8 #94AAAB
-    #}
 }
-
-# No window borders
-#new_window normal 1 px
-#new_float normal 1 px
 
 # nm-applet startup
 exec --no-startup-id nm-applet
-
-# gnome-sound-applet startup
-#exec --no-startup-id gnome-sound-applet
-
-# Synclient
-#exec ~/Documents/scripts/config-synclient.sh
-
-# Keyboard
-#exec --no-startup-id xmodmap .Xmodmap
 
 # Bluetooth
 exec --no-startup-id rfkill block bluetooth
@@ -199,36 +174,9 @@ bindsym $mod+l exec i3lock -c 000000
 
 # Clipboard, sync all using autocutsel
 exec --no-startup-id autocutsel -fork
-#exec --no-startup-id autocutsel -selection PRIMARY -fork
 
 # Dunst (notifications)
 exec --no-startup-id dunst
-
-# Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3dB
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -3dB
-#bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-
-# Alsa controls
-#bindsym XF86AudioRaiseVolume exec amixer -q set Master 4%+ unmute
-#bindsym XF86AudioLowerVolume exec amixer -q set Master 4%- unmute
-#bindsym XF86AudioMute exec amixer -q set Master toggle
-
-# Screen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-#bindsym XF86MonBrightnessUp exec ~/.i3/brightup.sh
-#bindsym XF86MonBrightnessDown exec ~/.i3/brightdown.sh
-
-# Keyboard brightness controls
-#bindsym XF86KbdBrightnessUp
-#bindsym XF86KbdBrightnessDown
-
-# # Media player controls
-#bindsym XF86AudioPlay exec playerctl play
-#bindsym XF86AudioPause exec playerctl pause
-#bindsym XF86AudioNext exec playerctl next
-#bindsym XF86AudioPrev exec playerctl previous
 
 # Scratchpad
 # floating toggle: mod-shift-space
