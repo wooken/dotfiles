@@ -1,3 +1,0 @@
-latex:
-  - src: latexmkrc
-    dest: ~/.latexmkrc

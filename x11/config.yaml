@@ -1,6 +1,0 @@
-xrandr:
-  - src: xprofile
-    dest: ~/.xprofile
-urxvt:
-  - src: Xresources
-    dest: ~/.Xresources

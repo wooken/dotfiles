@@ -26,7 +26,7 @@ if empty(glob(s:plugin_manager))
   augroup END
 endif
 
-call plug#begin('~/.vim/bundle')
+call plug#begin("$VIMHOME/bundle")
 
 Plug 'hecal3/vim-leader-guide'
 let g:lmap = {}
@@ -83,6 +83,7 @@ let g:lmap['.'] = ['n', 'next file']
 let g:lmap['p'] = ['b#', 'previous buffer']
 
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 set laststatus=2
 set noshowmode
 if !exists('g:airline_symbols')
@@ -150,5 +151,5 @@ vnoremap <silent> <leader> :LeaderGuideVisual '<Space>'<CR>
 
 " Activate base16-vim
 let base16colorspace=256
-colorscheme base16-eighties
+colorscheme base16-monokai
 set background=dark

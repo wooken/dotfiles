@@ -1,8 +1,0 @@
-vim:
-  - src: dotvim
-    dest: ~/.vim
-  - src: dotvim/init.vim
-    dest: ~/.vimrc
-nvim:
-  - src: dotvim
-    dest: ~/.config/nvim

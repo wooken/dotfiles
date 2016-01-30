@@ -1,3 +1,0 @@
-dunst:
-  - src: ../dunst
-    dest: ~/.config/dunst
