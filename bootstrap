@@ -1,0 +1,86 @@
+#!/usr/bin/env python
+
+"""
+Bootstrap dotfiles
+"""
+
+from __future__ import print_function
+import os
+import platform
+from subprocess import check_call, CalledProcessError, DEVNULL
+import sys
+
+
+def _is_ansi_linux():
+    return hasattr(sys.stderr, "isatty") and sys.stderr.isatty() and not platform.system() == 'Windows'
+
+
+def _print_error(err):
+    if _is_ansi_linux():
+        print("\033[1;31m%s\033[1;m" % err)
+    else:
+        print(err)
+
+
+def _print_already_exists(path):
+    msg = "error: symlink or file already exists: %s" % path
+    if _is_ansi_linux():
+        print("\033[1;35m%s\033[1;m" % msg)
+    else:
+        print(msg)
+
+
+def _print_msg(msg):
+    if _is_ansi_linux():
+        print("\033[1;34m%s\033[1;m" % msg)
+    else:
+        print(msg)
+
+
+def get_top_level_dirs():
+    """Returns a list of top level directories"""
+    dir_list = [f for f in os.listdir('.') if os.path.isdir(f) and not f.startswith('.')]
+    return dir_list
+
+
+def get_installed_prog_list(prog_list):
+    """
+    Args:
+        prog_list - list of programs to check the existence of
+
+    Returns a list of existing programs
+    """
+    progs_exist_list = []
+    for prog in prog_list:
+        try:
+            check_call(["which", prog], stdout=DEVNULL, stderr=DEVNULL)
+        except CalledProcessError:
+            _print_error("error: executable not found: %s" % prog)
+        else:
+            progs_exist_list.append(prog)
+    return progs_exist_list
+
+
+def deploy_symlinks(prog_exist_list):
+    """
+    deploy using os.symlink(source, link_name)
+    """
+    home = os.getenv("HOME")
+    # TODO: figure out how to deal with .config
+    for i in ['dunst', 'vim', 'termite']:
+        prog_exist_list.remove(i)
+    for directory in prog_exist_list:
+        file_list = [f for f in os.listdir(directory)]
+        for item in file_list:
+            path = os.path.join(home, item)
+            if os.path.islink(path) or os.path.isfile(path):
+                _print_already_exists(path)
+            else:
+                source = os.path.realpath(os.path.join(os.getcwd(), directory, item))
+                _print_msg("Creating symlink: %s" % path)
+                os.symlink(source, path)
+
+if __name__ == "__main__":
+    DIR_LIST = get_top_level_dirs()
+    PROG_LIST = get_installed_prog_list(DIR_LIST)
+    deploy_symlinks(PROG_LIST)
