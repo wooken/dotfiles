@@ -2,8 +2,8 @@ let mapleader=" "
 source ~/.config/nvim/plugins.vim
 
 " Allows C-c to trigger InsertLeave
-noremap <C-c> <ESC><ESC>
-noremap! <C-c> <ESC><ESC>
+map <C-c> <ESC><ESC>
+imap <C-c> <ESC><ESC>
 
 syntax on
 set t_Co=16                 " neovim ignores this setting
