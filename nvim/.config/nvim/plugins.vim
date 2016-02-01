@@ -131,6 +131,7 @@ let g:LatexBox_latexmk_options = "-pvc -pdfps"
 let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
 
 " Misc
+Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
