@@ -1,5 +1,4 @@
 let mapleader=" "
-source ~/.config/nvim/plugins.vim
 
 " Allows C-c to trigger InsertLeave
 map <C-c> <ESC><ESC>
@@ -60,3 +59,5 @@ nmap <silent> <A-k> :wincmd k<CR>
 nmap <silent> <A-j> :wincmd j<CR>
 nmap <silent> <A-h> :wincmd h<CR>
 nmap <silent> <A-l> :wincmd l<CR>
+
+source ~/.config/nvim/plugins.vim
