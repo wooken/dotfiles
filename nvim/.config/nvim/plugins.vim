@@ -1,7 +1,7 @@
 if has('nvim')
-    let $VIMHOME = '~/.config/nvim'
+    let $VIMHOME = $HOME . '/.config/nvim'
 else
-    let $VIMHOME = '~/.vim'
+    let $VIMHOME = $HOME . '/.vim'
 endif
 
 let s:plugin_manager = $VIMHOME . '/autoload/plug.vim'
