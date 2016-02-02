@@ -18,7 +18,6 @@ if !has('nvim')
     set history=10000       " max = 10000
     set hlsearch            " highlighted search
     set incsearch           " search while typing
-    set langnoremap
     set laststatus=2        " status line always shown
     set smarttab            " When on, a <Tab> in front of a line inserts blanks
                             " according to 'shiftwidth'. 'tabstop' is used in other
