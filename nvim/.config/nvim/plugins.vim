@@ -122,6 +122,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'janko-m/vim-test'
 let test#strategy = "dispatch"
+let test#javascript#mocha#executable = 'npm test'
 
 Plug 'xuhdev/SingleCompile'
 

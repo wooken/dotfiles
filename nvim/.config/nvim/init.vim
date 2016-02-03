@@ -57,10 +57,54 @@ nmap <silent> <A-j> :wincmd j<CR>
 nmap <silent> <A-h> :wincmd h<CR>
 nmap <silent> <A-l> :wincmd l<CR>
 
+" Rust
+autocmd FileType rust
+            \ setlocal nocindent
+
+" Python
+autocmd FileType python
+            \ setlocal tabstop=4
+            \ setlocal softtabstop=4
+            \ setlocal shiftwidth=4
+            \ setlocal smarttab
+            \ setlocal expandtab
+            \ setlocal nosmartindent
+
 " Ruby
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType ruby
+            \ setlocal expandtab
+            \ setlocal shiftwidth=2
+            \ setlocal tabstop=2
+
+" Javascript
+autocmd FileType javascript
+            \ setlocal shiftwidth=2
+            \ setlocal tabstop=2
+            \ setlocal nocindent
+
+" Markdown
+autocmd FileType markdown
+            \ setlocal spell spelllang=en_ca
+            \ setlocal tabstop=4
+            \ setlocal softtabstop=4
+            \ setlocal shiftwidth=4
+            \ setlocal smarttab
+            \ setlocal expandtab
+            \ setlocal autoindent
+            \ setlocal smartindent
 
 " Enable markdown syntax highlighting for md files
-autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.md
+            \ set filetype=markdown
+
+" HTML
+autocmd FileType html
+            \ setlocal shiftwidth=2
+            \ setlocal tabstop=2
+
+" Tex
+autocmd FileType tex
+            \ setlocal spell
+            \ setlocal spelllang=en_ca
 
 source ~/.config/nvim/plugins.vim
