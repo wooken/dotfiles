@@ -94,8 +94,8 @@ autocmd FileType markdown setlocal
             \ smartindent
 
 " Enable markdown syntax highlighting for md files
-autocmd BufRead,BufNewFile *.md setlocal
-            \ set filetype=markdown
+autocmd BufRead,BufNewFile *.md set
+            \ filetype=markdown
 
 " HTML
 autocmd FileType html setlocal
