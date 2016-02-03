@@ -48,9 +48,6 @@ set mouse=v
 set listchars=tab:!·,trail:«,nbsp:+
 set list
 
-" Enable markdown syntax highlighting for md files
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-
 " Auto resize splits
 autocmd VimResized * wincmd =
 
@@ -59,5 +56,11 @@ nmap <silent> <A-k> :wincmd k<CR>
 nmap <silent> <A-j> :wincmd j<CR>
 nmap <silent> <A-h> :wincmd h<CR>
 nmap <silent> <A-l> :wincmd l<CR>
+
+" Ruby
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+
+" Enable markdown syntax highlighting for md files
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 source ~/.config/nvim/plugins.vim
