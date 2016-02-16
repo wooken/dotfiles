@@ -84,7 +84,6 @@ let g:lmap['p'] = ['b#', 'previous buffer']
 
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-set laststatus=2
 set noshowmode
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
