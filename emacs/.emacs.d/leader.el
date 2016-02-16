@@ -13,6 +13,7 @@
 (which-key-add-key-based-replacements "SPC b" "buffers")
 (which-key-add-key-based-replacements "SPC c" "fly-check")
 (which-key-add-key-based-replacements "SPC h" "help")
+(which-key-add-key-based-replacements "SPC o" "org-mode")
 
 ;; buffers
 (defvar buffer-map (make-sparse-keymap))
@@ -33,5 +34,12 @@
 (add-hook 'flycheck-mode-hook
           (lambda ()
             (evil-leader/set-key "c" flycheck-command-map)
+            )
+          )
+
+;; org-mode
+(add-hook 'org-mode-hook
+          (lambda ()
+            (evil-leader/set-key "o" org-mode-map)
             )
           )
