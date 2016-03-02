@@ -1,0 +1,97 @@
+# Dependencies:
+#   - conky
+#   - ttf-font-awesome (AUR)
+
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 5
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address.
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 1
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+# JSON for i3bar
+
+[
+# Battery
+    {
+        "full_text" : " [${battery} ${battery_time}]",
+        "color" : "\#ffffff"
+    },
+
+# VPN
+    {
+        "full_text" : " ${if_up tun0}${addr tun0}${else}VPN${endif}",
+        "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif}
+    },
+
+# Wireless
+    {
+        "full_text" : "${if_up wlp2s0b1}${wireless_link_qual_perc wlp2s0b1}% @ ${wireless_essid wlp2s0b1} ${addr wlp2s0b1}${else} down${endif}",
+        "color" : ${if_up wlp2s0b1} "\#00ff00"${else}"\#ff0000"${endif}
+    },
+
+# Ethernet
+    {
+        "full_text" : " ${if_up eth0}${addr eth0}  ${totaldown eth0}  ${totalup eth0}${else}down${endif}",
+        "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif}
+    },
+
+# RAM
+    {
+        "full_text" : " ${memperc}%",
+        "color" : ${if_match ${memperc}<70}"\#ffffff"${else}"\#ff0000"${endif}
+    },
+
+# CPU
+    {
+        "full_text" : " ${loadavg 1} ${cpu cpu0}% ${cpu cpu1}%",
+        "color" : ${if_match ${loadavg 1}<3}"\#ffffff"${else}"\#ff0000"${endif}
+    },
+
+# Date
+    {
+        "full_text" : " ${time %a %b %d}",
+        "color" : "\#ff00ff"
+    },
+    {
+        "full_text" : " ${time %r}",
+        "color" : "\#ff00ff"
+    },
+# Volume
+    {
+        "full_text" : "${if_match "${exec amixer get Master | grep "Left:" | awk '{print $6}' | tr -d '[]'}"=="on"}  ${exec amixer get Master | grep "Left:" | awk '{print $5}' | tr -d '[]'} ${else}  off ${endif}",
+        "color" : "\#00cdcd"
+    }
+],
