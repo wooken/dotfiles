@@ -152,5 +152,5 @@ vnoremap <silent> <leader> :LeaderGuideVisual '<Space>'<CR>
 
 " Activate base16-vim
 let base16colorspace=256
-colorscheme base16-monokai
+colorscheme base16-eighties
 set background=dark
