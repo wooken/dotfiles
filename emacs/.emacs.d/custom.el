@@ -55,6 +55,8 @@
             (org-indent-mode t)
             )
           )
+;; wraps the lines in org-mode
+(setq org-startup-truncated nil)
 
 (load "~/.emacs.d/escape.el")
 (load "~/.emacs.d/helm.el")
