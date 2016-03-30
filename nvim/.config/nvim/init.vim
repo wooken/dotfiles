@@ -57,6 +57,11 @@ nmap <silent> <A-j> :wincmd j<CR>
 nmap <silent> <A-h> :wincmd h<CR>
 nmap <silent> <A-l> :wincmd l<CR>
 
+" Git
+autocmd Filetype gitcommit setlocal
+            \ spell
+            \ textwidth=72
+
 " Rust
 autocmd FileType rust setlocal
             \ nocindent
