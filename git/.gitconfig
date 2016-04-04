@@ -5,7 +5,7 @@
     ui = true
 [core]
     editor = "if [ $(which nvim) ]; then ED='nvim'; else ED='vim'; fi; $ED"
-    pager = less -r
+    pager = less -SFR
 [log]
     decorate = auto
 [push]
