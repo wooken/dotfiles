@@ -54,11 +54,13 @@ let g:lmap.t = {
             \'f': ['TestFile', 'file'],
             \}
 
-" vim-fugitive
+" vim-fugitive, vim-gitgutter
 let g:lmap.g = {
             \'name': 'Git',
             \'b': ['Gblame', 'blame (open)'],
             \'o': ['Gblame q', 'blame (close)'],
+            \'.': ['GitGutterNextHunk', 'next hunk'],
+            \',': ['GitGutterPrevHunk', 'previous hunk'],
             \}
 
 " fzf.vim
