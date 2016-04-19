@@ -71,7 +71,7 @@ let g:lmap.f = {
             \'g': ['GitFiles', 'git files'],
             \}
 
-" SimpleCompile
+" SingleCompile
 let g:lmap.r = {
             \'name': 'Run Program',
             \'c': ['SCCompile', 'compile'],
