@@ -177,6 +177,7 @@ let g:neomake_rust_enabled_makers = []
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+nnoremap <leader>c :Commands<cr>
 
 Plug 'janko-m/vim-test'
 let test#strategy = "dispatch"
