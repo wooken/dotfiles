@@ -141,63 +141,6 @@ if empty(glob(s:plugin_manager))
 endif
 
 call plug#begin("$VIMHOME/bundle")
-
-Plug 'hecal3/vim-leader-guide'
-let g:lmap = {}
-
-let g:lmap.h = {
-            \'name': 'Help',
-            \'l': ['help usr_41', 'VimL'],
-            \}
-
-" Neomake
-let g:lmap.m = {
-            \'name': 'Neomake',
-            \'c': ['lclose', 'close list of errors'],
-            \'o': ['lopen', 'open list of errors'],
-            \'l': ['ll', 'goto current error'],
-            \'n': ['lnext', 'goto next error'],
-            \'p': ['lprev', 'goto previous error'],
-            \'m': ['Neomake', 'neomake'],
-            \}
-
-" vim-test
-let g:lmap.t = {
-            \'name': 'Testing',
-            \'t': ['TestSuite', 'suite'],
-            \'f': ['TestFile', 'file'],
-            \}
-
-" vim-fugitive, vim-gitgutter
-let g:lmap.g = {
-            \'name': 'Git',
-            \'b': ['Gblame', 'blame (open)'],
-            \'o': ['Gblame q', 'blame (close)'],
-            \'.': ['GitGutterNextHunk', 'next hunk'],
-            \',': ['GitGutterPrevHunk', 'previous hunk'],
-            \}
-
-" fzf.vim
-let g:lmap.f = {
-            \'name': 'Find',
-            \'a': ['Ag', 'ag'],
-            \'b': ['Buffers', 'buffers'],
-            \'c': ['Colors', 'color schemes'],
-            \'f': ['Files', 'files'],
-            \'g': ['GitFiles', 'git files'],
-            \}
-
-" SingleCompile
-let g:lmap.r = {
-            \'name': 'Run Program',
-            \'c': ['SCCompile', 'compile'],
-            \'r': ['SCCompileRun', 'run'],
-            \}
-
-let g:lmap[','] = ['N', 'previous file']
-let g:lmap['.'] = ['n', 'next file']
-let g:lmap['p'] = ['b#', 'previous buffer']
-
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 set noshowmode
@@ -260,11 +203,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'pangloss/vim-javascript'
 call plug#end()
-
-" Activate vim-leader-guide
-call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
-nnoremap <silent> <leader> :LeaderGuide '<Space>'<CR>
-vnoremap <silent> <leader> :LeaderGuideVisual '<Space>'<CR>
 
 " Activate base16-vim
 let base16colorspace=256
