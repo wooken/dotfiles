@@ -184,6 +184,7 @@ let test#strategy = "dispatch"
 let test#javascript#mocha#executable = 'npm test'
 
 Plug 'xuhdev/SingleCompile'
+nnoremap <leader>r :SingleCompileRun<cr>
 
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 let g:tex_flavor='xelatex'
