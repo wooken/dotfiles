@@ -24,6 +24,7 @@ if !has('nvim')
                             " at the start of the line
 endif
 
+set nojoinspaces            " Single space when joining prose
 set showmatch               " Show matching brackets
 set ignorecase              " Ignore case in search patterns
 set number                  " Show line numbers
