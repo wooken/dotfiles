@@ -91,17 +91,6 @@ autocmd FileType javascript setlocal
 " Markdown
 autocmd FileType markdown setlocal
             \ spell spelllang=en_ca
-            \ tabstop=4
-            \ softtabstop=4
-            \ shiftwidth=4
-            \ smarttab
-            \ expandtab
-            \ autoindent
-            \ smartindent
-
-" Enable markdown syntax highlighting for md files
-autocmd BufRead,BufNewFile *.md set
-            \ filetype=markdown
 
 " HTML
 autocmd FileType html setlocal
@@ -197,6 +186,7 @@ let g:vimwiki_list = [{
             \'syntax': 'markdown',
             \'ext': '.md'
             \}]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 " Misc
 Plug 'airblade/vim-gitgutter'
