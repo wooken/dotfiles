@@ -1,0 +1,2 @@
+autocutsel # consolidates PRIMARY and CLIPBOARD
+xsel # nvim: utilize PRIMARY and CLIPBOARD
