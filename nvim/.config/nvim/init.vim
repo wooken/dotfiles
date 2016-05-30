@@ -28,6 +28,7 @@ set nojoinspaces            " Single space when joining prose
 set showmatch               " Show matching brackets
 set ignorecase              " Ignore case in search patterns
 set number                  " Show line numbers
+set relativenumber          " Show relative numbers
 set hidden                  " Hide buffers when they are abandoned
 set nobackup                " backups are stupid, use Git
 set nowritebackup           " backups are stupid, use Git
