@@ -4,7 +4,7 @@ install:
 
 .PHONY: upgrade
 upgrade:
-	sudo pip install -r pip.txt --upgrade
+	pip freeze | grep -v "^-e" | xargs sudo pip install -U
 
 .PHONY: clean
 clean:
