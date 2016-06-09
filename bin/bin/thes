@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+import json
+import os
+
+import click
+from colorama import Fore
+import requests
+
+
+@click.command(context_settings=dict(help_option_names=['-h', '--help']))
+@click.argument('word')
+def thesaurus(word):
+    """Finds synonyms for a given word."""
+    with open(os.path.expanduser('~/.api-keys.json')) as json_data:
+        api_key = json.load(json_data)['thesaurus']
+
+    req = 'http://words.bighugelabs.com/api/2/{}/{}/json'.format(api_key, word)
+    r = requests.get(req)
+    assert r.status_code == 200
+    data_json = r.json()
+    for part_of_speech in data_json:
+        print(Fore.BLUE + part_of_speech)
+        for definition_type in data_json[part_of_speech]:
+            print(Fore.RED + definition_type)
+            words = ''
+            for word in data_json[part_of_speech][definition_type]:
+                words += Fore.GREEN + word + ', '
+            print(words)
+        print()
+
+
+if __name__ == '__main__':
+    thesaurus()
