@@ -1,3 +1,12 @@
+" Key bindings
+let mapleader=" "
+" Allows C-c to trigger InsertLeave
+map <C-c> <ESC><ESC>
+imap <C-c> <ESC><ESC>
+
+nnoremap <leader>, :N<cr>
+nnoremap <leader>. :n<cr>
+
 " vim plug setup
 if has('nvim')
     let $VIMHOME = $HOME . '/.config/nvim'
@@ -195,13 +204,3 @@ autocmd FileType html setlocal
 autocmd FileType tex setlocal
             \ spell
             \ spelllang=en_ca
-
-" Misc bindings
-let mapleader=" "
-
-" Allows C-c to trigger InsertLeave
-map <C-c> <ESC><ESC>
-imap <C-c> <ESC><ESC>
-
-nnoremap <leader>, :N<cr>
-nnoremap <leader>. :n<cr>
