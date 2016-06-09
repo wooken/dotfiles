@@ -1,4 +1,4 @@
-" Key bindings
+" Key Bindings {{{
 let mapleader=" "
 " Allows C-c to trigger InsertLeave
 map <C-c> <ESC><ESC>
@@ -6,8 +6,8 @@ imap <C-c> <ESC><ESC>
 
 nnoremap <leader>, :N<cr>
 nnoremap <leader>. :n<cr>
-
-" vim plug setup
+" }}}
+" Vim Plug Setup {{{
 if has('nvim')
     let $VIMHOME = $HOME . '/.config/nvim'
 else
@@ -35,8 +35,8 @@ if empty(glob(s:plugin_manager))
     autocmd VimEnter * PlugInstall
   augroup END
 endif
-
-" plugins
+" }}}
+" Plugins {{{
 call plug#begin("$VIMHOME/bundle")
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -109,13 +109,13 @@ Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'pangloss/vim-javascript'
 call plug#end()
-
-" Activate base16-vim
+" }}}
+" Colorscheme {{{
 let base16colorspace=256
 colorscheme base16-eighties
 set background=dark
-
-" Settings
+" }}}
+" Settings {{{
 set t_Co=16                 " neovim ignores this setting
 if !empty(glob('/etc/arch-release'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -163,13 +163,8 @@ set list
 
 " Auto resize splits
 autocmd VimResized * wincmd =
-
-" Split navigation
-nmap <silent> <A-k> :wincmd k<CR>
-nmap <silent> <A-j> :wincmd j<CR>
-nmap <silent> <A-h> :wincmd h<CR>
-nmap <silent> <A-l> :wincmd l<CR>
-
+" }}}
+" Filetype Settings {{{
 " Git
 autocmd Filetype gitcommit setlocal
             \ spell
@@ -204,3 +199,5 @@ autocmd FileType html setlocal
 autocmd FileType tex setlocal
             \ spell
             \ spelllang=en_ca
+" }}}
+" vim: set foldmethod=marker:
