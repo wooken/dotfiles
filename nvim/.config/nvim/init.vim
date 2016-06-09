@@ -99,6 +99,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
+Plug 'henrik/vim-indexed-search'
 
 " Languages
 Plug 'hynek/vim-python-pep8-indent'
