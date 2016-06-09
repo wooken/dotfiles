@@ -1,3 +1,4 @@
+" vim plug setup
 if has('nvim')
     let $VIMHOME = $HOME . '/.config/nvim'
 else
@@ -26,6 +27,7 @@ if empty(glob(s:plugin_manager))
   augroup END
 endif
 
+" plugins
 call plug#begin("$VIMHOME/bundle")
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -104,13 +106,7 @@ let base16colorspace=256
 colorscheme base16-eighties
 set background=dark
 
-let mapleader=" "
-
-" Allows C-c to trigger InsertLeave
-map <C-c> <ESC><ESC>
-imap <C-c> <ESC><ESC>
-
-"filetype indent off
+" Settings
 set t_Co=16                 " neovim ignores this setting
 if !empty(glob('/etc/arch-release'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -199,3 +195,13 @@ autocmd FileType html setlocal
 autocmd FileType tex setlocal
             \ spell
             \ spelllang=en_ca
+
+" Misc bindings
+let mapleader=" "
+
+" Allows C-c to trigger InsertLeave
+map <C-c> <ESC><ESC>
+imap <C-c> <ESC><ESC>
+
+nnoremap <leader>, :N<cr>
+nnoremap <leader>. :n<cr>
