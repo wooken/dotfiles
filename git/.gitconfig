@@ -6,6 +6,7 @@
 [core]
     editor = "if [ $(which nvim) ]; then ED='nvim'; else ED='vim'; fi; $ED"
     pager = less
+    excludesfile = ~/.gitignore_global
 [log]
     decorate = auto
 [push]
