@@ -68,6 +68,7 @@ nnoremap <leader>c :Commands<cr>
 Plug 'janko-m/vim-test'
 let test#strategy = "dispatch"
 let test#javascript#mocha#executable = 'npm test'
+nnoremap <leader>t :TestSuite<cr>
 
 Plug 'xuhdev/SingleCompile'
 nnoremap <leader>r :SingleCompileRun<cr>
