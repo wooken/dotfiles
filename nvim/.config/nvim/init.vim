@@ -124,7 +124,7 @@ set undolevels=1000
 set wildignore=*.pyc
 set pastetoggle=<F2>        " toggles auto-indent for pasting large blocks of text
 set clipboard+=unnamedplus  " enable neovim always yanking to xclipboard
-set mouse=v                 " disable mouse
+set mouse=""                 " disable mouse
 if !has('nvim')
     set autoread            " detect file changes outside of vim
     set backspace=indent,eol,start      " fix backspace
