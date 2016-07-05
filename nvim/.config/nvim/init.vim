@@ -72,9 +72,6 @@ let test#strategy = "dispatch"
 let test#javascript#mocha#executable = 'npm test'
 nnoremap <leader>t :TestSuite<cr>
 
-Plug 'xuhdev/SingleCompile'
-nnoremap <leader>r :SingleCompileRun<cr>
-
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 let g:tex_flavor='xelatex'
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
@@ -90,8 +87,14 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
 Plug 'henrik/vim-indexed-search'
+
+" Dispatch
+Plug 'tpope/vim-dispatch'
+nnoremap <leader>r :Dispatch<cr>
+nnoremap <leader>e :cclose<cr>
+autocmd Filetype rust let b:dispatch = 'cargo run'
+autocmd Filetype python let b:dispatch = 'python %'
 
 " Languages
 Plug 'hynek/vim-python-pep8-indent'
