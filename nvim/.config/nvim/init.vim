@@ -88,6 +88,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
+Plug 'wooken/leaders.vim'
 
 " Dispatch
 Plug 'tpope/vim-dispatch'
