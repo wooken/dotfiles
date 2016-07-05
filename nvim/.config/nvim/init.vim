@@ -54,14 +54,14 @@ Plug 'benekastah/neomake'
 augroup neomake_after_save
     autocmd!
     autocmd BufWritePost * Neomake
-    autocmd BufWritePost *.rs if has('nvim') | Neomake! cargo | endif
+    "autocmd BufWritePost *.rs if has('nvim') | Neomake! cargo | endif
 augroup END
 let g:neomake_javascript_enabled_makers = ['standard']
 let g:neomake_python_pep8_maker = {
             \ 'args': ['--ignore=E501'],
             \ }
 " Disable rustc checker
-let g:neomake_rust_enabled_makers = []
+"let g:neomake_rust_enabled_makers = []
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
