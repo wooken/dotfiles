@@ -1,14 +1,4 @@
 #!/bin/bash
 
 # disable trackpad while typing
-syndaemon -k -d -i 0.2
-
-if [ -f ~/.Xresources ]; then
-    xrdb -merge ~/.Xresources
-fi
-
-# fixes i3 missing system tray
-xrandr --output eDP1 --primary
-
-# lightdm-gtk-greeter does not need this call
-#exec i3
+syndaemon -k -d -i 0.4
