@@ -4,13 +4,13 @@ let mapleader=" "
 map <C-c> <ESC><ESC>
 imap <C-c> <ESC><ESC>
 
-nnoremap <leader>, :Next<cr>
-nnoremap <leader>. :next<cr>
-nnoremap <leader>lo :lopen<cr>          " open location window
-nnoremap <leader>lc :lclose<cr>         " close location window
-nnoremap <leader>ll :ll<cr>             " go to current error/warning
-nnoremap <leader>[ :lprevious<cr>       " go to previous error/warning
-nnoremap <leader>] :lnext<cr>           " go to next error/warning
+nnoremap <LEADER>, :Next<CR>
+nnoremap <LEADER>. :next<CR>
+nnoremap <LEADER>lo :lopen<CR>          " open location window
+nnoremap <LEADER>lc :lclose<CR>         " close location window
+nnoremap <LEADER>ll :ll<CR>             " go to current error/warning
+nnoremap <LEADER>[ :lprevious<CR>       " go to previous error/warning
+nnoremap <LEADER>] :lnext<CR>           " go to next error/warning
 " }}}
 " Vim Plug Setup {{{
 if has('nvim')
@@ -70,12 +70,12 @@ let g:neomake_python_pep8_maker = {
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-nnoremap <leader>c :Commands<cr>
+nnoremap <LEADER>c :Commands<CR>
 
 Plug 'janko-m/vim-test'
 let test#strategy = "dispatch"
 let test#javascript#mocha#executable = 'npm test'
-nnoremap <leader>t :TestSuite<cr>
+nnoremap <LEADER>t :TestSuite<CR>
 
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 let g:tex_flavor='xelatex'
@@ -94,12 +94,12 @@ Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
 Plug 'wooken/leaders.vim'
-nnoremap <leader>j :ListLeaders<cr>
+nnoremap <LEADER>j :ListLeaders<CR>
 
 " Dispatch
 Plug 'tpope/vim-dispatch'
-nnoremap <leader>r :Dispatch<cr>
-nnoremap <leader>e :cclose<cr>
+nnoremap <LEADER>r :Dispatch<CR>
+nnoremap <LEADER>e :cclose<CR>
 autocmd Filetype rust let b:dispatch = 'cargo run'
 autocmd Filetype python let b:dispatch = 'python %'
 
