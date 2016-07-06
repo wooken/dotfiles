@@ -4,8 +4,10 @@ let mapleader=" "
 map <C-c> <ESC><ESC>
 imap <C-c> <ESC><ESC>
 
-nnoremap <leader>, :N<cr>
-nnoremap <leader>. :n<cr>
+nnoremap <leader>, :Next<cr>
+nnoremap <leader>. :next<cr>
+nnoremap <leader>[ :lprevious<cr>
+nnoremap <leader>] :lnext<cr>
 " }}}
 " Vim Plug Setup {{{
 if has('nvim')
@@ -89,6 +91,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
 Plug 'wooken/leaders.vim'
+nnoremap <leader>l :ListLeaders<cr>
 
 " Dispatch
 Plug 'tpope/vim-dispatch'
