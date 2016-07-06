@@ -6,8 +6,11 @@ imap <C-c> <ESC><ESC>
 
 nnoremap <leader>, :Next<cr>
 nnoremap <leader>. :next<cr>
-nnoremap <leader>[ :lprevious<cr>
-nnoremap <leader>] :lnext<cr>
+nnoremap <leader>lo :lopen<cr>          " open location window
+nnoremap <leader>lc :lclose<cr>         " close location window
+nnoremap <leader>ll :ll<cr>             " go to current error/warning
+nnoremap <leader>[ :lprevious<cr>       " go to previous error/warning
+nnoremap <leader>] :lnext<cr>           " go to next error/warning
 " }}}
 " Vim Plug Setup {{{
 if has('nvim')
