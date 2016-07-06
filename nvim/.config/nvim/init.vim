@@ -94,7 +94,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
 Plug 'wooken/leaders.vim'
-nnoremap <leader>l :ListLeaders<cr>
+nnoremap <leader>j :ListLeaders<cr>
 
 " Dispatch
 Plug 'tpope/vim-dispatch'
