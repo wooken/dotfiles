@@ -77,11 +77,6 @@ let test#strategy = "dispatch"
 let test#javascript#mocha#executable = 'npm test'
 nnoremap <LEADER>t :TestSuite<CR>
 
-Plug 'LaTeX-Box-Team/LaTeX-Box'
-let g:tex_flavor='xelatex'
-let g:LatexBox_latexmk_options = "-pvc -pdfps"
-let g:LatexBox_latexmk_async=1          " run with vim --servername latex *.tex
-
 Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = [{
             \'syntax': 'markdown',
