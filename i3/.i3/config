@@ -150,7 +150,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position        top
-    font            xft:Fira Mono for Powerline 10
+    font            xft:Fira Mono for Powerline 11
     tray_output     primary
     status_command  i3status
     colors {
