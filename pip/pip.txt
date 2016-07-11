@@ -1,8 +1,7 @@
+flake8
 invoke
 jinja2
 mypy-lang
 nose
-pep8
 pew
-pylint
 pytest
