@@ -204,4 +204,4 @@ autocmd FileType tex setlocal
             \ spell
             \ spelllang=en_ca
 " }}}
-" vim: set foldmethod=marker:
+" vim: set foldmethod=marker nofoldenable:
