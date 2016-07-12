@@ -6,11 +6,16 @@ imap <C-c> <ESC><ESC>
 
 nnoremap <LEADER>, :Next<CR>
 nnoremap <LEADER>. :next<CR>
-nnoremap <LEADER>lo :lopen<CR>          " open location window
-nnoremap <LEADER>lc :lclose<CR>         " close location window
-nnoremap <LEADER>ll :ll<CR>             " go to current error/warning
-nnoremap <LEADER>[ :lprevious<CR>       " go to previous error/warning
-nnoremap <LEADER>] :lnext<CR>           " go to next error/warning
+" Neomake: open location window
+nnoremap <LEADER>lo :lopen<CR>
+" Neomake: close location window
+nnoremap <LEADER>lc :lclose<CR>
+" Neomake: go to current error/warning
+nnoremap <LEADER>ll :ll<CR>
+" Neomake: go to previous error/warning
+nnoremap <LEADER>[ :lprevious<CR>
+" Neomake: go to next error/warning
+nnoremap <LEADER>] :lnext<CR>
 " }}}
 " Vim Plug Setup {{{
 if has('nvim')
@@ -70,11 +75,13 @@ let g:neomake_python_pep8_maker = {
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" FZF: Commands
 nnoremap <LEADER>c :Commands<CR>
 
 Plug 'janko-m/vim-test'
 let test#strategy = "dispatch"
 let test#javascript#mocha#executable = 'npm test'
+" vim-test: TestSuite
 nnoremap <LEADER>t :TestSuite<CR>
 
 Plug 'vimwiki/vimwiki'
@@ -89,11 +96,14 @@ Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
 Plug 'wooken/leaders.vim'
+" leaders: ListLeaders
 nnoremap <LEADER>j :ListLeaders<CR>
 
 " Dispatch
 Plug 'tpope/vim-dispatch'
+" vim-dispatch: Dispatch
 nnoremap <LEADER>r :Dispatch<CR>
+" vim-dispatch: close quickfix window
 nnoremap <LEADER>e :cclose<CR>
 autocmd Filetype rust let b:dispatch = 'cargo run'
 autocmd Filetype python let b:dispatch = 'python %'
