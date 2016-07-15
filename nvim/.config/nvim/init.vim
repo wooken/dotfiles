@@ -66,6 +66,7 @@ augroup neomake_after_save
     autocmd BufWritePost * Neomake
     "autocmd BufWritePost *.rs if has('nvim') | Neomake! cargo | endif
 augroup END
+let g:neomake_python_enabled_makers = ['flake8', 'mypy']
 let g:neomake_javascript_enabled_makers = ['standard']
 let g:neomake_python_pep8_maker = {
             \ 'args': ['--ignore=E501'],
