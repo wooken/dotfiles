@@ -191,8 +191,7 @@ autocmd FileType rust setlocal
 
 " Python
 autocmd FileType python setlocal
-            " hynek/vim-python-pep8-indent: indent comments properly
-            \ nosmartindent
+            \ nosmartindent  " pep8-indent comments
 
 " Ruby
 autocmd FileType ruby setlocal
