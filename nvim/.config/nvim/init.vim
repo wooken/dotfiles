@@ -177,7 +177,7 @@ if !has('nvim')
 endif
 
 " Auto resize splits
-autocmd VimResized * wincmd =
+"autocmd VimResized * wincmd =
 " }}}
 " Filetype Settings {{{
 " Git
