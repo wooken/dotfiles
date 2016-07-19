@@ -189,6 +189,11 @@ autocmd Filetype gitcommit setlocal
 autocmd FileType rust setlocal
             \ nocindent
 
+" Python
+autocmd FileType python setlocal
+            " hynek/vim-python-pep8-indent: indent comments properly
+            \ nosmartindent
+
 " Ruby
 autocmd FileType ruby setlocal
             \ expandtab
