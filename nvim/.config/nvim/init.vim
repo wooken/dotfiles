@@ -83,7 +83,7 @@ Plug 'janko-m/vim-test'
 let test#strategy = "dispatch"
 let test#javascript#mocha#executable = 'npm test'
 " vim-test: TestSuite
-nnoremap <LEADER>t :TestSuite<CR>
+nnoremap <LEADER>t :w<CR>:TestSuite<CR>
 
 Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = [{
@@ -103,7 +103,7 @@ nnoremap <LEADER>j :ListLeaders<CR>
 " Dispatch
 Plug 'tpope/vim-dispatch'
 " vim-dispatch: Dispatch
-nnoremap <LEADER>r :Dispatch<CR>
+nnoremap <LEADER>r :w<CR>:Dispatch<CR>
 " vim-dispatch: close quickfix window
 nnoremap <LEADER>e :cclose<CR>
 autocmd Filetype rust let b:dispatch = 'cargo run'
