@@ -77,7 +77,7 @@ let g:neomake_python_pep8_maker = {
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " FZF: Commands
-nnoremap <LEADER>c :Commands<CR>
+nnoremap <LEADER>f :Commands<CR>
 
 Plug 'janko-m/vim-test'
 let test#strategy = "dispatch"
@@ -104,8 +104,10 @@ nnoremap <LEADER>j :ListLeaders<CR>
 Plug 'tpope/vim-dispatch'
 " vim-dispatch: Dispatch
 nnoremap <LEADER>r :w<CR>:Dispatch<CR>
+" vim-dispatch: open quickfix window
+nnoremap <LEADER>co :Copen<CR>
 " vim-dispatch: close quickfix window
-nnoremap <LEADER>e :cclose<CR>
+nnoremap <LEADER>cc :cclose<CR>
 autocmd Filetype rust let b:dispatch = 'cargo run'
 autocmd Filetype python let b:dispatch = 'python %'
 autocmd Filetype sh let b:dispatch = 'sh %'
