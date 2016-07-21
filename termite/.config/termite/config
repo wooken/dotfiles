@@ -5,7 +5,7 @@ mouse_autohide = false
 allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
-clickable_url = true
+clickable_url = false
 scrollback_lines = 10000
 search_wrap = true
 
