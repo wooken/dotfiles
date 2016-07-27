@@ -90,7 +90,15 @@ let g:vimwiki_list = [{
             \'syntax': 'markdown',
             \'ext': '.md'
             \}]
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+"let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_global_ext = 0
+
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_no_default_key_mappings = 1
+set conceallevel=2
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
 
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
