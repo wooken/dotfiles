@@ -183,6 +183,9 @@ exec --no-startup-id autocutsel -fork
 # Dunst (notifications)
 exec --no-startup-id dunst
 
+# udiskie (automount)
+exec --no-startup-id udiskie --tray
+
 # Scratchpad
 # floating toggle: mod-shift-space
 bindsym $mod+Shift+minus move scratchpad
