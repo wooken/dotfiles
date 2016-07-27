@@ -111,6 +111,7 @@ nnoremap <LEADER>cc :cclose<CR>
 autocmd Filetype rust let b:dispatch = 'cargo run'
 autocmd Filetype python let b:dispatch = 'python %'
 autocmd Filetype sh let b:dispatch = 'sh %'
+autocmd Filetype ruby let b:dispatch = 'ruby %'
 
 " Languages
 Plug 'hynek/vim-python-pep8-indent'
