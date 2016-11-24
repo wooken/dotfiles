@@ -124,7 +124,6 @@ autocmd Filetype ruby let b:dispatch = 'ruby %'
 " Languages
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'avakhov/vim-yaml'
-Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
