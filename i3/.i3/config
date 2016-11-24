@@ -192,9 +192,13 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Remove titlebar for certain programs
-for_window [class="chromium"] border pixel 1
+for_window [class="Chromium"] border pixel 1
 
 # Volume
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%-
 bindsym XF86AudioMute exec amixer -q sset Master toggle
+
+# Brightness
+bindsym XF86MonBrightnessDown exec xbacklight -5
+bindsym XF86MonBrightnessUp exec xbacklight +5
