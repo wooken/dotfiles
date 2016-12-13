@@ -48,12 +48,22 @@ endif
 " }}}
 " Plugins {{{
 call plug#begin("$VIMHOME/bundle")
+
 Plug 'vim-airline/vim-airline'
+let g:airline_mode_map = {
+            \ 'n'  : 'N',
+            \ 'i'  : 'I',
+            \ 'R'  : 'R',
+            \ 'v'  : 'V',
+            \ 'V'  : 'V',
+            \ 's'  : 'S',
+            \ 'S'  : 'S',
+            \ }
 Plug 'vim-airline/vim-airline-themes'
 set noshowmode
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'base16'
 
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
