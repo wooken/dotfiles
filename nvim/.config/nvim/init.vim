@@ -113,7 +113,7 @@ Plug 'tpope/vim-dispatch'
 " vim-dispatch: Dispatch
 nnoremap <LEADER>r :w<CR>:Dispatch<CR>
 " vim-dispatch: open quickfix window
-nnoremap <LEADER>co :Copen<CR>
+nnoremap <LEADER>co :copen<CR>
 " vim-dispatch: close quickfix window
 nnoremap <LEADER>cc :cclose<CR>
 autocmd Filetype rust let b:dispatch = 'cargo run'
