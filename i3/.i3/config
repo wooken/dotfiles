@@ -193,6 +193,7 @@ bindsym $mod+minus scratchpad show
 
 # Remove titlebar for certain programs
 for_window [class="Chromium"] border pixel 1
+for_window [class="Termite"] border pixel 2
 
 # Volume
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
