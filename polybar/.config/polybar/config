@@ -20,7 +20,7 @@ font-1 = FontAwesome:size=12;0
 
 modules-left = i3
 modules-center =
-modules-right = battery0 battery1 ethernet wlan cpu memory volume backlight keyboard date
+modules-right = keyboard battery0 battery1 ethernet wlan cpu memory volume backlight date
 
 [module/i3]
 type = internal/i3
