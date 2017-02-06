@@ -148,16 +148,16 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    position        top
-    font            xft:Fira Mono Medium for Powerline 11
-    #tray_output     primary
-    status_command  i3status
-    colors {
-        background #000000
-        statusline #ff00ff
-    }
-}
+#bar {
+#    position        top
+#    font            xft:Fira Mono Medium for Powerline 11
+#    #tray_output     primary
+#    status_command  i3status
+#    colors {
+#        background #000000
+#        statusline #ff00ff
+#    }
+#}
 
 # nm-applet startup
 exec --no-startup-id nm-applet
@@ -185,6 +185,9 @@ exec --no-startup-id dunst
 
 # udiskie (automount)
 exec --no-startup-id udiskie --tray
+
+# polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Scratchpad
 # floating toggle: mod-shift-space
