@@ -9,7 +9,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/elite]
+[bar/unimatrix]
 monitor = eDP1
 tray-position = right
 module-margin-left = 2
