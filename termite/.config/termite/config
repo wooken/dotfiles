@@ -1,5 +1,5 @@
 [options]
-font = Fira Mono Medium for Powerline, Medium 14
+font = Fira Mono Medium for Powerline, Medium 13
 audible_bell = false
 mouse_autohide = false
 allow_bold = true
