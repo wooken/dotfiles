@@ -1,3 +1,0 @@
-fc-cache:
-  - src: ../fonts
-    dest: ~/.local/share/fonts
