@@ -71,13 +71,22 @@ let g:airline_left_alt_sep = '|'
 let g:airline_right_alt_sep = '|'
 
 Plug 'benekastah/neomake'
-augroup neomake_after_save
+augroup neomake_run
     autocmd!
+    autocmd BufWinEnter * Neomake
     autocmd BufWritePost * Neomake
     "autocmd BufWritePost *.rs if has('nvim') | Neomake! cargo | endif
 augroup END
+let g:neomake_error_sign = {
+            \ 'text': '',
+            \ 'texthl': 'NeomakeErrorSign',
+            \ }
+let g:neomake_warning_sign = {
+            \ 'text': '',
+            \ 'texthl': 'NeomakeWarningSign',
+            \ }
 let g:neomake_python_enabled_makers = ['flake8', 'mypy']
-let g:neomake_javascript_enabled_makers = ['standard']
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_python_pep8_maker = {
             \ 'args': ['--ignore=E501'],
             \ }
@@ -105,7 +114,6 @@ let g:vimwiki_global_ext = 0
 
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_no_default_key_mappings = 1
-set conceallevel=2
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
@@ -130,6 +138,7 @@ autocmd Filetype rust let b:dispatch = 'cargo run'
 autocmd Filetype python let b:dispatch = 'python %'
 autocmd Filetype sh let b:dispatch = 'sh %'
 autocmd Filetype ruby let b:dispatch = 'ruby %'
+autocmd Filetype c let b:dispatch = 'gcc % && ./a.out'
 
 " Languages
 Plug 'hynek/vim-python-pep8-indent'
@@ -148,8 +157,8 @@ endif
 " }}}
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
-if !empty(glob('/etc/arch-release'))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if has("termguicolors")
+    set termguicolors
 endif
 
 " behavior
