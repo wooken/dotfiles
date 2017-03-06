@@ -56,7 +56,7 @@ font:
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 2.0
-    y: -13.0
+    y: -15.0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -156,8 +156,8 @@ visual_bell:
 key_bindings:
   - { key: V,        mods: Control|Shift, action: Paste                        }
   - { key: C,        mods: Control|Shift, action: Copy                         }
-  - { key: Q,        mods: Control, action: Quit                         }
-  - { key: W,        mods: Control, action: Quit                         }
+#  - { key: Q,        mods: Command, action: Quit                         }
+#  - { key: W,        mods: Control, action: Quit                         }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[1~",  mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }

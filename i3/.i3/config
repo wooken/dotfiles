@@ -27,7 +27,7 @@ font pango:Ubuntu 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -197,6 +197,7 @@ bindsym $mod+minus scratchpad show
 # Remove titlebar for certain programs
 for_window [class="Chromium"] border pixel 1
 for_window [class="Termite"] border pixel 2
+for_window [class="Alacritty"] border pixel 2
 
 # Volume
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
