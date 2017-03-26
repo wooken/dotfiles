@@ -165,6 +165,7 @@ if has("termguicolors")
 endif
 
 " behavior
+set undoreload=0            " clear undo tree with :edit
 set nojoinspaces            " Single space when joining prose
 set hidden                  " Hide buffers when they are abandoned
 set nobackup                " backups are stupid, use Git
