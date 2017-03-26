@@ -1,4 +1,7 @@
 #!/bin/bash
 
+# sets i3-sensible-terminal
+export TERMINAL="alacritty"
+
 # disable trackpad while typing
 syndaemon -k -d -i 0.4
