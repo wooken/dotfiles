@@ -144,7 +144,7 @@ autocmd Filetype ruby let b:dispatch = 'ruby %'
 autocmd Filetype c let b:dispatch = 'gcc % && ./a.out'
 
 " Languages
-Plug 'hynek/vim-python-pep8-indent'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'avakhov/vim-yaml'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
