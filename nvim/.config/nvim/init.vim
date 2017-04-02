@@ -111,6 +111,7 @@ let g:vimwiki_list = [{
             \}]
 "let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let g:vimwiki_global_ext = 0
+let g:vimwiki_autowriteall = 0
 
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_no_default_key_mappings = 1
