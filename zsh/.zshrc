@@ -28,9 +28,6 @@ export VISUAL=$EDITOR
 alias vi=$EDITOR
 alias vim=$EDITOR
 
-# TMUX disable ctrl-d eof
-if [ -n "$TMUX" ]; then set -o ignoreeof; fi
-
 # Go
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
