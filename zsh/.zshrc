@@ -56,5 +56,9 @@ alias emacs='emacs -nw'
 #BASE16_SHELL=$HOME/.config/base16-shell/
 #[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+# fzf
+if $(type ag 2>&1 > /dev/null); then
+    export FZF_DEFAULT_COMMAND='ag --ignore .git --hidden -g ""'
+fi
 alias vif='vi $(fzf --height 40%)'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
