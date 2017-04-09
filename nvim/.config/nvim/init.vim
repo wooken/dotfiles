@@ -119,6 +119,7 @@ let g:gitgutter_eager = 0
 
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpop/vim-surround'
 Plug 'henrik/vim-indexed-search'
 Plug 'wooken/leaders.vim'
 " leaders: ListLeaders
