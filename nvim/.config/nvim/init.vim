@@ -113,12 +113,6 @@ let g:vimwiki_list = [{
 let g:vimwiki_global_ext = 0
 let g:vimwiki_autowriteall = 0
 
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_toml_frontmatter = 1
-let g:vim_markdown_folding_disabled = 1
-
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
@@ -151,6 +145,13 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'pangloss/vim-javascript'
+
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
+
 call plug#end()
 " }}}
 " Colorscheme {{{
