@@ -139,8 +139,13 @@ autocmd Filetype ruby let b:dispatch = 'ruby %'
 autocmd Filetype c let b:dispatch = 'gcc % && ./a.out'
 " work around for Copen text jumbled inside tmux
 " https://github.com/tpope/vim-dispatch/issues/192
-" tmux 2.4 may fix this issue
-set shellpipe=2>&1\|\ tee\ 
+" tmux 2.4 seems to fix this issue
+if executable('tmux')
+    let tmux_version = system('tmux -V')
+    if tmux_version =~? 'tmux 2.3'
+        set shellpipe=2>&1\|\ tee\ 
+    endif
+endif
 
 " Languages
 Plug 'Vimjas/vim-python-pep8-indent'
