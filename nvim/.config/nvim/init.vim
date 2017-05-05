@@ -6,16 +6,6 @@ imap <C-c> <ESC><ESC>
 
 nnoremap <LEADER>, :Next<CR>
 nnoremap <LEADER>. :next<CR>
-" Neomake: open location window
-nnoremap <LEADER>lo :lopen<CR>
-" Neomake: close location window
-nnoremap <LEADER>lc :lclose<CR>
-" Neomake: go to current error/warning
-nnoremap <LEADER>ll :ll<CR>
-" Neomake: go to previous error/warning
-nnoremap <LEADER>[ :lprevious<CR>
-" Neomake: go to next error/warning
-nnoremap <LEADER>] :lnext<CR>
 " }}}
 " Vim Plug Setup {{{
 if has('nvim')
@@ -71,6 +61,16 @@ let g:airline_left_alt_sep = '|'
 let g:airline_right_alt_sep = '|'
 
 Plug 'benekastah/neomake'
+" Neomake: open location window
+nnoremap <LEADER>lo :lopen<CR>
+" Neomake: close location window
+nnoremap <LEADER>lc :lclose<CR>
+" Neomake: go to current error/warning
+nnoremap <LEADER>ll :ll<CR>
+" Neomake: go to previous error/warning
+nnoremap <LEADER>[ :lprevious<CR>
+" Neomake: go to next error/warning
+nnoremap <LEADER>] :lnext<CR>
 augroup neomake_run
     autocmd!
     autocmd BufWinEnter * Neomake
