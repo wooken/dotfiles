@@ -104,7 +104,7 @@ let test#javascript#mocha#executable = 'npm test'
 " vim-test: TestSuite
 nnoremap <LEADER>t :w<CR>:TestSuite<CR>
 
-Plug 'vimwiki/vimwiki'
+Plug 'wooken/vimwiki', { 'branch': 'bold_emph_fix' }
 let g:vimwiki_list = [{
             \'syntax': 'markdown',
             \'ext': '.md'
