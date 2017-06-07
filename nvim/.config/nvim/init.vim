@@ -165,15 +165,15 @@ call plug#end()
 " }}}
 " Colorscheme {{{
 if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+    let base16colorspace=256
+    if has("termguicolors")
+        set termguicolors
+    endif
+    source ~/.vimrc_background
 endif
 " }}}
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
-if has("termguicolors")
-    set termguicolors
-endif
 
 " behavior
 set undoreload=0            " clear undo tree with :edit
