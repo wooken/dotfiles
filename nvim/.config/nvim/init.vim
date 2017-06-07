@@ -150,7 +150,7 @@ endif
 " Languages
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'avakhov/vim-yaml'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'pangloss/vim-javascript'
