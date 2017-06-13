@@ -49,16 +49,16 @@ let g:airline_mode_map = {
             \ 's'  : 'S',
             \ 'S'  : 'S',
             \ }
-Plug 'vim-airline/vim-airline-themes'
 set noshowmode
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'base16'
-
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_left_alt_sep = '|'
 let g:airline_right_alt_sep = '|'
+
+"Plug 'vim-airline/vim-airline-themes'
+"let g:airline_theme = 'base16'
 
 Plug 'benekastah/neomake'
 " Neomake: open location window
@@ -118,6 +118,7 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
 Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
 Plug 'wooken/leaders.vim'
@@ -164,13 +165,15 @@ let g:vim_markdown_folding_disabled = 1
 call plug#end()
 " }}}
 " Colorscheme {{{
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    if has("termguicolors")
-        set termguicolors
-    endif
-    source ~/.vimrc_background
-endif
+"if filereadable(expand("~/.vimrc_background"))
+"    let base16colorspace=256
+"    if has("termguicolors")
+"        set termguicolors
+"    endif
+"    source ~/.vimrc_background
+"endif
+set termguicolors
+colorscheme dracula
 " }}}
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
