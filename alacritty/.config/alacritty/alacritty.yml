@@ -87,40 +87,34 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: true
 
-# Base16 Harmonic16 Dark 256 - alacritty color config
-# Jannik Siebert (https://github.com/janniks)
+# Colors (Dracula)
 colors:
   # Default colors
   primary:
-    background: '0x0b1c2c'
-    foreground: '0xcbd6e2'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x0b1c2c'
-    cursor: '0xcbd6e2'
+    background: '0x282a36'
+    foreground: '0xf8f8f2'
 
   # Normal colors
   normal:
-    black:   '0x0b1c2c'
-    red:     '0xbf8b56'
-    green:   '0x56bf8b'
-    yellow:  '0x8bbf56'
-    blue:    '0x8b56bf'
-    magenta: '0xbf568b'
-    cyan:    '0x568bbf'
-    white:   '0xcbd6e2'
+    black:   '0x000000'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xbd93f9'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xbbbbbb'
 
   # Bright colors
   bright:
-    black:   '0x627e99'
-    red:     '0xbf8b56'
-    green:   '0x56bf8b'
-    yellow:  '0x8bbf56'
-    blue:    '0x8b56bf'
-    magenta: '0xbf568b'
-    cyan:    '0x568bbf'
-    white:   '0xcbd6e2'
+    black:   '0x555555'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xcaa9fa'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xffffff'
 
 # Visual Bell
 #
