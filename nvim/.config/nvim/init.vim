@@ -152,6 +152,7 @@ endif
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'avakhov/vim-yaml'
 Plug 'fatih/vim-go', { 'tag': '*' }
+let g:go_fmt_experimental = 1
 Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'pangloss/vim-javascript'
