@@ -65,12 +65,15 @@ fi
 #
 # Temporary Files
 #
-
-if [[ ! -d "$TMPDIR" ]]; then
-  export TMPDIR="$(mktemp -d)"
+#
+if [[ -z "$TMPDIR" ]]; then
+  export TMPDIR="/tmp/zsh-$UID"
 fi
 
-TMPPREFIX="${TMPDIR%/}/zsh"
+if [[ ! -d "$TMPDIR" ]]; then
+  mkdir "$TMPDIR"
+  chmod 700 "$TMPDIR"
+fi
 
 # run startx on login
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
