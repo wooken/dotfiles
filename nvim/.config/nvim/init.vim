@@ -266,5 +266,9 @@ autocmd FileType html setlocal
 autocmd FileType tex setlocal
             \ spell
             \ spelllang=en_ca
+
+" Go
+autocmd FileType go setlocal
+            \ noexpandtab
 " }}}
 " vim: set foldmethod=marker nofoldenable:
