@@ -1,5 +1,0 @@
-" minimal vimrc
-set backspace=indent,eol,start
-syntax on
-set number
-set hidden
