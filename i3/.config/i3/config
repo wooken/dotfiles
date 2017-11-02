@@ -165,7 +165,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id nm-applet
 
 # Bluetooth
-exec --no-startup-id /usr/bin/blueman-applet
+#exec --no-startup-id /usr/bin/blueman-applet
 #exec --no-startup-id rfkill block bluetooth
 
 # Wallpaper
