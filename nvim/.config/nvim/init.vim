@@ -149,17 +149,8 @@ if executable('tmux')
 endif
 
 " Languages
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'avakhov/vim-yaml'
-Plug 'rust-lang/rust.vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'pangloss/vim-javascript'
-
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_toml_frontmatter = 1
-let g:vim_markdown_folding_disabled = 1
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/bats.vim'
 
 call plug#end()
 " }}}
@@ -228,47 +219,5 @@ endif
 "autocmd VimResized * wincmd =
 " }}}
 " Filetype Settings {{{
-" Git
-autocmd Filetype gitcommit setlocal
-            \ spell
-            \ textwidth=72
-
-" Rust
-autocmd FileType rust setlocal
-            \ nocindent
-
-" Python
-autocmd FileType python setlocal
-            \ nosmartindent  " pep8-indent comments
-
-" Ruby
-autocmd FileType ruby setlocal
-            \ expandtab
-            \ shiftwidth=2
-            \ tabstop=2
-
-" Javascript
-autocmd FileType javascript setlocal
-            \ shiftwidth=2
-            \ tabstop=2
-            \ nocindent
-
-" Markdown
-autocmd FileType markdown setlocal
-            \ spell spelllang=en_ca
-
-" HTML
-autocmd FileType html setlocal
-            \ shiftwidth=2
-            \ tabstop=2
-
-" Tex
-autocmd FileType tex setlocal
-            \ spell
-            \ spelllang=en_ca
-
-" Go
-autocmd FileType go setlocal
-            \ noexpandtab
 " }}}
 " vim: set foldmethod=marker nofoldenable:
