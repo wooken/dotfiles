@@ -186,9 +186,11 @@ exec --no-startup-id nm-applet
 exec --no-startup-id sh ~/.fehbg
 
 # Lock screen
-exec --no-startup-id xset dpms 600 1200 0
-exec --no-startup-id xss-lock -- i3lock -c 000000
-bindsym $mod+l exec i3lock -c 000000
+#exec --no-startup-id xset dpms 600 1200 0
+#exec --no-startup-id xss-lock -- i3lock -c 000000
+#bindsym $mod+l exec i3lock -c 000000
+exec --no-startup-id xscreensaver -no-splash
+bindsym $mod+l exec xscreensaver-command -lock
 
 # Clipboard, sync all using autocutsel
 exec --no-startup-id autocutsel -fork
