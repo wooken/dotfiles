@@ -189,6 +189,10 @@ exec --no-startup-id sh ~/.fehbg
 #exec --no-startup-id xset dpms 600 1200 0
 #exec --no-startup-id xss-lock -- i3lock -c 000000
 #bindsym $mod+l exec i3lock -c 000000
+
+# Lock screen (xscreensaver)
+# xss-lock processes screen lid event. no need for systemd script
+exec --no-startup-id xss-lock -- xscreensaver-command -lock
 exec --no-startup-id xscreensaver -no-splash
 bindsym $mod+l exec xscreensaver-command -lock
 
