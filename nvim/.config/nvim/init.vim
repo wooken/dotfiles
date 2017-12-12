@@ -1,8 +1,8 @@
 " Key Bindings {{{
 let mapleader=" "
 " Allows C-c to trigger InsertLeave
-map <C-c> <ESC><ESC>
-imap <C-c> <ESC><ESC>
+noremap <C-c> <ESC><ESC>
+inoremap <C-c> <ESC><ESC>
 
 nnoremap <LEADER>, :Next<CR>
 nnoremap <LEADER>. :next<CR>
@@ -117,7 +117,7 @@ Plug 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
@@ -207,7 +207,7 @@ endif
 " UI
 set showmatch               " Show matching brackets
 set number                  " Show line numbers
-set relativenumber          " Show relative numbers
+"set relativenumber          " Show relative numbers
 set showcmd                 " Show partial commands
 set listchars=tab:!·,trail:«,nbsp:+
 set list
