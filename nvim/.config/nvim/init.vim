@@ -60,38 +60,21 @@ let g:airline_right_alt_sep = '|'
 "Plug 'vim-airline/vim-airline-themes'
 "let g:airline_theme = 'base16'
 
-Plug 'benekastah/neomake'
-" Neomake: open location window
+Plug 'w0rp/ale'
+let g:ale_lint_on_text_changed="normal"
+let g:ale_lint_on_insert_leave=1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+" ALE: open location window
 nnoremap <LEADER>lo :lopen<CR>
-" Neomake: close location window
+" ALE: close location window
 nnoremap <LEADER>lc :lclose<CR>
-" Neomake: go to current error/warning
+" ALE: go to current error/warning
 nnoremap <LEADER>ll :ll<CR>
-" Neomake: go to previous error/warning
+" ALE: go to previous error/warning
 nnoremap <LEADER>[ :lprevious<CR>
-" Neomake: go to next error/warning
+" ALE: go to next error/warning
 nnoremap <LEADER>] :lnext<CR>
-augroup neomake_run
-    autocmd!
-    autocmd BufWinEnter * Neomake
-    autocmd BufWritePost * Neomake
-    "autocmd BufWritePost *.rs if has('nvim') | Neomake! cargo | endif
-augroup END
-let g:neomake_error_sign = {
-            \ 'text': '',
-            \ 'texthl': 'NeomakeErrorSign',
-            \ }
-let g:neomake_warning_sign = {
-            \ 'text': '',
-            \ 'texthl': 'NeomakeWarningSign',
-            \ }
-let g:neomake_python_enabled_makers = ['flake8', 'mypy']
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_python_pep8_maker = {
-            \ 'args': ['--ignore=E501'],
-            \ }
-" Disable rustc checker
-"let g:neomake_rust_enabled_makers = []
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
