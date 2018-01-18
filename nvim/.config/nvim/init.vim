@@ -121,6 +121,7 @@ autocmd Filetype python let b:dispatch = 'python %'
 autocmd Filetype sh let b:dispatch = 'sh %'
 autocmd Filetype ruby let b:dispatch = 'ruby %'
 autocmd Filetype c let b:dispatch = 'gcc % && ./a.out'
+autocmd Filetype cpp let b:dispatch = 'g++ % && ./a.out'
 " work around for Copen text jumbled inside tmux
 " https://github.com/tpope/vim-dispatch/issues/192
 " tmux 2.4 seems to fix this issue
