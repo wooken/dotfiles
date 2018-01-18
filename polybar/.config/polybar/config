@@ -10,13 +10,16 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/unimatrix]
-monitor = ${env:MONITOR}
+monitor = DP2-1
+monitor-fallback = eDP1
 tray-position = right
 module-margin-left = 2
 module-margin-right = 2
 padding-right = 1
 font-0 = NotoSans-Regular:size=12;0
-font-1 = FontAwesome:size=12;0
+font-1 = "Font Awesome 5 Free:style=Regular:size=12;0"
+font-2 = "Font Awesome 5 Free:style=Solid:size=12;0"
+font-3 = "Font Awesome 5 Brands:size=12;0"
 
 modules-left = i3
 modules-center =
@@ -145,7 +148,7 @@ label-disconnected-foreground = #66
 type = internal/cpu
 interval = 0.5
 format = <label> <ramp-coreload>
-label =  %percentage%%
+label =  %percentage%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
@@ -228,7 +231,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 format = <label-indicator>
-label-indicator = %name%
+label-indicator =  %name%
 label-indicator-padding = 2
 label-indicator-background = #8139e8
 
