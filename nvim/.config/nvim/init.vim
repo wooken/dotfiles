@@ -127,6 +127,7 @@ autocmd Filetype c let b:dispatch = 'gcc % && ./a.out'
 if executable('tmux')
     let tmux_version = system('tmux -V')
     if tmux_version =~? 'tmux 2.3'
+        " DO NOT REMOVE TRAILING WHITESPACE
         set shellpipe=2>&1\|\ tee\ 
     endif
 endif
