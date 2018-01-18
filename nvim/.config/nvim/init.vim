@@ -60,21 +60,21 @@ let g:airline_right_alt_sep = '|'
 "Plug 'vim-airline/vim-airline-themes'
 "let g:airline_theme = 'base16'
 
-Plug 'w0rp/ale'
-let g:ale_lint_on_text_changed="normal"
-let g:ale_lint_on_insert_leave=1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
-" ALE: open location window
-nnoremap <LEADER>lo :lopen<CR>
-" ALE: close location window
-nnoremap <LEADER>lc :lclose<CR>
-" ALE: go to current error/warning
-nnoremap <LEADER>ll :ll<CR>
-" ALE: go to previous error/warning
-nnoremap <LEADER>[ :lprevious<CR>
-" ALE: go to next error/warning
-nnoremap <LEADER>] :lnext<CR>
+"Plug 'w0rp/ale'
+"let g:ale_lint_on_text_changed="normal"
+"let g:ale_lint_on_insert_leave=1
+"let g:ale_sign_error = '✖'
+"let g:ale_sign_warning = '⚠'
+"" ALE: open location window
+"nnoremap <LEADER>lo :lopen<CR>
+"" ALE: close location window
+"nnoremap <LEADER>lc :lclose<CR>
+"" ALE: go to current error/warning
+"nnoremap <LEADER>ll :ll<CR>
+"" ALE: go to previous error/warning
+"nnoremap <LEADER>[ :lprevious<CR>
+"" ALE: go to next error/warning
+"nnoremap <LEADER>] :lnext<CR>
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
