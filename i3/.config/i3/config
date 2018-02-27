@@ -214,6 +214,10 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Remove titlebar for certain programs
-for_window [class="Chromium"] border pixel 1
+for_window [class="Chromium"] border pixel 2
 for_window [class="Termite"] border pixel 2
 for_window [class="Alacritty"] border pixel 2
+
+# set border color
+# class                 border  backgr. text    indicator   child_border
+client.focused          #4c7899 #285577 #ffffff #4b0082     #9400D3
