@@ -96,8 +96,9 @@ Plug 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-"Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
 Plug 'wooken/leaders.vim'
@@ -136,15 +137,12 @@ Plug 'vim-scripts/bats.vim'
 call plug#end()
 " }}}
 " Colorscheme {{{
-"if filereadable(expand("~/.vimrc_background"))
-"    let base16colorspace=256
-"    if has("termguicolors")
-"        set termguicolors
-"    endif
-"    source ~/.vimrc_background
-"endif
-set termguicolors
-colorscheme dracula
+if has("termguicolors")
+    set termguicolors
+endif
+let base16colorspace=256  " Access colors present in 256 colorspace
+set background=light
+colorscheme PaperColor
 " }}}
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
