@@ -105,30 +105,25 @@ Plug 'wooken/leaders.vim'
 " leaders: ListLeaders
 nnoremap <LEADER>j :ListLeaders<CR>
 
-" Dispatch
-Plug 'tpope/vim-dispatch'
-" vim-dispatch: Dispatch
-nnoremap <LEADER>r :w<CR>:Dispatch<CR>
-" vim-dispatch: open quickfix window
-nnoremap <LEADER>co :copen<CR>
-" vim-dispatch: close quickfix window
-nnoremap <LEADER>cc :cclose<CR>
-autocmd Filetype rust let b:dispatch = 'cargo run'
-autocmd Filetype python let b:dispatch = 'python %'
-autocmd Filetype sh let b:dispatch = 'sh %'
-autocmd Filetype ruby let b:dispatch = 'ruby %'
-autocmd Filetype c let b:dispatch = 'gcc % && ./a.out'
-autocmd Filetype cpp let b:dispatch = 'g++ % && ./a.out'
-" work around for Copen text jumbled inside tmux
-" https://github.com/tpope/vim-dispatch/issues/192
-" tmux 2.4 seems to fix this issue
-if executable('tmux')
-    let tmux_version = system('tmux -V')
-    if tmux_version =~? 'tmux 2.3'
-        " DO NOT REMOVE TRAILING WHITESPACE
-        set shellpipe=2>&1\|\ tee\ 
+Plug 'skywind3000/asyncrun.vim'
+function! CustomAsyncMake() abort
+    if exists('b:thismake')
+        AsyncRun -raw=1 -program=make %
+    else
+        AsyncRun -program=make
     endif
-endif
+endfunction
+augroup asyncrun
+    autocmd!
+    autocmd Filetype python let b:thismake = 1
+    command! Make call CustomAsyncMake()
+augroup END
+" AsyncRun: Run
+nnoremap <LEADER>r :w<CR>:Make<CR>
+" AsyncRun: open quickfix window (w/o stealing focus)
+nnoremap <LEADER>co :copen<CR><C-w><C-w>
+" AsyncRun: close quickfix window
+nnoremap <LEADER>cc :cclose<CR>
 
 " Languages
 Plug 'sheerun/vim-polyglot'
