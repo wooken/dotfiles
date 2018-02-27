@@ -10,8 +10,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/unimatrix]
-monitor = DP2-1
-monitor-fallback = eDP1
+monitor = ${env:MONITOR:eDP1}
 tray-position = right
 module-margin-left = 2
 module-margin-right = 2
@@ -237,5 +236,5 @@ label-indicator-background = #8139e8
 
 [module/date]
 type = internal/date
-date =  %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%I:%M %p%%{F-}
+date =  %%{F#99} %a %Y-%m-%d%%{F-}  %%{F#fff}%I:%M %p%%{F-}
 date-alt =  %%{F#fff}%A, %d %B %Y  %%{F#fff}%I:%M %p%%{F#666}:%%{F#fba922}%S%%{F-}

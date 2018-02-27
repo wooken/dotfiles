@@ -7,6 +7,14 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar
-polybar unimatrix &
+#polybar unimatrix &
+
+if type "xrandr"; then
+    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        MONITOR=$m polybar --reload unimatrix &
+    done
+else
+    polybar --reload unimatrix &
+fi
 
 echo "Polybars launched..."
