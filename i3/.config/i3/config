@@ -166,6 +166,9 @@ bindsym $mod+r mode "resize"
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# dockd
+exec --no-startup-id dockd --daemon
+
 # Volume
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%-
