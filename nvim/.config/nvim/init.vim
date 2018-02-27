@@ -52,13 +52,9 @@ let g:airline_mode_map = {
 set noshowmode
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep = '|'
-let g:airline_right_alt_sep = '|'
 
-"Plug 'vim-airline/vim-airline-themes'
-"let g:airline_theme = 'base16'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme = 'base16'
 
 "Plug 'w0rp/ale'
 "let g:ale_lint_on_text_changed="normal"
