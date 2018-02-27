@@ -198,5 +198,7 @@ endif
 "autocmd VimResized * wincmd =
 " }}}
 " Filetype Settings {{{
+" augroup filetype_vim
+" augroup END
 " }}}
 " vim: set foldmethod=marker nofoldenable:
