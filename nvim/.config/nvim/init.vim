@@ -115,14 +115,15 @@ endfunction
 augroup asyncrun
     autocmd!
     autocmd Filetype python let b:thismake = 1
-    command! Make call CustomAsyncMake()
+    command! AsyncMake call CustomAsyncMake()
+    autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
 augroup END
 " AsyncRun: Run
-nnoremap <LEADER>r :w<CR>:Make<CR>
-" AsyncRun: open quickfix window (w/o stealing focus)
-nnoremap <LEADER>co :copen<CR><C-w><C-w>
-" AsyncRun: close quickfix window
-nnoremap <LEADER>cc :cclose<CR>
+nnoremap <LEADER>r :w<CR>:AsyncMake<CR>
+" AsyncRun: stop current job
+nnoremap <LEADER>s :w<CR>:AsyncStop<CR>
+" AsyncRun: toggle quickfix window
+nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
 
 " Languages
 Plug 'sheerun/vim-polyglot'
