@@ -4,8 +4,10 @@ let mapleader=" "
 noremap <C-c> <ESC><ESC>
 inoremap <C-c> <ESC><ESC>
 
+nnoremap <LEADER>m :make<CR>
 nnoremap <LEADER>, :Next<CR>
 nnoremap <LEADER>. :next<CR>
+nnoremap <LEADER>j :map <lt>leader><CR>
 " }}}
 " Vim Plug Setup {{{
 if has('nvim')
@@ -101,9 +103,6 @@ Plug 'dracula/vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
-Plug 'wooken/leaders.vim'
-" leaders: ListLeaders
-nnoremap <LEADER>j :ListLeaders<CR>
 
 Plug 'skywind3000/asyncrun.vim'
 function! CustomAsyncMake() abort
