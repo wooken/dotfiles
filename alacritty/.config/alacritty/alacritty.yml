@@ -105,69 +105,41 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: true
 
-# Base16 Atelier Cave Light 256 - alacritty color config
-# Bram de Haan (http://atelierbramdehaan.nl)
+# PaperColor 256 - alacritty color config
+# https://github.com/NLKNguyen/papercolor-theme
+# https://www.reddit.com/r/vim/comments/36xzbs/vim_paper_color_theme_inspired_by_googles/crqbfpa/
 colors:
   # Default colors
   primary:
-    background: '0xefecf4'
-    foreground: '0x585260'
+    background: '0xeeeeee'
+    foreground: '0x4d4d4c'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xefecf4'
-    cursor: '0x585260'
+    text: '0xf3f3f3'
+    cursor: '0x4d4d4c'
 
   # Normal colors
   normal:
-    black:   '0xefecf4'
-    red:     '0xbe4678'
-    green:   '0x2a9292'
-    yellow:  '0xa06e3b'
-    blue:    '0x576ddb'
-    magenta: '0x955ae7'
-    cyan:    '0x398bc6'
-    white:   '0x585260'
+    black:   '0xededed'
+    red:     '0xd7005f'
+    green:   '0x718c00'
+    yellow:  '0xd75f00'
+    blue:    '0x4271ae'
+    magenta: '0x8959a8'
+    cyan:    '0x3e999f'
+    white:   '0x4d4d4c'
 
   # Bright colors
   bright:
-    black:   '0x7e7887'
-    red:     '0xbe4678'
-    green:   '0x2a9292'
-    yellow:  '0xa06e3b'
-    blue:    '0x576ddb'
-    magenta: '0x955ae7'
-    cyan:    '0x398bc6'
-    white:   '0x585260'
-
-## Colors (Dracula)
-#colors:
-#  # Default colors
-#  primary:
-#    background: '0x282a36'
-#    foreground: '0xf8f8f2'
-#
-#  # Normal colors
-#  normal:
-#    black:   '0x000000'
-#    red:     '0xff5555'
-#    green:   '0x50fa7b'
-#    yellow:  '0xf1fa8c'
-#    blue:    '0xbd93f9'
-#    magenta: '0xff79c6'
-#    cyan:    '0x8be9fd'
-#    white:   '0xbbbbbb'
-#
-#  # Bright colors
-#  bright:
-#    black:   '0x555555'
-#    red:     '0xff5555'
-#    green:   '0x50fa7b'
-#    yellow:  '0xf1fa8c'
-#    blue:    '0xcaa9fa'
-#    magenta: '0xff79c6'
-#    cyan:    '0x8be9fd'
-#    white:   '0xffffff'
+    black:   '0x949494'
+    red:     '0xd7005f'
+    green:   '0x718c00'
+    yellow:  '0xd75f00'
+    blue:    '0x4271ae'
+    magenta: '0x8959a8'
+    cyan:    '0x3e999f'
+    white:   '0xf5f5f5'
 
 # Visual Bell
 #
