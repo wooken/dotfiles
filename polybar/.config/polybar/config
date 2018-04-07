@@ -1,28 +1,61 @@
 ; vim:ft=dosini
 
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #55
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+background = #EEEEEE
+foreground = #4D4D4C
+
+red = #d7005f
+green = #718c00
+yellow = #d75f00
+blue = #4271ae
+magenta = #8959a8
+cyan = #3e999f
+white = #4d4d4c
+
 [bar/unimatrix]
 monitor = ${env:MONITOR:eDP1}
-tray-position = right
-module-margin-left = 2
-module-margin-right = 2
-padding-right = 1
-font-0 = NotoSans-Regular:size=12;0
-font-1 = "Font Awesome 5 Free:style=Regular:size=12;0"
-font-2 = "Font Awesome 5 Free:style=Solid:size=12;0"
-font-3 = "Font Awesome 5 Brands:size=12;0"
+;monitor = ${env:MONITOR:DP2-1}
+
+width = 100%
+height = 23
+
+;fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+spacing = 0
+padding-left = 0
+padding-right = 5
+module-margin-left = 0
+module-margin-right = 5
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = NotoSans-Regular:size=12;0
+font-4 = "Font Awesome 5 Free:style=Regular:size=12;0"
+font-5 = "Font Awesome 5 Free:style=Solid:size=12;0"
+font-6 = "Font Awesome 5 Brands:size=12;0"
+
 
 modules-left = i3
-modules-center =
-modules-right = keyboard battery0 battery1 ethernet wlan cpu memory volume backlight date
+modules-center = date
+modules-right = keyboard battery0 battery1 ethernet wlan cpu memory volume backlight
+
+tray-position = right
+tray-padding = 4
+tray-background = ${colors.background}
 
 [module/i3]
 type = internal/i3
@@ -30,13 +63,13 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-label-mode-padding = 1
-label-mode-foreground = #000
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.primary}
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.blue}
 label-focused-padding = ${self.label-mode-padding}
 
 label-occupied = %index%
@@ -57,6 +90,108 @@ label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%b. %d, %Y"
+time = %I:%M %p
+
+format-prefix-foreground = ${colors.foreground}
+label =  %time%     %date%
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label =  %percentage%%
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = ${colors.green}
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = ${colors.green}
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = ${colors.green}
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = ${colors.green}
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = ${colors.red}
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = ${colors.red}
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = ${colors.red}
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = ${colors.red}
+
+[module/keyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+format = <label-indicator>
+label-indicator = 
+label-indicator-padding = 2
+label-indicator-underline = ${colors.magenta}
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+format = <label> <bar>
+label = 
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #ff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format = <label>
+label =  %percentage_used%%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+label-volume = 
+label-volume-foreground = ${colors.foreground}
+
+format-muted-foreground = #5b
+label-muted =  muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.red}
+bar-volume-gradient = false
+bar-volume-indicator = │
+bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = #ff
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery0]
 type = internal/battery
@@ -131,7 +266,9 @@ interval = 3.0
 
 label-connected =  (%{T3}%local_ip%%{T-})
 label-disconnected = 
-label-disconnected-foreground = #66
+label-connected-underline = ${colors.green} 
+label-disconnected-underline = ${colors.red} 
+label-disconnected-foreground = #5b
 
 [module/wlan]
 type = internal/network
@@ -141,100 +278,15 @@ ping-interval = 10
 
 label-connected =  (%essid% @ %signal%%)
 label-disconnected = 
-label-disconnected-foreground = #66
+label-connected-underline = ${colors.green} 
+label-disconnected-underline = ${colors.red} 
+label-disconnected-foreground = #5b
 
-[module/cpu]
-type = internal/cpu
-interval = 0.5
-format = <label> <ramp-coreload>
-label =  %percentage%%
-
-ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = #aaff77
-ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = #aaff77
-ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = #aaff77
-ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
-ramp-coreload-3-foreground = #aaff77
-ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
-ramp-coreload-4-foreground = #fba922
-ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
-ramp-coreload-5-foreground = #fba922
-ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
-ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = #ff5555
-
-[module/memory]
-type = internal/memory
-interval = 2
-format = <label>
-label =  %percentage_used%%
-
-[module/volume]
-type = internal/volume
-
-format-volume = <label-volume> <bar-volume>
-label-volume = 
-label-volume-foreground = ${colors.foreground}
-
-format-muted-foreground = ${colors.foreground-alt}
-label-muted =  muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = │
-bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = #ff
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-format = <label> <bar>
-label = 
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
-
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/keyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-blacklist-1 = scroll lock
-format = <label-indicator>
-label-indicator =  %name%
-label-indicator-padding = 2
-label-indicator-background = #8139e8
-
-[module/date]
-type = internal/date
-date =  %%{F#99} %a %Y-%m-%d%%{F-}  %%{F#fff}%I:%M %p%%{F-}
-date-alt =  %%{F#fff}%A, %d %B %Y  %%{F#fff}%I:%M %p%%{F#666}:%%{F#fba922}%S%%{F-}
+[module/vpncheck]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = vpn
+format-underline = ${colors.blue}
+format-prefix = " "
+format-prefix-foreground = #5b
