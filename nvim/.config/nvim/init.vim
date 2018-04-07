@@ -4,6 +4,7 @@ let mapleader=" "
 noremap <C-c> <ESC><ESC>
 inoremap <C-c> <ESC><ESC>
 
+nnoremap <leader>v :source ~/.vimrc<CR>
 nnoremap <LEADER>m :make<CR>
 nnoremap <LEADER>, :Next<CR>
 nnoremap <LEADER>. :next<CR>
