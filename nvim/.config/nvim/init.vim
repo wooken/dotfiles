@@ -42,22 +42,28 @@ endif
 " Plugins {{{
 call plug#begin("$VIMHOME/bundle")
 
-Plug 'vim-airline/vim-airline'
-let g:airline_mode_map = {
-            \ 'n'  : 'N',
-            \ 'i'  : 'I',
-            \ 'R'  : 'R',
-            \ 'v'  : 'V',
-            \ 'V'  : 'V',
-            \ 's'  : 'S',
-            \ 'S'  : 'S',
-            \ }
+Plug 'itchyny/lightline.vim', { 'as': 'lightline' }
 set noshowmode
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:lightline = {
+            \ 'colorscheme': 'Dracula',
+            \ }
 
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme = 'base16'
+"Plug 'vim-airline/vim-airline'
+"let g:airline_mode_map = {
+"            \ 'n'  : 'N',
+"            \ 'i'  : 'I',
+"            \ 'R'  : 'R',
+"            \ 'v'  : 'V',
+"            \ 'V'  : 'V',
+"            \ 's'  : 'S',
+"            \ 'S'  : 'S',
+"            \ }
+"set noshowmode
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"
+"Plug 'vim-airline/vim-airline-themes'
+"let g:airline_theme = 'dracula'
 
 "Plug 'w0rp/ale'
 "let g:ale_lint_on_text_changed="normal"
