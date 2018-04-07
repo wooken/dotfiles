@@ -106,7 +106,7 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
 Plug 'chriskempson/base16-vim'
-Plug 'dracula/vim'
+Plug 'dracula/vim', { 'as': 'dracula'}
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
