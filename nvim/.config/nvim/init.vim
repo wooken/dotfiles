@@ -44,8 +44,23 @@ call plug#begin("$VIMHOME/bundle")
 
 Plug 'itchyny/lightline.vim', { 'as': 'lightline' }
 set noshowmode
+" fname function helps keep mode visible as the window shrinks
 let g:lightline = {
             \ 'colorscheme': 'Dracula',
+            \ 'component_function': {
+            \   'fname': '%<%f',
+            \ },
+            \ }
+let g:lightline.mode_map = {
+            \   'n': 'N',
+            \   'i' : 'I',
+            \   'R' : 'R',
+            \   'v' : 'V',
+            \   'V' : 'V',
+            \   "\<C-v>": 'V',
+            \   's' : 'S',
+            \   'S' : 'S',
+            \   "\<C-s>": 'S',
             \ }
 
 "Plug 'vim-airline/vim-airline'
