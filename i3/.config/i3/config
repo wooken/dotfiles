@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -208,6 +208,9 @@ exec --no-startup-id dunst
 # udiskie (automount)
 exec --no-startup-id udiskie --tray
 
+# caffeine
+exec --no-startup-id caffeine
+
 # Scratchpad
 # floating toggle: mod-shift-space
 bindsym $mod+Shift+minus move scratchpad
@@ -215,9 +218,17 @@ bindsym $mod+minus scratchpad show
 
 # Remove titlebar for certain programs
 for_window [class="Chromium"] border pixel 2
+for_window [class="Google-chrome"] border pixel 2
 for_window [class="Termite"] border pixel 2
 for_window [class="Alacritty"] border pixel 2
 
+# Theme Info for Archlinux and i3
+# Install
+# - lxappearnace
+#   - set theme here
+# - qt4
+#   - use qtconfig-qt4 to take settings from GTK+
+
 # set border color
 # class                 border  backgr. text    indicator   child_border
-client.focused          #4c7899 #285577 #ffffff #4b0082     #9400D3
+client.focused          #4c7899 #eeeeee #4d4d4c #4b0082     #9400D3
