@@ -51,7 +51,7 @@ font-6 = "Font Awesome 5 Brands:size=12;0"
 
 modules-left = i3
 modules-center = date
-modules-right = keyboard battery0 battery1 ethernet wlan cpu memory volume backlight
+modules-right = temperature keyboard battery0 battery1 vpncheck ethernet wlan cpu memory volume backlight
 
 tray-position = right
 tray-padding = 4
@@ -280,7 +280,15 @@ interface = wlp3s0
 interval = 3.0
 ping-interval = 10
 
-label-connected =  (%essid% @ %signal%%)
+#format-connected = <ramp-signal> <label-connected>
+#ramp-signal-0 = 0
+#ramp-signal-1 = 1
+#ramp-signal-2 = 2
+#ramp-signal-3 = 3
+#ramp-signal-4 = 4
+#ramp-signal-5 = 5
+#label-connected =  (%essid% %signal%%)
+label-connected =  %essid%
 label-disconnected = 
 label-connected-underline = ${colors.green} 
 label-disconnected-underline = ${colors.red} 
@@ -293,4 +301,11 @@ interval = 5
 label = vpn
 format-underline = ${colors.blue}
 format-prefix = " "
-format-prefix-foreground = #5b
+format-prefix-foreground = ${colors.foreground}
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+thermal-zone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input
+warn-temperature = 60
