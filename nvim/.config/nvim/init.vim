@@ -42,7 +42,7 @@ endif
 " Plugins {{{
 call plug#begin("$VIMHOME/bundle")
 
-Plug 'itchyny/lightline.vim', { 'as': 'lightline' }
+Plug 'itchyny/lightline.vim'
 set noshowmode
 " fname function helps keep mode visible as the window shrinks
 let g:lightline = {
