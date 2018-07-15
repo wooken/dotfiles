@@ -4,4 +4,4 @@
 export TERMINAL="alacritty"
 
 # disable trackpad while typing
-syndaemon -k -d -i 0.4
+syndaemon -i 0.3 -d -t -K -R
