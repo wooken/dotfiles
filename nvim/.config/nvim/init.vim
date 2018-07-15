@@ -163,6 +163,9 @@ colorscheme base16-dracula
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
 
+" GUI
+set guifont=Iosevka\ Nerd\ Font\ Mono\ 12
+
 " behavior
 set undoreload=0            " clear undo tree with :edit
 set nojoinspaces            " Single space when joining prose
