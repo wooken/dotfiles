@@ -150,6 +150,11 @@ nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/bats.vim'
 
+Plug 'mattn/emmet-vim'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='\'
+
 call plug#end()
 " }}}
 " Colorscheme {{{
