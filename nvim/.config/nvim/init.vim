@@ -116,9 +116,8 @@ let g:vimwiki_list = [{
 let g:vimwiki_global_ext = 0
 let g:vimwiki_autowriteall = 0
 
-Plug 'airblade/vim-gitgutter'
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+Plug 'mhinz/vim-signify'
+let g:signify_vcs_list = ['git']
 
 Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'as': 'dracula'}
