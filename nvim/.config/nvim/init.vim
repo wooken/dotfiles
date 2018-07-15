@@ -46,7 +46,7 @@ Plug 'itchyny/lightline.vim'
 set noshowmode
 " fname function helps keep mode visible as the window shrinks
 let g:lightline = {
-            \ 'colorscheme': 'Dracula',
+            \ 'colorscheme': 'material',
             \ 'component_function': {
             \   'fname': '%<%f',
             \ },
