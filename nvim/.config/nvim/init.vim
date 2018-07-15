@@ -158,7 +158,7 @@ if has("termguicolors")
 endif
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
-colorscheme dracula
+colorscheme base16-dracula
 " }}}
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
