@@ -109,7 +109,7 @@ label-foreground = ${colors.foreground}
 type = internal/cpu
 interval = 0.5
 format = <label> <ramp-coreload>
-label =  %percentage%%
+label =  %percentage:3%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
@@ -167,7 +167,7 @@ bar-empty-foreground = ${colors.foreground}
 type = internal/memory
 interval = 2
 format = <label>
-label =  %percentage_used%%
+label =  %percentage_used:3%%
 
 [module/volume]
 type = internal/volume
