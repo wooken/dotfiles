@@ -1,7 +1,0 @@
-flake8
-invoke
-jinja2
-mypy-lang
-pew
-pytest
-pytoml
