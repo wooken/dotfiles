@@ -149,8 +149,10 @@ label-indicator-underline = ${colors.magenta}
 type = internal/backlight
 card = intel_backlight
 
-format = <label> <bar>
-label = 
+;format = <label> <bar>
+;label = 
+format = <label>
+label =  %percentage:3%%
 
 bar-width = 10
 bar-indicator = |
@@ -172,8 +174,10 @@ label =  %percentage_used:3%%
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = 
+;format-volume = <label-volume> <bar-volume>
+;label-volume = 
+format-volume = <label-volume>
+label-volume =  %percentage:3%%
 label-volume-foreground = ${colors.foreground}
 
 format-muted-foreground = #5b
@@ -309,3 +313,4 @@ interval = 0.5
 thermal-zone = 0
 hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input
 warn-temperature = 60
+label-warn-foreground = #f00
