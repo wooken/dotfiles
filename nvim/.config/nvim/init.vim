@@ -46,7 +46,7 @@ Plug 'itchyny/lightline.vim'
 set noshowmode
 " fname function helps keep mode visible as the window shrinks
 let g:lightline = {
-            \ 'colorscheme': 'material',
+            \ 'colorscheme': 'palenight',
             \ 'component_function': {
             \   'fname': '%<%f',
             \ },
@@ -122,6 +122,7 @@ let g:signify_vcs_list = ['git']
 Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'as': 'dracula'}
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-indexed-search'
 
@@ -163,7 +164,7 @@ if has("termguicolors")
 endif
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
-colorscheme base16-dracula
+colorscheme palenight
 " }}}
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
