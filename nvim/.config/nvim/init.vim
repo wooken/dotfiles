@@ -128,15 +128,15 @@ Plug 'henrik/vim-indexed-search'
 
 Plug 'skywind3000/asyncrun.vim'
 function! CustomAsyncMake() abort
-    if exists('b:thismake')
-        AsyncRun -raw=1 -program=make %
+    if exists('b:scripting_asyncmake')
+        AsyncRun -raw -program=make %
     else
         AsyncRun -program=make
     endif
 endfunction
 augroup asyncrun
     autocmd!
-    autocmd Filetype python let b:thismake = 1
+    autocmd Filetype python let b:scripting_asyncmake = 1
     command! AsyncMake call CustomAsyncMake()
     autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
 augroup END
@@ -227,4 +227,5 @@ endif
 " augroup filetype_vim
 " augroup END
 " }}}
+
 " vim: set foldmethod=marker nofoldenable:
