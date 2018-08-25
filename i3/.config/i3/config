@@ -220,10 +220,10 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Remove titlebar for certain programs
-for_window [class="Chromium"] border pixel 2
-for_window [class="Google-chrome"] border pixel 2
-for_window [class="Termite"] border pixel 2
-for_window [class="Alacritty"] border pixel 2
+for_window [class="Chromium"] border pixel 3
+for_window [class="Google-chrome"] border pixel 3
+for_window [class="Termite"] border pixel 3
+for_window [class="Alacritty"] border pixel 3
 
 # Theme Info for Archlinux and i3
 # Install
@@ -234,4 +234,4 @@ for_window [class="Alacritty"] border pixel 2
 
 # set border color
 # class                 border  backgr. text    indicator   child_border
-client.focused          #4c7899 #eeeeee #4d4d4c #4b0082     #9400D3
+client.focused          #4271ae #eeeeee #4d4d4c #4b0082     #4271ae
