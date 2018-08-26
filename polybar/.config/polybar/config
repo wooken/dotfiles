@@ -38,20 +38,17 @@ spacing = 0
 padding-left = 0
 padding-right = 3
 module-margin-left = 0
-module-margin-right = 3
+module-margin-right = 2
 
 font-0 = lemon:style=Medium:size=11;0
-font-1 = fixed:pixelsize=11;1
-font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = siji:pixelsize=10;1
-font-4 = NotoSans-Regular:size=12;0
-font-5 = "Font Awesome 5 Free:style=Regular:size=12;0"
-font-6 = "Font Awesome 5 Free:style=Solid:size=12;0"
-font-7 = "Font Awesome 5 Brands:size=12;0"
+font-1 = "Font Awesome 5 Free:style=Regular:size=12;0"
+font-2 = "Font Awesome 5 Free:style=Solid:size=12;0"
+font-3 = "Font Awesome 5 Brands:size=12;0"
+font-4 = "FuraMono Nerd Font Mono:size=11;0"
 
 modules-left = i3
 modules-center = date
-modules-right = temperature keyboard battery0 battery1 vpncheck ethernet wlan cpu memory volume backlight
+modules-right = temperature keyboard battery0 battery1 vpncheck ethernet wlan cpu memory alsa backlight
 
 tray-position = right
 tray-padding = 2
@@ -112,28 +109,20 @@ format = <label> <ramp-coreload>
 label =  %percentage:3%%
 
 ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
 ramp-coreload-0-foreground = ${colors.green}
 ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
 ramp-coreload-1-foreground = ${colors.green}
 ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
 ramp-coreload-2-foreground = ${colors.green}
 ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
 ramp-coreload-3-foreground = ${colors.green}
 ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
 ramp-coreload-4-foreground = ${colors.red}
 ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
 ramp-coreload-5-foreground = ${colors.red}
 ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
 ramp-coreload-6-foreground = ${colors.red}
 ramp-coreload-7 = █
-ramp-coreload-7-font = 2
 ramp-coreload-7-foreground = ${colors.red}
 
 [module/keyboard]
@@ -157,12 +146,9 @@ label =  %percentage:3%%
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
-bar-indicator-font = 2
 bar-fill = ─
-bar-fill-font = 2
 bar-fill-foreground = #9f78e1
 bar-empty = ─
-bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground}
 
 [module/memory]
@@ -171,11 +157,15 @@ interval = 2
 format = <label>
 label =  %percentage_used:3%%
 
-[module/volume]
-type = internal/volume
+[module/alsa]
+type = internal/alsa
 
-;format-volume = <label-volume> <bar-volume>
-;label-volume = 
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+master-mixer = Master
+
 format-volume = <label-volume>
 label-volume =  %percentage:3%%
 label-volume-foreground = ${colors.foreground}
@@ -193,12 +183,9 @@ bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = │
-bar-volume-indicator-font = 2
 bar-volume-indicator-foreground = #ff
 bar-volume-fill = ─
-bar-volume-fill-font = 2
 bar-volume-empty = ─
-bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery0]
@@ -217,15 +204,6 @@ ramp-capacity-1-foreground = #ffa900
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-
-bar-capacity-width = 10
-bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -251,15 +229,6 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
-bar-capacity-width = 10
-bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
-
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -284,15 +253,8 @@ interface = wlp3s0
 interval = 3.0
 ping-interval = 10
 
-#format-connected = <ramp-signal> <label-connected>
-#ramp-signal-0 = 0
-#ramp-signal-1 = 1
-#ramp-signal-2 = 2
-#ramp-signal-3 = 3
-#ramp-signal-4 = 4
-#ramp-signal-5 = 5
-#label-connected =  (%essid% %signal%%)
-label-connected =  %essid%
+format-connected = <label-connected>
+label-connected =  (%essid% %signal%%)
 label-disconnected = 
 label-connected-underline = ${colors.green} 
 label-disconnected-underline = ${colors.red} 
