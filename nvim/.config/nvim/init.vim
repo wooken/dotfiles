@@ -218,8 +218,9 @@ endif
 "autocmd VimResized * wincmd =
 " }}}
 " Filetype Settings {{{
-" augroup filetype_vim
-" augroup END
+augroup filetype_vim
+autocmd FileType gitcommit setlocal spell
+augroup END
 " }}}
 
 " vim: set foldmethod=marker nofoldenable:
