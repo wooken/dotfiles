@@ -52,7 +52,7 @@ font-4 = "FuraMono Nerd Font Mono:size=11;0"
 
 modules-left = i3
 modules-center = date
-modules-right = temperature keyboard battery0 battery1 vpncheck ethernet wlan cpu memory alsa backlight
+modules-right = keyboard temperature battery0 battery1 vpncheck ethernet wlan cpu memory alsa backlight
 
 tray-position = right
 tray-padding = 2
@@ -96,7 +96,7 @@ label-visible-padding = ${self.label-focused-padding}
 type = internal/date
 interval = 5
 
-date = "%b. %d, %Y"
+date = %b. %d, %Y
 time = %I:%M %p
 
 format = <label>
@@ -145,7 +145,7 @@ card = intel_backlight
 ;format = <label> <bar>
 ;label = 
 format = <label>
-label =  %percentage:3%%
+label =  %percentage%%
 
 bar-width = 10
 bar-indicator = |
@@ -159,7 +159,7 @@ bar-empty-foreground = ${colors.foreground}
 type = internal/memory
 interval = 2
 format = <label>
-label =  %percentage_used:3%%
+label =  %percentage_used%%
 
 [module/alsa]
 type = internal/alsa
@@ -171,7 +171,7 @@ headphone-soundcard = default
 master-mixer = Master
 
 format-volume = <label-volume>
-label-volume =  %percentage:3%%
+label-volume =  %percentage%%
 label-volume-foreground = ${colors.foreground}
 
 format-muted-foreground = #5b
