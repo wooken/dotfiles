@@ -50,10 +50,10 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+Tab exec rofi -show window
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -62,10 +62,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+j move left
-#bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-#bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -74,7 +74,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -213,7 +213,7 @@ exec --no-startup-id xset dpms 1200 3600 0
 #exec --no-startup-id xss-lock -- i3lock -c 000000
 #bindsym $mod+l exec i3lock -c 000000
 exec --no-startup-id xss-lock -- i3lock -i ~/Pictures/akuma_splat.png
-bindsym $mod+l exec i3lock -i ~/Pictures/akuma_splat.png
+bindsym $mod+s exec i3lock -i ~/Pictures/akuma_splat.png
 
 # Lock screen (xscreensaver)
 # xss-lock processes screen lid event. no need for systemd script
