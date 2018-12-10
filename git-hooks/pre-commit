@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+
+use 5.28.0;
+use warnings;
+use autodie;
+use Term::ANSIColor;
+
+my @files = `git diff --staged --name-only`;
+
+for my $file (@files) {
+    chomp $file;
+    open my $fh, '<', "$file";
+    my $line_num = 0;
+    while (defined($_ = <$fh>)) {
+        chomp;
+        $line_num++;
+        if ($_ =~ /^export AWS_/) {
+            say color('red'), 'Error: Illegal text found in staging.', color('reset');
+            say color('magenta'), "$file", color('reset');
+            print color('green'), "$line_num", color('reset');
+            say ":$_";
+            exit 1;
+        }
+        last if eof $fh;
+    }
+}

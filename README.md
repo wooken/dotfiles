@@ -17,3 +17,10 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 ```
 git pull && git submodule update --init --recursive
 ```
+
+### Git Hooks
+
+Set up git hooks with:
+```
+stow git-hooks
+```
