@@ -6,9 +6,9 @@ e.g. `stow zsh`
 
 ## Git Hooks
 
-Set up git hooks with:
+Set up git hooks:
 ```
-stow git-hooks
+ln -s git-hooks/pre-commit .git/hooks/pre-commit
 ```
 
 ## ZSH zprezto Setup
