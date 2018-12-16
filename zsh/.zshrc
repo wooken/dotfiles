@@ -16,6 +16,7 @@ unsetopt autopushd
 
 # ZSH Vi mode
 bindkey '^r' history-incremental-search-backward
+bindkey -M vicmd v edit-command-line
 export KEYTIMEOUT=1
 
 # default system editor
