@@ -46,7 +46,7 @@ function prompt_kylewest_setup {
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format "%B${statuscode}%f%b "
+  zstyle ':prezto:module:editor:info:keymap:primary' format "%B${statuscode}%f%b"
   zstyle ':prezto:module:editor:info:keymap:alternate' format "%B%F{magenta}❮%f%b"
 
   # Set git-info parameters.
