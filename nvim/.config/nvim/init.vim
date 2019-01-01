@@ -147,7 +147,7 @@ Plug 'vim-scripts/bats.vim'
 
 Plug 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,xml EmmetInstall
 let g:user_emmet_leader_key='\'
 
 Plug 'lifepillar/vim-cheat40'
@@ -221,6 +221,10 @@ endif
 " Filetype Settings {{{
 augroup filetype_vim
 autocmd FileType gitcommit setlocal spell
+autocmd FileType perl setlocal makeprg=perl\ %
+autocmd FileType html setlocal tabstop=2 shiftwidth=2
+autocmd FileType xml setlocal tabstop=2 shiftwidth=2
+autocmd BufEnter *.wxs set ft=xml
 augroup END
 " }}}
 
