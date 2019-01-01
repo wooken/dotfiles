@@ -118,7 +118,7 @@ Plug 'dracula/vim', { 'as': 'dracula'}
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'henrik/vim-indexed-search'
+Plug 'google/vim-searchindex'
 
 Plug 'skywind3000/asyncrun.vim'
 function! CustomAsyncMake() abort
