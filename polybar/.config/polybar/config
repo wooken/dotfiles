@@ -44,7 +44,7 @@ module-margin-right = 2
 ;   - Use `gucharmap`
 ;   - Select View->Show only glyphs from this font
 ;   - Choose a font that contains desired glyphs
-font-0 = "Noto Sans:style=Medium:size=11;0"
+font-0 = "Noto Sans:style=Medium:size=12;0"
 font-1 = "Font Awesome 5 Free:style=Regular:size=12;0"
 font-2 = "Font Awesome 5 Free:style=Solid:size=12;0"
 font-3 = "Font Awesome 5 Brands:size=12;0"
