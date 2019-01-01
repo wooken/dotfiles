@@ -24,3 +24,11 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 ```
 git pull && git submodule update --init --recursive
 ```
+
+### bin directory
+
+Stow the `bin` directory to `/usr/local`.
+
+```
+stow bin --target=/usr/local/
+```
