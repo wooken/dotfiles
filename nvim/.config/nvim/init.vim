@@ -151,6 +151,7 @@ autocmd FileType html,css,xml EmmetInstall
 let g:user_emmet_leader_key='\'
 
 Plug 'lifepillar/vim-cheat40'
+let g:cheat40_use_default = 0
 
 call plug#end()
 " }}}
