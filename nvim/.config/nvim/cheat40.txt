@@ -53,6 +53,48 @@ About {{{2
        before a motion or a text object)
   *    Acts on text under/after cursor
 }}}
+
+Objects {{{2
+Around word              aw            T
+Inside word              iw            T
+Around WORD              aW            T
+Inside WORD              iW            T
+Around sentence          as            T
+Inside sentence          is            T
+Around paragraph         ap            T
+Inside paragraph         ip            T
+Around parentheses       a(            T
+Ditto                    ab            T
+Inside parentheses       i(            T
+Ditto                    ib            T
+Around brackets          a[            T
+Inside brackets          i[            T
+Around braces            a{            T
+Ditto                    aB            T
+Inside braces            i{            T
+Ditto                    iB            T
+Around (XML) tags        at            T
+Inside (XML) tags        it            T
+Around < and >           a<            T
+Inside < and >           i<            T
+Around double quotes     a"            T
+Inside double quotes     i"            T
+Around simple quotes     a'            T
+Inside simple quotes     i'            T
+Around backticks         a`            T
+Inside backticks         i`            T
+}}}
+
+Tags {{{2
+Jump to specified tag    :tag …        N
+Jump to older tag        «C-t»         N
+Jump to tag definition   «C-]»        *N
+Ditto, but show choices  g]           *N
+Jump or show choices     g«C-]»       *N
+To next matching tag     :tn           N
+To prev matching tag     :tp           N
+}}}
+
 To prev jump position    «C-o»         N
 To next jump position    «C-i»         N
 
@@ -66,3 +108,6 @@ Browse command history   q:            N
 Browse command history   «C-f»         C
 Browse » search patterns q/            N
 Browse « search patterns q?            N
+
+Hard-wrap (cursor moves) gq            O
+Hard-wrap (cursor stays) gw            O
