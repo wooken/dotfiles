@@ -184,8 +184,8 @@ bindsym $mod+r mode "resize"
 #}
 
 # move workspaces
-bindsym $mod+n move workspace to output left
-bindsym $mod+m move workspace to output right
+bindsym $mod+Shift+n move workspace to output left
+bindsym $mod+Shift+m move workspace to output right
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
