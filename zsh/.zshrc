@@ -45,6 +45,27 @@ source ~/perl5/perlbrew/etc/bashrc
 alias em='emacs -nw'
 alias emacs='emacs -nw'
 
+# spaceship zsh/prezto theme
+SPACESHIP_PROMPT_ORDER=(
+time
+dir
+git
+venv
+pyenv
+line_sep
+vi_mode
+exit_code
+char
+)
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=true
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_TIME_COLOR=111
+SPACESHIP_TIME_12HR=true
+SPACESHIP_DIR_PREFIX=
+SPACESHIP_DIR_TRUNC=2
+SPACESHIP_EXIT_CODE_SHOW=true
+
 # fzf
 if $(type ag 2>&1 > /dev/null); then
     export FZF_DEFAULT_COMMAND='ag --ignore .git --hidden -g ""'
