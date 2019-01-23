@@ -51,3 +51,6 @@ if $(type ag 2>&1 > /dev/null); then
 fi
 alias vif='vi $(fzf --height 40%)'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ripgrep
+export RIPGREP_CONFIG_PATH=~/.config/ripgrep/.ripgreprc
