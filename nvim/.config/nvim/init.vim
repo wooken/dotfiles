@@ -80,6 +80,18 @@ let g:lightline.mode_map = {
 "Plug 'vim-airline/vim-airline-themes'
 "let g:airline_theme = 'dracula'
 
+Plug 'neomake/neomake'
+" neomake: open location window
+nnoremap <LEADER>lo :lopen<CR>
+" neomake: close location window
+nnoremap <LEADER>lc :lclose<CR>
+" neomake: go to current error/warning
+nnoremap <LEADER>ll :ll<CR>
+" neomake: go to previous error/warning
+nnoremap <LEADER>[ :lprevious<CR>
+" neomake: go to next error/warning
+nnoremap <LEADER>] :lnext<CR>
+
 "Plug 'w0rp/ale'
 "let g:ale_lint_on_text_changed="normal"
 "let g:ale_lint_on_insert_leave=1
@@ -154,6 +166,17 @@ Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
 
 call plug#end()
+
+"Neomake
+function! MyOnBattery()
+  return readfile('/sys/class/power_supply/AC/online') == ['0']
+endfunction
+if MyOnBattery()
+  call neomake#configure#automake('w')
+else
+  call neomake#configure#automake('nrw')
+endif
+
 " }}}
 " Colorscheme {{{
 if has("termguicolors")
