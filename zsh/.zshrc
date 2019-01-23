@@ -36,26 +36,14 @@ export PATH=$PATH:$GOPATH/bin
 # Rust
 export PATH=$PATH:~/.cargo/bin
 
+# Perlbrew
+source ~/perl5/perlbrew/etc/bashrc
+
 # Personal bin
 [ -d ~/bin ] && export PATH=$PATH:~/bin
 
 alias em='emacs -nw'
 alias emacs='emacs -nw'
-
-# Termite dircolors
-# generate using: dircolors -p > ~/.dircolors
-# append to ~/.dircolors: TERM xterm-termite
-#eval $(dircolors ~/.dircolors)
-
-# Termite: open new terminal in cwd
-#if [[ $TERM == xterm-termite ]]; then
-#  . /etc/profile.d/vte.sh
-#  __vte_osc7
-#fi
-
-# Base 16 shell colors
-#BASE16_SHELL=$HOME/.config/base16-shell/
-#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # fzf
 if $(type ag 2>&1 > /dev/null); then
