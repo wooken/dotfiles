@@ -231,7 +231,7 @@ endif
 " UI
 set showmatch               " Show matching brackets
 set number                  " Show line numbers
-"set relativenumber          " Show relative numbers
+set relativenumber          " Show relative numbers
 set showcmd                 " Show partial commands
 set listchars=tab:!·,trail:«,nbsp:+
 set list
