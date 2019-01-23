@@ -36,9 +36,6 @@ export PATH=$PATH:$GOPATH/bin
 # Rust
 export PATH=$PATH:~/.cargo/bin
 
-# Perlbrew
-source ~/perl5/perlbrew/etc/bashrc
-
 # Personal bin
 [ -d ~/bin ] && export PATH=$PATH:~/bin
 
