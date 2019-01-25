@@ -53,4 +53,4 @@ alias vif='vi $(fzf --height 40%)'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ripgrep
-export RIPGREP_CONFIG_PATH=~/.config/ripgrep/.ripgreprc
+export RIPGREP_CONFIG_PATH=~/.config/ripgrep/ripgreprc
