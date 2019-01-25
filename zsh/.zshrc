@@ -30,7 +30,14 @@ alias vi=$EDITOR
 alias vim=$EDITOR
 
 # pure prompt
-PROMPT='%F{magenta}%* '$PROMPT
+# add timestamp to prompt
+PROMPT='%B%F{105}%*%b '$PROMPT
+PURE_PROMPT_SYMBOL=➜
+PURE_PROMPT_VICMD_SYMBOL=➩
+# disable auto git fetch
+PURE_GIT_PULL=0
+# disable window title updates
+prompt_pure_set_title() {}
 
 # Go
 export GOPATH=~/go
