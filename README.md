@@ -30,5 +30,5 @@ git pull && git submodule update --init --recursive
 Stow the `bin` directory to `/usr/local`.
 
 ```
-stow bin --target=/usr/local/
+stow bin --target=/usr/local/bin
 ```
