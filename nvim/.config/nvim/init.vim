@@ -131,6 +131,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'google/vim-searchindex'
+Plug 'machakann/vim-sandwich'
 
 Plug 'skywind3000/asyncrun.vim'
 function! CustomAsyncMake() abort

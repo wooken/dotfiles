@@ -95,6 +95,14 @@ To next matching tag     :tn           N
 To prev matching tag     :tp           N
 }}}
 
+Sandwich {{{2
+motion/text object       sa{iw}(       N
+delete                   sdb           N
+delete specific          sd(           N
+replace                  srb           N
+replace specific         sr(           N
+}}}
+
 To prev jump position    «C-o»         N
 To next jump position    «C-i»         N
 
