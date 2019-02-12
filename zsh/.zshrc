@@ -42,9 +42,6 @@ export PATH=$PATH:~/.cargo/bin
 # Personal bin
 [ -d ~/bin ] && export PATH=~/bin:$PATH
 
-alias em='emacs -nw'
-alias emacs='emacs -nw'
-
 # fzf
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!.git/*'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
