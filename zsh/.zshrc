@@ -40,17 +40,16 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:~/.cargo/bin
 
 # Personal bin
-[ -d ~/bin ] && export PATH=$PATH:~/bin
+[ -d ~/bin ] && export PATH=~/bin:$PATH
 
 alias em='emacs -nw'
 alias emacs='emacs -nw'
 
 # fzf
-if $(type ag 2>&1 > /dev/null); then
-    export FZF_DEFAULT_COMMAND='ag --ignore .git --hidden -g ""'
-fi
-alias vif='vi $(fzf --height 40%)'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!.git/*'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 
 # ripgrep
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/ripgreprc
