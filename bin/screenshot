@@ -1,3 +1,4 @@
 #!/bin/bash
 
-scrot ~/screenshot.png -d 1
+maim -s ~/screenshot.png
+#scrot ~/screenshot.png -d 1
