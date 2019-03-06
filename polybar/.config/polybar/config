@@ -5,8 +5,8 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-background = #EEEEEE
-foreground = #4D4D4C
+background = #FF131920
+foreground = #ECEFF4
 
 red = #d7005f
 green = #718c00
