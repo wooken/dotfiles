@@ -133,6 +133,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'google/vim-searchindex'
 Plug 'machakann/vim-sandwich'
 
+Plug 'ntpeters/vim-better-whitespace'
+let g:strip_max_file_size = 1000
+let g:strip_whitespace_on_save = 1
+let g:strip_only_modified_lines=1
+"let g:strip_whitespace_confirm=0
+
 Plug 'skywind3000/asyncrun.vim'
 function! CustomAsyncMake() abort
     if exists('b:scripting_asyncmake')
@@ -234,8 +240,8 @@ set showmatch               " Show matching brackets
 set number                  " Show line numbers
 set relativenumber          " Show relative numbers
 set showcmd                 " Show partial commands
-set listchars=tab:!·,trail:«,nbsp:+
-set list
+"set listchars=tab:!·,trail:«,nbsp:+
+"set list
 if !has('nvim')
     set laststatus=2        " status line always shown
 endif
