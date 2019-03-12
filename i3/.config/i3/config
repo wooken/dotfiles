@@ -245,7 +245,6 @@ bindsym $mod+minus scratchpad show
 # Remove titlebar for certain programs
 for_window [class="Chromium"] border pixel 3
 for_window [class="Google-chrome"] border pixel 3
-for_window [class="Termite"] border pixel 3
 for_window [class="Alacritty"] border pixel 3
 
 # https://github.com/ValveSoftware/steam-for-linux/issues/1040
