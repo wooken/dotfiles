@@ -54,7 +54,7 @@ About {{{2
   *    Acts on text under/after cursor
 }}}
 
-Objects {{{2
+Objects {{{1
 Around word              aw            T
 Inside word              iw            T
 Around WORD              aW            T
@@ -85,7 +85,7 @@ Around backticks         a`            T
 Inside backticks         i`            T
 }}}
 
-Tags {{{2
+Tags {{{
 Jump to specified tag    :tag …        N
 Jump to older tag        «C-t»         N
 Jump to tag definition   «C-]»        *N
@@ -95,7 +95,27 @@ To next matching tag     :tn           N
 To prev matching tag     :tp           N
 }}}
 
-Sandwich {{{2
+Marks {{{
+Set mark                 m‹c›          N
+Jump to mark and pos     '‹c›          M
+Jump to mark (line)      `‹c›          M
+View all marks           :marks        N
+Remove marks             :delmarks …   N
+Remove marks a-z         :delm a-z     N
+Remove all lower case    :delmarks!    N
+Change to mark and pos   c'‹c›         N
+}}}
+
+Repetition {{{
+Repeat last command      .             N
+Repeat last subst        &             N
+Repeat f/t/F/T »         ;             M
+Repeat f/t/F/T «         ,             M
+Repeat last macro        @@            N
+Repeat last Ex command   @:            N
+}}}
+
+Sandwich {{{
 motion/text object       sa{iw}(       N
 delete                   sdb           N
 delete specific          sd(           N
@@ -103,8 +123,11 @@ replace                  srb           N
 replace specific         sr(           N
 }}}
 
+Misc {{{
 To prev jump position    «C-o»         N
 To next jump position    «C-i»         N
+Prev pos in change list  g;            N
+Next pos in change list  g,            N
 
 Fold                     zc           *N
 Unfold                   zv           *N
@@ -119,3 +142,4 @@ Browse « search patterns q?            N
 
 Hard-wrap (cursor moves) gq            O
 Hard-wrap (cursor stays) gw            O
+}}}
