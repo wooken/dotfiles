@@ -51,17 +51,17 @@ let g:lightline = {
             \   'fname': '%<%f',
             \ },
             \ }
-let g:lightline.mode_map = {
-            \   'n': 'N',
-            \   'i' : 'I',
-            \   'R' : 'R',
-            \   'v' : 'V',
-            \   'V' : 'V',
-            \   "\<C-v>": 'V',
-            \   's' : 'S',
-            \   'S' : 'S',
-            \   "\<C-s>": 'S',
-            \ }
+"let g:lightline.mode_map = {
+"            \   'n': 'N',
+"            \   'i' : 'I',
+"            \   'R' : 'R',
+"            \   'v' : 'V',
+"            \   'V' : 'V',
+"            \   "\<C-v>": 'V',
+"            \   's' : 'S',
+"            \   'S' : 'S',
+"            \   "\<C-s>": 'S',
+"            \ }
 
 "Plug 'vim-airline/vim-airline'
 "let g:airline_mode_map = {
