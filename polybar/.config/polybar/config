@@ -247,8 +247,8 @@ interval = 3.0
 
 label-connected =  (%{T3}%local_ip%%{T-})
 label-disconnected = 
-label-connected-underline = ${colors.green} 
-label-disconnected-underline = ${colors.red} 
+label-connected-underline = ${colors.green}
+label-disconnected-underline = ${colors.red}
 label-disconnected-foreground = #5b
 
 [module/wlan]
@@ -260,8 +260,8 @@ ping-interval = 10
 format-connected = <label-connected>
 label-connected =  (%essid% %signal%%)
 label-disconnected = 
-label-connected-underline = ${colors.green} 
-label-disconnected-underline = ${colors.red} 
+label-connected-underline = ${colors.green}
+label-disconnected-underline = ${colors.red}
 label-disconnected-foreground = #5b
 
 [module/vpncheck]

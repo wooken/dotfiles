@@ -271,7 +271,3 @@ for_window [title="^Steam Keyboard$"] floating enable
 #   - set theme here
 # - qt4
 #   - use qtconfig-qt4 to take settings from GTK+
-
-# set border color
-# class                 border  backgr. text    indicator   child_border
-client.focused          #4271ae #eeeeee #4d4d4c #4b0082     #4271ae
