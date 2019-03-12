@@ -231,9 +231,6 @@ bindsym $mod+s exec i3lock -i ~/Pictures/akuma_splat.png
 # Clipboard, sync all using autocutsel
 exec --no-startup-id autocutsel -fork
 
-# Dunst (notifications)
-exec --no-startup-id dunst
-
 # udiskie (automount)
 exec --no-startup-id udiskie --tray
 
