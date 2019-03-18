@@ -126,8 +126,8 @@ Plug 'mhinz/vim-signify'
 let g:signify_vcs_list = ['git']
 
 Plug 'chriskempson/base16-vim'
-Plug 'dracula/vim', { 'as': 'dracula'}
-Plug 'NLKNguyen/papercolor-theme'
+"Plug 'dracula/vim', { 'as': 'dracula'}
+"Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'google/vim-searchindex'
