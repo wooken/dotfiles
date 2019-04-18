@@ -266,9 +266,9 @@ label-disconnected-foreground = #5b
 
 [module/vpncheck]
 type = custom/script
-exec = pgrep openvpn
+exec = echo vpn
+exec-if = pgrep -x openvpn
 interval = 5
-label = vpn
 format-underline = ${colors.blue}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
