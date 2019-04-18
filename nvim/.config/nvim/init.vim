@@ -50,6 +50,17 @@ let g:lightline = {
             \ 'component_function': {
             \   'fname': '%<%f',
             \ },
+            \ 'active': {
+            \   'left': [
+            \       [ 'mode', 'paste' ],
+            \       [ 'readonly', 'filename', 'modified' ],
+            \   ],
+            \   'right': [
+            \       [ 'lineinfo' ],
+            \       [ 'percent' ],
+            \       [ 'fileformat', 'fileencoding', 'filetype' ],
+            \   ],
+            \ },
             \ }
 "let g:lightline.mode_map = {
 "            \   'n': 'N',
