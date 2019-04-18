@@ -151,25 +151,16 @@ let g:strip_only_modified_lines=1
 "let g:strip_whitespace_confirm=0
 
 Plug 'skywind3000/asyncrun.vim'
-function! CustomAsyncMake() abort
-    if exists('b:scripting_asyncmake')
-        AsyncRun -raw -program=make %
-    else
-        AsyncRun -program=make
-    endif
-endfunction
-augroup asyncrun
-    autocmd!
-    autocmd Filetype python let b:scripting_asyncmake = 1
-    command! AsyncMake call CustomAsyncMake()
-    autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
-augroup END
-" AsyncRun: Run
-nnoremap <LEADER>r :w<CR>:AsyncMake<CR>
+let g:asyncrun_open = 8
+let $PYTHONUNBUFFERED=1
 " AsyncRun: stop current job
 nnoremap <LEADER>s :w<CR>:AsyncStop<CR>
 " AsyncRun: toggle quickfix window
 nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
+" AsyncRun: make
+nnoremap <LEADER>r :AsyncRun make
+autocmd FileType rust nnoremap<buffer> <Leader>r :AsyncRun -program=make build<CR>
+autocmd FileType python nnoremap<buffer> <Leader>r :AsyncRun -program=make %<CR>
 
 " Languages
 Plug 'sheerun/vim-polyglot'
