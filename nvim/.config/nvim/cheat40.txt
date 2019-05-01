@@ -148,4 +148,7 @@ Browse « search patterns q?            N
 
 Hard-wrap (cursor moves) gq            O
 Hard-wrap (cursor stays) gw            O
+
+Increment number         ‹n›«C-a»     *N
+Decrement number         ‹n›«C-x»     *N
 }}}
