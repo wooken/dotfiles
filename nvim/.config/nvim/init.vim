@@ -160,9 +160,9 @@ nnoremap <LEADER>s :w<CR>:AsyncStop<CR>
 " AsyncRun: toggle quickfix window
 nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
 " AsyncRun: make
-nnoremap <LEADER>r :AsyncRun make
-autocmd FileType rust nnoremap<buffer> <Leader>r :AsyncRun -program=make build<CR>
-autocmd FileType python nnoremap<buffer> <Leader>r :AsyncRun -program=make %<CR>
+nnoremap <LEADER>r :w<CR>:AsyncRun -program=make<CR>
+autocmd FileType rust nnoremap<buffer> <Leader>r :w<CR>:AsyncRun -program=make build<CR>
+autocmd FileType python nnoremap<buffer> <Leader>r :w<CR>:AsyncRun -raw -program=make %<CR>
 
 " Languages
 Plug 'sheerun/vim-polyglot'
