@@ -16,6 +16,9 @@ unsetopt autopushd
 
 setopt hist_ignore_all_dups hist_save_no_dups
 
+# fix unreadable grep colors
+export GREP_COLORS='mt=1;91;40'
+
 # ZSH Vi mode
 bindkey -M vicmd v edit-command-line
 export KEYTIMEOUT=1
