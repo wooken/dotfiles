@@ -250,6 +250,10 @@ if !has('nvim')
     set laststatus=2        " status line always shown
 endif
 
+" file navigation and completion
+set path+=**
+let g:netrw_liststyle=3
+
 " Auto resize splits
 "autocmd VimResized * wincmd =
 " }}}
