@@ -123,6 +123,10 @@ replace                  srb           N
 replace specific         sr(           N
 }}}
 
+File Nav {{{
+wildmenu files           ^x^f          I
+}}}
+
 Misc {{{
 To prev jump position    «C-o»         N
 To next jump position    «C-i»         N
@@ -134,6 +138,8 @@ Unfold                   zv           *N
 Toggle fold              za           *N
 Fold all                 zM            N
 Unfold all               zR            N
+Upward to next fold      zk            N
+Downward to next fold    zj            N
 
 Browse command history   q:            N
 Browse command history   «C-f»         C
