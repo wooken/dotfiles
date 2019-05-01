@@ -144,6 +144,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'google/vim-searchindex'
 Plug 'machakann/vim-sandwich'
+Plug 'vim-scripts/LargeFile'
 
 Plug 'ntpeters/vim-better-whitespace'
 let g:strip_max_file_size = 1000
