@@ -14,6 +14,8 @@ fi
 
 unsetopt autopushd
 
+setopt hist_ignore_all_dups hist_save_no_dups
+
 # ZSH Vi mode
 bindkey -M vicmd v edit-command-line
 export KEYTIMEOUT=1
