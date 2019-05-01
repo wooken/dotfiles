@@ -133,6 +133,7 @@ let g:vimwiki_list = [{
 let g:vimwiki_global_ext = 0
 let g:vimwiki_autowriteall = 0
 
+" way faster than gitgutter
 Plug 'mhinz/vim-signify'
 let g:signify_vcs_list = ['git']
 
