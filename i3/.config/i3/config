@@ -202,14 +202,12 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 bindsym XF86MonBrightnessDown exec xbacklight -5
 bindsym XF86MonBrightnessUp exec xbacklight +5
 
-# nm-applet startup
+# applets
 exec --no-startup-id nm-applet
-
-# printer
+exec --no-startup-id pasystray
 exec --no-startup-id system-config-printer-applet
-
-# Bluetooth
 exec --no-startup-id /usr/bin/blueman-applet
+
 #exec --no-startup-id rfkill block bluetooth
 
 # Wallpaper
