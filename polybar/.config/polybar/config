@@ -49,10 +49,14 @@ font-1 = "Font Awesome 5 Free:style=Regular:size=12;0"
 font-2 = "Font Awesome 5 Free:style=Solid:size=12;0"
 font-3 = "Font Awesome 5 Brands:size=12;0"
 font-4 = "FuraMono Nerd Font Mono:size=18;0"
+font-5 = "Noto Sans Symbol:size=12;0"
+font-6 = "Noto Sans Symbols2:size=12;0"
+font-7 = "Unifont:size=12;0"
+font-8 = "Siji:size=12;0"
 
 modules-left = i3
 modules-center = date
-modules-right = keyboard temperature battery0 battery1 vpncheck ethernet wlan cpu memory alsa backlight
+modules-right = keyboard temperature battery0 battery1 vpncheck ethernet wlan cpu memory pulseaudio backlight
 
 tray-position = right
 tray-padding = 2
@@ -161,6 +165,47 @@ interval = 2
 format = <label>
 label =  %percentage_used%%
 
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
 [module/alsa]
 type = internal/alsa
 
@@ -245,7 +290,7 @@ type = internal/network
 interface = enp0s25
 interval = 3.0
 
-label-connected =  (%{T3}%local_ip%%{T-})
+label-connected = 
 label-disconnected = 
 label-connected-underline = ${colors.green}
 label-disconnected-underline = ${colors.red}
