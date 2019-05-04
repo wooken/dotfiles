@@ -151,4 +151,6 @@ Hard-wrap (cursor stays) gw            O
 
 Increment number         ‹n›«C-a»     *N
 Decrement number         ‹n›«C-x»     *N
+
+4-hexchar Unicode        «C-v»u        I
 }}}
