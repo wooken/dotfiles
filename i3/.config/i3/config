@@ -30,7 +30,7 @@ font pango:DejaVu Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -44,9 +44,9 @@ bindsym $mod+Shift+q kill
 
 # rofi
 # program launcher
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run
 # window switcher
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+h focus left
@@ -193,14 +193,14 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id autorandr -c
 
 # Volume
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%-
-bindsym XF86AudioMute exec amixer -q sset Master toggle
-bindsym XF86AudioMicMute exec amixer set Capture toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 
 # Brightness
-bindsym XF86MonBrightnessDown exec xbacklight -5
-bindsym XF86MonBrightnessUp exec xbacklight +5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +5
 
 # applets
 exec --no-startup-id nm-applet
