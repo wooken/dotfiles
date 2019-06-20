@@ -54,7 +54,14 @@ About {{{2
   *    Acts on text under/after cursor
 }}}
 
-Objects {{{1
+Navigating help {{{2
+Follow link              «C-]»         N
+Previous topic           «C-T»         N
+To prev jump position    «C-o»         N
+To next jump position    «C-i»         N
+}}}
+
+Objects {{{2
 Around word              aw            T
 Inside word              iw            T
 Around WORD              aW            T
@@ -85,7 +92,15 @@ Around backticks         a`            T
 Inside backticks         i`            T
 }}}
 
-Tags {{{
+Movement {{{1
+To prev jump position    «C-o»         N
+To next jump position    «C-i»         N
+Prev pos in change list  g;            N
+Next pos in change list  g,            N
+Matching brackets        %             N
+}}}
+
+Tags {{{1
 Jump to specified tag    :tag …        N
 Jump to older tag        «C-t»         N
 Jump to tag definition   «C-]»        *N
@@ -95,7 +110,7 @@ To next matching tag     :tn           N
 To prev matching tag     :tp           N
 }}}
 
-Marks {{{
+Marks {{{1
 Set mark                 m‹c›          N
 Jump to mark and pos     '‹c›          M
 Jump to mark (line)      `‹c›          M
@@ -106,7 +121,7 @@ Remove all lower case    :delmarks!    N
 Change to mark and pos   c'‹c›         N
 }}}
 
-Repetition {{{
+Repetition {{{1
 Repeat last command      .             N
 Repeat last subst        &             N
 Repeat f/t/F/T »         ;             M
@@ -115,37 +130,7 @@ Repeat last macro        @@            N
 Repeat last Ex command   @:            N
 }}}
 
-Sandwich {{{
-motion/text object       sa{iw}(       N
-delete                   sdb           N
-delete specific          sd(           N
-replace                  srb           N
-replace specific         sr(           N
-}}}
-
-File Nav {{{
-wildmenu files           ^x^f          I
-}}}
-
-Misc {{{
-To prev jump position    «C-o»         N
-To next jump position    «C-i»         N
-Prev pos in change list  g;            N
-Next pos in change list  g,            N
-
-Fold                     zc           *N
-Unfold                   zv           *N
-Toggle fold              za           *N
-Fold all                 zM            N
-Unfold all               zR            N
-Upward to next fold      zk            N
-Downward to next fold    zj            N
-
-Browse command history   q:            N
-Browse command history   «C-f»         C
-Browse » search patterns q/            N
-Browse « search patterns q?            N
-
+Text Editing {{{1
 Hard-wrap (cursor moves) gq            O
 Hard-wrap (cursor stays) gw            O
 
@@ -153,4 +138,27 @@ Increment number         ‹n›«C-a»     *N
 Decrement number         ‹n›«C-x»     *N
 
 4-hexchar Unicode        «C-v»u        I
+}}}
+
+File Nav {{{1
+wildmenu files           ^x^f          I
+}}}
+
+Folding {{{1
+Fold                     zc           *N
+Unfold                   zv           *N
+Toggle fold              za           *N
+Increase folding         zm            N
+Fold all                 zM            N
+Decrease folding         zr            N
+Unfold all               zR            N
+Upward to next fold      zk            N
+Downward to next fold    zj            N
+}}}
+
+History {{{1
+Browse command history   q:            N
+Browse command history   «C-f»         C
+Browse » search patterns q/            N
+Browse « search patterns q?            N
 }}}
