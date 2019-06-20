@@ -48,7 +48,7 @@ export PATH=$PATH:~/.cargo/bin
 [ -d ~/bin ] && export PATH=~/bin:$PATH
 
 # fzf
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!.git/*'"
+export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/*'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
