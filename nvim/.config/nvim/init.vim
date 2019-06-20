@@ -9,6 +9,12 @@ nnoremap <LEADER>m :make<CR>
 nnoremap <LEADER>, :Next<CR>
 nnoremap <LEADER>. :next<CR>
 nnoremap <LEADER>j :map <lt>leader><CR>
+
+nnoremap <LEADER>lo :lopen<CR>
+nnoremap <LEADER>lc :lclose<CR>
+nnoremap <LEADER>ll :ll<CR>
+nnoremap <LEADER>[ :lprevious<CR>
+nnoremap <LEADER>] :lnext<CR>
 " }}}
 " Vim Plug Setup {{{
 if has('nvim')
@@ -44,12 +50,8 @@ call plug#begin("$VIMHOME/bundle")
 
 Plug 'itchyny/lightline.vim'
 set noshowmode
-" fname function helps keep mode visible as the window shrinks
 let g:lightline = {
-            \ 'colorscheme': 'palenight',
-            \ 'component_function': {
-            \   'fname': '%<%f',
-            \ },
+            \ 'colorscheme': 'nord',
             \ 'active': {
             \   'left': [
             \       [ 'mode', 'paste' ],
@@ -62,62 +64,12 @@ let g:lightline = {
             \   ],
             \ },
             \ }
-"let g:lightline.mode_map = {
-"            \   'n': 'N',
-"            \   'i' : 'I',
-"            \   'R' : 'R',
-"            \   'v' : 'V',
-"            \   'V' : 'V',
-"            \   "\<C-v>": 'V',
-"            \   's' : 'S',
-"            \   'S' : 'S',
-"            \   "\<C-s>": 'S',
-"            \ }
 
-"Plug 'vim-airline/vim-airline'
-"let g:airline_mode_map = {
-"            \ 'n'  : 'N',
-"            \ 'i'  : 'I',
-"            \ 'R'  : 'R',
-"            \ 'v'  : 'V',
-"            \ 'V'  : 'V',
-"            \ 's'  : 'S',
-"            \ 'S'  : 'S',
-"            \ }
-"set noshowmode
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-"
-"Plug 'vim-airline/vim-airline-themes'
-"let g:airline_theme = 'dracula'
-
-Plug 'neomake/neomake'
-" neomake: open location window
-nnoremap <LEADER>lo :lopen<CR>
-" neomake: close location window
-nnoremap <LEADER>lc :lclose<CR>
-" neomake: go to current error/warning
-nnoremap <LEADER>ll :ll<CR>
-" neomake: go to previous error/warning
-nnoremap <LEADER>[ :lprevious<CR>
-" neomake: go to next error/warning
-nnoremap <LEADER>] :lnext<CR>
-
-"Plug 'w0rp/ale'
-"let g:ale_lint_on_text_changed="normal"
-"let g:ale_lint_on_insert_leave=1
-"let g:ale_sign_error = '✖'
-"let g:ale_sign_warning = '⚠'
-"" ALE: open location window
-"nnoremap <LEADER>lo :lopen<CR>
-"" ALE: close location window
-"nnoremap <LEADER>lc :lclose<CR>
-"" ALE: go to current error/warning
-"nnoremap <LEADER>ll :ll<CR>
-"" ALE: go to previous error/warning
-"nnoremap <LEADER>[ :lprevious<CR>
-"" ALE: go to next error/warning
-"nnoremap <LEADER>] :lnext<CR>
+Plug 'w0rp/ale'
+let g:ale_lint_on_text_changed="normal"
+let g:ale_lint_on_insert_leave=1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -138,13 +90,18 @@ Plug 'mhinz/vim-signify'
 let g:signify_vcs_list = ['git']
 
 Plug 'chriskempson/base16-vim'
-"Plug 'dracula/vim', { 'as': 'dracula'}
+Plug 'dracula/vim', { 'as': 'dracula'}
+Plug 'arcticicestudio/nord-vim'
 "Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'google/vim-searchindex'
-Plug 'machakann/vim-sandwich'
 Plug 'vim-scripts/LargeFile'
+"Plug 'unblevable/quick-scope'
+
+Plug 'justinmk/vim-sneak'
+let g:sneak#label = 1
 
 Plug 'ntpeters/vim-better-whitespace'
 let g:strip_max_file_size = 1000
@@ -156,46 +113,34 @@ Plug 'skywind3000/asyncrun.vim'
 let g:asyncrun_open = 8
 let $PYTHONUNBUFFERED=1
 " AsyncRun: stop current job
-nnoremap <LEADER>s :w<CR>:AsyncStop<CR>
+nnoremap <LEADER>s :update<CR>:AsyncStop<CR>
 " AsyncRun: toggle quickfix window
 nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
 " AsyncRun: make
-nnoremap <LEADER>r :w<CR>:AsyncRun -program=make<CR>
-autocmd FileType rust nnoremap<buffer> <Leader>r :w<CR>:AsyncRun -program=make build<CR>
-autocmd FileType python nnoremap<buffer> <Leader>r :w<CR>:AsyncRun -raw -program=make %<CR>
+nnoremap <LEADER>r :update<CR>:AsyncRun -program=make<CR>
+autocmd FileType rust nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -program=make build<CR>
+autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=make %<CR>
+" AsyncRun: make test
+nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
 
 " Languages
-Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/bats.vim'
 
-Plug 'mattn/emmet-vim'
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,xml EmmetInstall
-let g:user_emmet_leader_key='\'
+Plug 'sheerun/vim-polyglot'
+"let g:haskell_indent_disable = 1
 
 Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
 
 call plug#end()
-
-"Neomake
-function! MyOnBattery()
-  return readfile('/sys/class/power_supply/AC/online') == ['0']
-endfunction
-if MyOnBattery()
-  call neomake#configure#automake('w')
-else
-  call neomake#configure#automake('nrw')
-endif
-
 " }}}
 " Colorscheme {{{
 if has("termguicolors")
     set termguicolors
 endif
-let base16colorspace=256  " Access colors present in 256 colorspace
+let base16colorspace=256    " Access colors present in 256 colorspace
 set background=dark
-colorscheme palenight
+colorscheme nord
 " }}}
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
@@ -222,7 +167,7 @@ if !has('nvim')
 endif
 
 " indentation
-set tabstop=4               " Number of spaces that a <Tab> in the file counts for
+"set tabstop=4               " Number of spaces that a <Tab> in the file counts for
 set shiftwidth=4            " Number of spaces to use for each step of (auto)indent
 set expandtab               " Use the appropriate number of spaces to insert a <Tab>. <Ctrl>-V, <Tab> for real tab
 set smartindent
@@ -259,12 +204,18 @@ let g:netrw_liststyle=3
 " }}}
 " Filetype Settings {{{
 augroup filetype_vim
-autocmd FileType gitcommit setlocal spell
-autocmd FileType perl setlocal makeprg=perl\ %
-autocmd FileType html setlocal tabstop=2 shiftwidth=2
-autocmd FileType xml setlocal tabstop=2 shiftwidth=2
-autocmd BufEnter *.wxs set ft=xml
+    autocmd!
+    autocmd FileType gitcommit setlocal spell
+    autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2 makeprg=runghc\ %
+    autocmd FileType sh setlocal makeprg=bash\ %
+    autocmd FileType perl setlocal makeprg=perl\ %
+    autocmd FileType html setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
+    autocmd BufEnter *.wxs set ft=xml
 augroup END
+" }}}
+" Snippets {{{
+nnoremap <LEADER>gd :read ~/.config/nvim/snippets/dumper.pl<CR>=ip
 " }}}
 
 " vim: set foldmethod=marker nofoldenable:
