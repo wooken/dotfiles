@@ -76,12 +76,12 @@ Plug 'junegunn/fzf.vim'
 " FZF: Commands
 nnoremap <LEADER>f :Commands<CR>
 
-Plug 'wooken/vimwiki', { 'branch': 'bold_emph_fix' }
+"Plug 'wooken/vimwiki', { 'branch': 'bold_emph_fix' }
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 let g:vimwiki_list = [{
             \'syntax': 'markdown',
             \'ext': '.md'
             \}]
-"let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let g:vimwiki_global_ext = 0
 let g:vimwiki_autowriteall = 0
 
@@ -92,13 +92,12 @@ let g:signify_vcs_list = ['git']
 Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'as': 'dracula'}
 Plug 'arcticicestudio/nord-vim'
-"Plug 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'google/vim-searchindex'
-Plug 'vim-scripts/LargeFile'
-"Plug 'unblevable/quick-scope'
 
 Plug 'justinmk/vim-sneak'
 let g:sneak#label = 1
@@ -127,7 +126,18 @@ nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
 Plug 'vim-scripts/bats.vim'
 
 Plug 'sheerun/vim-polyglot'
-"let g:haskell_indent_disable = 1
+"let g:polyglot_disabled = ['fish']
+let g:haskell_classic_highlighting = 1
+let g:haskell_indent_if = 2
+let g:haskell_indent_case = 2
+let g:haskell_indent_let = 2
+let g:haskell_indent_where = 2
+let g:haskell_indent_before_where = 2
+let g:haskell_indent_after_bare_where = 2
+let g:haskell_indent_do = 2
+let g:haskell_indent_in = 2
+let g:haskell_indent_guard = 2
+let g:haskell_indent_case_alternative = 1
 
 Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
@@ -198,6 +208,11 @@ endif
 " file navigation and completion
 set path+=**
 let g:netrw_liststyle=3
+
+" ripgrep
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+endif
 
 " Auto resize splits
 "autocmd VimResized * wincmd =
