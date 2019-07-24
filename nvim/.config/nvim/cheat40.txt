@@ -138,6 +138,9 @@ Increment number         ‹n›«C-a»     *N
 Decrement number         ‹n›«C-x»     *N
 
 4-hexchar Unicode        «C-v»u        I
+
+lower case selection     u             V
+upper case selection     U             V
 }}}
 
 File Nav {{{1
