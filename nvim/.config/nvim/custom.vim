@@ -1,0 +1,1 @@
+/home/kennyw/dev/tools/vim/log_loclist.vim

@@ -16,6 +16,7 @@ nnoremap <LEADER>ll :ll<CR>
 nnoremap <LEADER>[ :lprevious<CR>
 nnoremap <LEADER>] :lnext<CR>
 " }}}
+
 " Vim Plug Setup {{{
 if has('nvim')
     let $VIMHOME = $HOME . '/.config/nvim'
@@ -45,6 +46,7 @@ if empty(glob(s:plugin_manager))
   augroup END
 endif
 " }}}
+
 " Plugins {{{
 call plug#begin("$VIMHOME/bundle")
 
@@ -144,6 +146,7 @@ let g:cheat40_use_default = 0
 
 call plug#end()
 " }}}
+
 " Colorscheme {{{
 if has("termguicolors")
     set termguicolors
@@ -152,6 +155,7 @@ let base16colorspace=256    " Access colors present in 256 colorspace
 set background=dark
 colorscheme nord
 " }}}
+
 " Settings {{{
 set t_Co=16                 " neovim ignores this setting
 
@@ -217,6 +221,7 @@ endif
 " Auto resize splits
 "autocmd VimResized * wincmd =
 " }}}
+
 " Filetype Settings {{{
 augroup filetype_vim
     autocmd!
@@ -229,6 +234,7 @@ augroup filetype_vim
     autocmd BufEnter *.wxs set ft=xml
 augroup END
 " }}}
+
 " Snippets {{{
 nnoremap <LEADER>gd :read ~/.config/nvim/snippets/dumper.pl<CR>=ip
 " }}}
