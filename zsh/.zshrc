@@ -52,6 +52,9 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/*'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+# Remap CTRL-T to CTRL-X CTRL-T
+bindkey -r '^T'
+bindkey '^F' fzf-file-widget
 
 # ripgrep
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/ripgreprc
