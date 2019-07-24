@@ -202,6 +202,13 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +5
 
+# Media player controls (requires playerctl installed)
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
 # applets
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
