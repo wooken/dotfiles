@@ -598,4 +598,4 @@ key_bindings:
   # custom
   - { key: Home,     mods: Shift, action: ScrollToTop }
   - { key: End,      mods: Shift, action: ScrollToBottom }
-  - { key: N,        mods: Control, action: SpawnNewInstance }
+  - { key: N,        mods: Super, action: SpawnNewInstance }
