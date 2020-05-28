@@ -252,4 +252,9 @@ augroup END
 nnoremap <LEADER>gd :read ~/.config/nvim/snippets/dumper.pl<CR>j=ip
 " }}}
 
+let s:devfile = $VIMHOME . '/dev.vim'
+if filereadable(glob(s:devfile))
+    execute 'source' s:devfile
+endif
+
 " vim: set foldmethod=marker nofoldenable:
