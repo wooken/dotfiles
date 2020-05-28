@@ -134,7 +134,6 @@ nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
 Plug 'vim-scripts/bats.vim'
 
 Plug 'sheerun/vim-polyglot'
-"let g:polyglot_disabled = ['fish']
 let g:haskell_classic_highlighting = 1
 let g:haskell_indent_if = 2
 let g:haskell_indent_case = 2
