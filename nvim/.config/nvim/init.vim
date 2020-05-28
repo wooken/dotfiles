@@ -104,6 +104,10 @@ Plug 'tpope/vim-repeat'
 Plug 'google/vim-searchindex'
 Plug 'Yggdroot/indentLine'
 
+Plug 'wooken/url-ghrey-tea', {'do': ':UpdateRemotePlugins'}
+nnoremap <LEADER>ggo :GHOpenUrl<CR>
+nnoremap <LEADER>ggl :GHGetUrl<CR>
+
 Plug 'justinmk/vim-sneak'
 let g:sneak#label = 1
 
