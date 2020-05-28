@@ -18,6 +18,9 @@ nnoremap <LEADER>] :lnext<CR>
 
 " fix CR/LF line endings for windows files
 nnoremap <LEADER>gcrlf :%s/\r//g<CR>
+
+" redraw eliminates the 'hit enter to continue' prompt (see :h echo-redraw)
+nnoremap <LEADER>md :let &conceallevel=(&conceallevel == 2) ? 0 : 2 <bar> redraw <bar> echo 'conceallevel=' . &conceallevel<CR>
 " }}}
 
 " Vim Plug Setup {{{
