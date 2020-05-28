@@ -183,7 +183,7 @@ set undolevels=1000
 set wildignore=*.pyc
 set pastetoggle=<F2>        " toggles auto-indent for pasting large blocks of text
 set clipboard+=unnamedplus  " enable neovim always yanking to xclipboard
-set mouse=""                 " disable mouse
+set mouse=""                " disable mouse
 if !has('nvim')
     set autoread            " detect file changes outside of vim
     set backspace=indent,eol,start      " fix backspace
@@ -191,7 +191,7 @@ if !has('nvim')
 endif
 
 " indentation
-"set tabstop=4               " Number of spaces that a <Tab> in the file counts for
+set tabstop=4               " Number of spaces that a <Tab> in the file counts for
 set shiftwidth=4            " Number of spaces to use for each step of (auto)indent
 set expandtab               " Use the appropriate number of spaces to insert a <Tab>. <Ctrl>-V, <Tab> for real tab
 set smartindent
@@ -215,6 +215,7 @@ set relativenumber          " Show relative numbers
 set showcmd                 " Show partial commands
 set listchars=tab:!·,trail:«,nbsp:+
 set list
+set title                   " sets window title
 if !has('nvim')
     set laststatus=2        " status line always shown
 endif
@@ -225,7 +226,7 @@ let g:netrw_liststyle=3
 
 " ripgrep
 if executable('rg')
-    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+    set grepprg=rg\ --vimgrep\ --smart-case
 endif
 
 " Auto resize splits
@@ -241,12 +242,14 @@ augroup filetype_vim
     autocmd FileType perl setlocal makeprg=perl\ %
     autocmd FileType html setlocal softtabstop=2 shiftwidth=2
     autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType json setlocal softtabstop=2 shiftwidth=2
     autocmd BufEnter *.wxs set ft=xml
+    autocmd FileType go setlocal noexpandtab
 augroup END
 " }}}
 
 " Snippets {{{
-nnoremap <LEADER>gd :read ~/.config/nvim/snippets/dumper.pl<CR>=ip
+nnoremap <LEADER>gd :read ~/.config/nvim/snippets/dumper.pl<CR>j=ip
 " }}}
 
 " vim: set foldmethod=marker nofoldenable:
