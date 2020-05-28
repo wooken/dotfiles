@@ -19,6 +19,8 @@
     gg = log --color --pretty=oneline --abbrev-commit --no-merges
     ri = rebase --interactive
     rc = rebase --continue
+    res = restore
+    sw = switch
     c = commit
     b = branch
     co = checkout

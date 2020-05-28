@@ -33,9 +33,16 @@ export VISUAL=$EDITOR
 alias vi=$EDITOR
 alias vim=$EDITOR
 
+# Do not remove suffix characters (after tab completion) with subsequent pipe character
+# https://superuser.com/questions/613685/how-stop-zsh-from-eating-space-before-pipe-symbol
+ZLE_REMOVE_SUFFIX_CHARS=""
+
 # pure prompt
 # disable auto git fetch
 PURE_GIT_PULL=0
+PURE_GIT_UNTRACKED_DIRTY=0
+# show system time
+PROMPT='%F{white}%* '$PROMPT
 
 # Go
 export GOPATH=~/go
