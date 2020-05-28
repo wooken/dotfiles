@@ -15,6 +15,8 @@ nnoremap <LEADER>lc :lclose<CR>
 nnoremap <LEADER>ll :ll<CR>
 nnoremap <LEADER>[ :lprevious<CR>
 nnoremap <LEADER>] :lnext<CR>
+
+nnoremap <LEADER>gcrlf :%s/\r//g<CR>
 " }}}
 
 " Vim Plug Setup {{{
