@@ -102,6 +102,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'google/vim-searchindex'
+Plug 'Yggdroot/indentLine'
 
 Plug 'justinmk/vim-sneak'
 let g:sneak#label = 1
