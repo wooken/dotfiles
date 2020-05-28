@@ -69,7 +69,7 @@ let g:lightline = {
             \ },
             \ }
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_sign_error = '✖'
