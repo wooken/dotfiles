@@ -66,10 +66,14 @@ let g:lightline = {
             \       [ 'readonly', 'filename', 'modified' ],
             \   ],
             \   'right': [
+            \       [ 'searchindex' ],
             \       [ 'lineinfo' ],
             \       [ 'percent' ],
             \       [ 'fileformat', 'fileencoding', 'filetype' ],
             \   ],
+            \ },
+            \ 'component_function': {
+            \   'searchindex': 'SearchIndexMatches'
             \ },
             \ }
 
@@ -246,6 +250,21 @@ augroup filetype_vim
     autocmd BufEnter *.wxs set ft=xml
     autocmd FileType go setlocal noexpandtab
 augroup END
+" }}}
+
+" Functions {{{
+
+" uses google/vim-searchindex to return number of matches for lightline
+" nice to have since the echo'd line sometimes gets overwritten by other plugins
+function! SearchIndexMatches()
+    if getfsize(expand(@%)) > 500000000
+        return "[?/∞]"
+    endif
+    let [l:current, l:total] = searchindex#MatchCounts()
+    let l:msg = '[' . l:current . '/' . l:total . ']'
+    return l:msg
+endfunction
+
 " }}}
 
 " Snippets {{{
