@@ -111,11 +111,10 @@ nnoremap <LEADER>ggl :GHGetUrl<CR>
 Plug 'justinmk/vim-sneak'
 let g:sneak#label = 1
 
-Plug 'ntpeters/vim-better-whitespace'
-let g:strip_max_file_size = 1000
-let g:strip_whitespace_on_save = 1
-let g:strip_only_modified_lines=1
-"let g:strip_whitespace_confirm=0
+"Plug 'ntpeters/vim-better-whitespace'
+"let g:strip_max_file_size = 1000
+"let g:strip_whitespace_on_save = 1
+"let g:strip_only_modified_lines=1
 
 Plug 'skywind3000/asyncrun.vim'
 let g:asyncrun_open = 8
