@@ -16,6 +16,7 @@ nnoremap <LEADER>ll :ll<CR>
 nnoremap <LEADER>[ :lprevious<CR>
 nnoremap <LEADER>] :lnext<CR>
 
+" fix CR/LF line endings for windows files
 nnoremap <LEADER>gcrlf :%s/\r//g<CR>
 " }}}
 
