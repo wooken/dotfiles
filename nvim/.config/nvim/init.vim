@@ -56,10 +56,23 @@ endif
 " Plugins {{{
 call plug#begin("$VIMHOME/bundle")
 
+Plug 'sheerun/vim-polyglot'
+let g:haskell_classic_highlighting = 1
+let g:haskell_indent_if = 2
+let g:haskell_indent_case = 2
+let g:haskell_indent_let = 2
+let g:haskell_indent_where = 2
+let g:haskell_indent_before_where = 2
+let g:haskell_indent_after_bare_where = 2
+let g:haskell_indent_do = 2
+let g:haskell_indent_in = 2
+let g:haskell_indent_guard = 2
+let g:haskell_indent_case_alternative = 1
+
 Plug 'itchyny/lightline.vim'
 set noshowmode
 let g:lightline = {
-            \ 'colorscheme': 'nord',
+            \ 'colorscheme': 'dracula',
             \ 'active': {
             \   'left': [
             \       [ 'mode', 'paste' ],
@@ -73,7 +86,7 @@ let g:lightline = {
             \   ],
             \ },
             \ 'component_function': {
-            \   'searchindex': 'SearchIndexMatches'
+            "\   'searchindex': 'SearchIndexMatches'
             \ },
             \ }
 
@@ -135,24 +148,9 @@ nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
 nnoremap <LEADER>r :update<CR>:AsyncRun -program=make<CR>
 autocmd FileType rust nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -program=make build<CR>
 autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=make %<CR>
+"autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=python %<CR>
 " AsyncRun: make test
 nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
-
-" Languages
-Plug 'vim-scripts/bats.vim'
-
-Plug 'sheerun/vim-polyglot'
-let g:haskell_classic_highlighting = 1
-let g:haskell_indent_if = 2
-let g:haskell_indent_case = 2
-let g:haskell_indent_let = 2
-let g:haskell_indent_where = 2
-let g:haskell_indent_before_where = 2
-let g:haskell_indent_after_bare_where = 2
-let g:haskell_indent_do = 2
-let g:haskell_indent_in = 2
-let g:haskell_indent_guard = 2
-let g:haskell_indent_case_alternative = 1
 
 Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
@@ -244,6 +242,7 @@ augroup filetype_vim
     autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2 makeprg=runghc\ %
     autocmd FileType sh setlocal makeprg=bash\ %
     autocmd FileType perl setlocal makeprg=perl\ %
+    autocmd FileType python setlocal makeprg=python
     autocmd FileType html setlocal softtabstop=2 shiftwidth=2
     autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
     autocmd FileType json setlocal softtabstop=2 shiftwidth=2
