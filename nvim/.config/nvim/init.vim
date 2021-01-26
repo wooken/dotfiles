@@ -19,8 +19,15 @@ nnoremap <LEADER>] :lnext<CR>
 " fix CR/LF line endings for windows files
 nnoremap <LEADER>gcrlf :%s/\r//g<CR>
 
+" add windows ^M characters to end of line
+vnoremap <LEADER>gwcrlf $A<C-v><C-m><ESC><ESC>
+
 " redraw eliminates the 'hit enter to continue' prompt (see :h echo-redraw)
 nnoremap <LEADER>md :let &conceallevel=(&conceallevel == 2) ? 0 : 2 <bar> redraw <bar> echo 'conceallevel=' . &conceallevel<CR>
+" }}}
+
+" Neovim Settings {{{
+let g:python3_host_prog = '/usr/bin/python3'
 " }}}
 
 " Vim Plug Setup {{{
@@ -72,7 +79,7 @@ let g:haskell_indent_case_alternative = 1
 Plug 'itchyny/lightline.vim'
 set noshowmode
 let g:lightline = {
-            \ 'colorscheme': 'dracula',
+            \ 'colorscheme': 'palenight',
             \ 'active': {
             \   'left': [
             \       [ 'mode', 'paste' ],
@@ -124,6 +131,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'google/vim-searchindex'
 Plug 'Yggdroot/indentLine'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 Plug 'wooken/url-ghrey-tea', {'do': ':UpdateRemotePlugins'}
 nnoremap <LEADER>ggo :GHOpenUrl<CR>
@@ -164,7 +172,7 @@ if has("termguicolors")
 endif
 let base16colorspace=256    " Access colors present in 256 colorspace
 set background=dark
-colorscheme dracula
+colorscheme palenight
 "colorscheme nord
 " }}}
 
@@ -213,11 +221,14 @@ endif
 " UI
 set showmatch               " Show matching brackets
 set number                  " Show line numbers
-set relativenumber          " Show relative numbers
+"set relativenumber          " Show relative numbers
+set number relativenumber   " numbertoggle plugin uses this
 set showcmd                 " Show partial commands
 set listchars=tab:!·,trail:«,nbsp:+
 set list
 set title                   " sets window title
+set ffs=unix                " display raw line endings
+set synmaxcol=0             " disable maximum syntax highlighting character limit
 if !has('nvim')
     set laststatus=2        " status line always shown
 endif
@@ -248,6 +259,7 @@ augroup filetype_vim
     autocmd FileType json setlocal softtabstop=2 shiftwidth=2
     autocmd BufEnter *.wxs set ft=xml
     autocmd FileType go setlocal noexpandtab
+    autocmd FileType json syntax match Comment +\/\/.\+$+
 augroup END
 " }}}
 
