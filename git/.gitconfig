@@ -7,23 +7,28 @@
     editor = "if [ $(which nvim) ]; then ED='nvim'; else ED='vim'; fi; $ED"
     pager = less
     excludesfile = ~/.gitignore_global
+    autocrlf = input
+[init]
+    defaultBranch = master
 [log]
     decorate = auto
 [push]
     default = simple
+[pull]
+    rebase = false
 [grep]
     linenumber = true
     extendedRegexp = true
 [alias]
     lg = log --color --pretty=format:'%Cred%h%Creset -%Cgreen%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --no-merges
+    as = log --color --pretty=format:'%Cred%h%Creset - %s %Cblue<%an>%Creset' --abbrev-commit
     gg = log --color --pretty=oneline --abbrev-commit --no-merges
     ri = rebase --interactive
-    rc = rebase --continue
-    res = restore
+    re = restore
     sw = switch
-    c = commit
     b = branch
     co = checkout
-    sf = show --pretty="format:" --name-only
-    s = status -s
+    s = status -sb
     verbs = !git log --pretty=format:'%s' | cut -d \" \" -f 1 | sort | uniq -c | sort -nr
+[url "ssh://git@github.com"]
+    insteadOf = https://github.com
