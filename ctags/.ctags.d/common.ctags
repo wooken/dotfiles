@@ -1,0 +1,11 @@
+--exclude=vendor
+--exclude=node_modules
+--exclude=db
+--exclude=log
+--exclude=bazel-*
+
+--exclude=.git
+--exclude=.tox
+--exclude=.circleci
+--exclude=.githooks
+--exclude=.mypy_cache
