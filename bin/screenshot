@@ -1,4 +1,4 @@
 #!/bin/bash
 
-maim -s ~/screenshot.png
-#scrot ~/screenshot.png -d 1
+#maim -s ~/screenshot.png
+maim -s --format png /dev/stdout | xclip -selection clipboard -t image/png -i
