@@ -144,6 +144,8 @@ upper case selection     U             V
 }}}
 
 File Nav {{{1
+file relative path       ‹n›«C-g»      N
+file full path           ‹n›1«C-g»     N
 wildmenu files           ^x^f          I
 }}}
 
