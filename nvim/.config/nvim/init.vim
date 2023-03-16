@@ -78,6 +78,7 @@ let g:haskell_indent_case_alternative = 1
 
 Plug 'itchyny/lightline.vim'
 set noshowmode
+set shortmess-=S
 let g:lightline = {
             \ 'colorscheme': 'palenight',
             \ 'active': {
@@ -86,18 +87,15 @@ let g:lightline = {
             \       [ 'readonly', 'filename', 'modified' ],
             \   ],
             \   'right': [
-            \       [ 'searchindex' ],
             \       [ 'lineinfo' ],
             \       [ 'percent' ],
             \       [ 'fileformat', 'fileencoding', 'filetype' ],
             \   ],
             \ },
-            \ 'component_function': {
-            "\   'searchindex': 'SearchIndexMatches'
-            \ },
             \ }
 
 Plug 'dense-analysis/ale'
+let g:ale_disable_lsp = 1
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_sign_error = '✖'
@@ -109,13 +107,13 @@ Plug 'junegunn/fzf.vim'
 nnoremap <LEADER>f :Commands<CR>
 
 "Plug 'wooken/vimwiki', { 'branch': 'bold_emph_fix' }
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-let g:vimwiki_list = [{
-            \'syntax': 'markdown',
-            \'ext': '.md'
-            \}]
-let g:vimwiki_global_ext = 0
-let g:vimwiki_autowriteall = 0
+"Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+"let g:vimwiki_list = [{
+"            \'syntax': 'markdown',
+"            \'ext': '.md'
+"            \}]
+"let g:vimwiki_global_ext = 0
+"let g:vimwiki_autowriteall = 0
 
 " way faster than gitgutter
 Plug 'mhinz/vim-signify'
@@ -123,13 +121,12 @@ let g:signify_vcs_list = ['git']
 
 Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'as': 'dracula'}
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'google/vim-searchindex'
 Plug 'Yggdroot/indentLine'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
@@ -162,6 +159,8 @@ nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
 
 Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 " }}}
@@ -204,7 +203,7 @@ endif
 set tabstop=4               " Number of spaces that a <Tab> in the file counts for
 set shiftwidth=4            " Number of spaces to use for each step of (auto)indent
 set expandtab               " Use the appropriate number of spaces to insert a <Tab>. <Ctrl>-V, <Tab> for real tab
-set smartindent
+"set smartindent             " Caution: causes difficulty indenting comment lines starting with #
 if !has('nvim')
     set autoindent          " use indent from current line
     set smarttab            " <Tab> and <BS> uses 'shiftwidth'
@@ -261,21 +260,11 @@ augroup filetype_vim
     autocmd FileType go setlocal noexpandtab
     autocmd FileType json syntax match Comment +\/\/.\+$+
 augroup END
+
 " }}}
 
-" Functions {{{
-
-" uses google/vim-searchindex to return number of matches for lightline
-" nice to have since the echo'd line sometimes gets overwritten by other plugins
-function! SearchIndexMatches()
-    if getfsize(expand(@%)) > 500000000
-        return "[?/∞]"
-    endif
-    let [l:current, l:total] = searchindex#MatchCounts()
-    let l:msg = '[' . l:current . '/' . l:total . ']'
-    return l:msg
-endfunction
-
+" Commands {{{
+command Gblame :Git blame
 " }}}
 
 " Snippets {{{
