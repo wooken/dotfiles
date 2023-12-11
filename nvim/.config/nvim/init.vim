@@ -124,6 +124,7 @@ Plug 'dracula/vim', { 'as': 'dracula'}
 "Plug 'arcticicestudio/nord-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'hardhackerlabs/theme-vim', { 'as': 'hardhacker' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -171,7 +172,7 @@ if has("termguicolors")
 endif
 let base16colorspace=256    " Access colors present in 256 colorspace
 set background=dark
-colorscheme palenight
+colorscheme hardhacker
 "colorscheme nord
 " }}}
 
