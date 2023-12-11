@@ -115,9 +115,7 @@ nnoremap <LEADER>f :Commands<CR>
 "let g:vimwiki_global_ext = 0
 "let g:vimwiki_autowriteall = 0
 
-" way faster than gitgutter
-Plug 'mhinz/vim-signify'
-let g:signify_vcs_list = ['git']
+Plug 'airblade/vim-gitgutter'
 
 Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'as': 'dracula'}
