@@ -4,8 +4,6 @@ let mapleader=" "
 noremap <C-c> <ESC><ESC>
 inoremap <C-c> <ESC><ESC>
 
-nnoremap <leader>v :source ~/.vimrc<CR>
-nnoremap <LEADER>m :make<CR>
 nnoremap <LEADER>, :Next<CR>
 nnoremap <LEADER>. :next<CR>
 nnoremap <LEADER>j :map <lt>leader><CR>
@@ -101,26 +99,15 @@ let g:ale_lint_on_insert_leave=1
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" FZF: Commands
-nnoremap <LEADER>f :Commands<CR>
-
-"Plug 'wooken/vimwiki', { 'branch': 'bold_emph_fix' }
-"Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-"let g:vimwiki_list = [{
-"            \'syntax': 'markdown',
-"            \'ext': '.md'
-"            \}]
-"let g:vimwiki_global_ext = 0
-"let g:vimwiki_autowriteall = 0
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
+"" FZF: Commands
+"nnoremap <LEADER>f :Commands<CR>
 
 Plug 'airblade/vim-gitgutter'
 
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'as': 'dracula'}
-"Plug 'arcticicestudio/nord-vim'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'hardhackerlabs/theme-vim', { 'as': 'hardhacker' }
 Plug 'tpope/vim-fugitive'
@@ -136,30 +123,17 @@ nnoremap <LEADER>ggl :GHGetUrl<CR>
 Plug 'justinmk/vim-sneak'
 let g:sneak#label = 1
 
-"Plug 'ntpeters/vim-better-whitespace'
-"let g:strip_max_file_size = 1000
-"let g:strip_whitespace_on_save = 1
-"let g:strip_only_modified_lines=1
-
-Plug 'skywind3000/asyncrun.vim'
-let g:asyncrun_open = 8
-let $PYTHONUNBUFFERED=1
-" AsyncRun: stop current job
-nnoremap <LEADER>s :update<CR>:AsyncStop<CR>
-" AsyncRun: toggle quickfix window
-nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
-" AsyncRun: make
-nnoremap <LEADER>r :update<CR>:AsyncRun -program=make<CR>
-autocmd FileType rust nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -program=make build<CR>
-autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=make %<CR>
-"autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=python %<CR>
-" AsyncRun: make test
-nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
-
 Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+nnoremap <leader>tf <cmd>Telescope find_files<cr>
+nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+"nnoremap <leader>tc <cmd>Telescope commands<cr>
+nnoremap <leader>f <cmd>Telescope commands<cr>
 
 call plug#end()
 " }}}
@@ -168,14 +142,12 @@ call plug#end()
 if has("termguicolors")
     set termguicolors
 endif
-let base16colorspace=256    " Access colors present in 256 colorspace
 set background=dark
 colorscheme hardhacker
-"colorscheme nord
 " }}}
 
 " Settings {{{
-set t_Co=16                 " neovim ignores this setting
+set t_Co=256                " neovim ignores this setting
 
 " GUI
 set guifont=Iosevka\ Nerd\ Font\ Mono\ 12
@@ -248,16 +220,19 @@ endif
 augroup filetype_vim
     autocmd!
     autocmd FileType gitcommit setlocal spell
-    autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2 makeprg=runghc\ %
-    autocmd FileType sh setlocal makeprg=bash\ %
-    autocmd FileType perl setlocal makeprg=perl\ %
-    autocmd FileType python setlocal makeprg=python
+    autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
     autocmd FileType html setlocal softtabstop=2 shiftwidth=2
     autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
     autocmd FileType json setlocal softtabstop=2 shiftwidth=2
     autocmd BufEnter *.wxs set ft=xml
     autocmd FileType go setlocal noexpandtab
     autocmd FileType json syntax match Comment +\/\/.\+$+
+
+    " python folding
+    autocmd FileType python setlocal foldmethod=indent
+    autocmd FileType python setlocal foldnestmax=1
+    autocmd FileType python setlocal nofoldenable
+
 augroup END
 
 " }}}
