@@ -128,6 +128,7 @@ let g:cheat40_use_default = 0
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 nnoremap <leader>tf <cmd>Telescope find_files<cr>
