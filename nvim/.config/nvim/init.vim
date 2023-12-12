@@ -123,10 +123,33 @@ nnoremap <LEADER>ggl :GHGetUrl<CR>
 Plug 'justinmk/vim-sneak'
 let g:sneak#label = 1
 
+Plug 'skywind3000/asyncrun.vim'
+let g:asyncrun_open = 8
+let $PYTHONUNBUFFERED=1
+" AsyncRun: stop current job
+nnoremap <LEADER>s :AsyncStop<CR>
+" AsyncRun: toggle quickfix window
+nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
+" AsyncRun: make
+nnoremap <LEADER>r :update<CR>:AsyncRun -program=make<CR>
+autocmd FileType rust nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -program=make build<CR>
+autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=make %<CR>
+"autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=python %<CR>
+" AsyncRun: make test
+"nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
+"AsyncRun: filetypes
+autocmd FileType haskell setlocal makeprg=runghc\ %
+autocmd FileType sh setlocal makeprg=bash\ %
+autocmd FileType perl setlocal makeprg=perl\ %
+autocmd FileType python setlocal makeprg=python
+
 Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'michaelb/sniprun', {'do': 'sh install.sh'}
+vmap f <Plug>SnipRun
 
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
@@ -222,6 +245,7 @@ augroup filetype_vim
     autocmd!
     autocmd FileType gitcommit setlocal spell
     autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
+    autocmd BufEnter *.PL set filetype=perl
     autocmd FileType html setlocal softtabstop=2 shiftwidth=2
     autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
     autocmd FileType json setlocal softtabstop=2 shiftwidth=2
