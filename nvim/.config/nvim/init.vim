@@ -98,11 +98,16 @@ let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
+let g:ale_linters = {
+            \ 'python': ['ruff'],
+            \ 'javascript': ['eslint'],
+\}
+let g:ale_linters_explicit = 1
 
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
-"" FZF: Commands
-"nnoremap <LEADER>f :Commands<CR>
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" FZF: Commands
+nnoremap <LEADER>f :Commands<CR>
 
 Plug 'airblade/vim-gitgutter'
 
@@ -122,38 +127,45 @@ Plug 'wooken/url-ghrey-tea', {'do': ':UpdateRemotePlugins'}
 nnoremap <LEADER>ggo :GHOpenUrl<CR>
 nnoremap <LEADER>ggl :GHGetUrl<CR>
 
-"Plug 'skywind3000/asyncrun.vim'
-"let g:asyncrun_open = 8
-"let $PYTHONUNBUFFERED=1
-"" AsyncRun: stop current job
-"nnoremap <LEADER>s :AsyncStop<CR>
-"" AsyncRun: toggle quickfix window
-"nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
-"" AsyncRun: make
-"nnoremap <LEADER>r :update<CR>:AsyncRun -program=make<CR>
-"autocmd FileType rust nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -program=make build<CR>
-"autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=make %<CR>
-""autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=python %<CR>
-"" AsyncRun: make test
-""nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
-""AsyncRun: filetypes
-"autocmd FileType haskell setlocal makeprg=runghc\ %
-"autocmd FileType sh setlocal makeprg=bash\ %
-"autocmd FileType perl setlocal makeprg=perl\ %
-"autocmd FileType python setlocal makeprg=python
+Plug 'skywind3000/asyncrun.vim'
+let g:asyncrun_open = 8
+let $PYTHONUNBUFFERED=1
+" AsyncRun: stop current job
+nnoremap <LEADER>s :AsyncStop<CR>
+" AsyncRun: toggle quickfix window
+nnoremap <LEADER>c :call asyncrun#quickfix_toggle(8)<CR>
+" AsyncRun: make
+nnoremap <LEADER>r :update<CR>:AsyncRun -program=make<CR>
+autocmd FileType rust nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -program=make build<CR>
+autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=make %<CR>
+"autocmd FileType python nnoremap<buffer> <Leader>r :update<CR>:AsyncRun -raw -program=python %<CR>
+" AsyncRun: make test
+"nnoremap <LEADER>t :update<CR>:AsyncRun -program=make test<CR>
+"AsyncRun: filetypes
+autocmd FileType haskell setlocal makeprg=runghc\ %
+autocmd FileType sh setlocal makeprg=bash\ %
+autocmd FileType perl setlocal makeprg=perl\ %
+autocmd FileType python setlocal makeprg=python3
 
 Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
-nnoremap <leader>tf <cmd>Telescope find_files<cr>
-nnoremap <leader>tg <cmd>Telescope live_grep<cr>
-"nnoremap <leader>tc <cmd>Telescope commands<cr>
-nnoremap <leader>f <cmd>Telescope commands<cr>
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+"Plug 'nvim-tree/nvim-web-devicons'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+"nnoremap <leader>tf <cmd>Telescope find_files<cr>
+"nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+""nnoremap <leader>tc <cmd>Telescope commands<cr>
+"nnoremap <leader>f <cmd>Telescope commands<cr>
 
 call plug#end()
 " }}}
