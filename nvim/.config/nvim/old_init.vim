@@ -92,18 +92,6 @@ let g:lightline = {
             \ },
             \ }
 
-Plug 'dense-analysis/ale'
-let g:ale_disable_lsp = 1
-let g:ale_lint_on_text_changed="normal"
-let g:ale_lint_on_insert_leave=1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
-let g:ale_linters = {
-            \ 'python': ['ruff'],
-            \ 'javascript': ['eslint'],
-\}
-let g:ale_linters_explicit = 1
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " FZF: Commands
@@ -121,7 +109,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'Yggdroot/indentLine'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'github/copilot.vim'
 
 Plug 'wooken/url-ghrey-tea', {'do': ':UpdateRemotePlugins'}
 nnoremap <LEADER>ggo :GHOpenUrl<CR>
@@ -150,14 +137,28 @@ autocmd FileType python setlocal makeprg=python3
 Plug 'lifepillar/vim-cheat40'
 let g:cheat40_use_default = 0
 
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+
+" Avante Deps
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+
+" Avante Optional deps
+Plug 'hrsh7th/nvim-cmp'
+Plug 'nvim-tree/nvim-web-devicons' "or Plug 'echasnovski/mini.icons'
+Plug 'HakonHarnes/img-clip.nvim'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'stevearc/dressing.nvim' " for enhanced input UI
+Plug 'folke/snacks.nvim' " for modern input UI
+
+" Avante, pass source=true if you want to build from source
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 "Plug 'nvim-tree/nvim-web-devicons'
 "Plug 'nvim-lua/plenary.nvim'
@@ -193,7 +194,7 @@ set nowritebackup           " backups are stupid, use Git
 set noswapfile              " swp files are stupid, use Git
 set undolevels=1000
 set wildignore=*.pyc
-set pastetoggle=<F2>        " toggles auto-indent for pasting large blocks of text
+"set pastetoggle=<F2>        " toggles auto-indent for pasting large blocks of text
 set clipboard+=unnamedplus  " enable neovim always yanking to xclipboard
 set mouse=""                " disable mouse
 if !has('nvim')
@@ -231,6 +232,7 @@ set list
 set title                   " sets window title
 set ffs=unix                " display raw line endings
 set synmaxcol=0             " disable maximum syntax highlighting character limit
+set laststatus=3            " Avante recommended
 if !has('nvim')
     set laststatus=2        " status line always shown
 endif
@@ -243,6 +245,66 @@ let g:netrw_liststyle=3
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --smart-case
 endif
+
+"" Avante
+"autocmd! User avante.nvim
+"lua << EOF
+"require('avante').setup({})
+"EOF
+
+" LSP
+lua << EOF
+vim.lsp.config.lua_ls = {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
+}
+vim.lsp.enable('pyright')
+vim.lsp.enable('lua_ls')
+EOF
+
+lua << EOF
+local cmp = require('cmp')
+cmp.setup({
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' }
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+  })
+})
+EOF
+
+" Show diagnostic in floating window
+nnoremap <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
+
+" Navigate diagnostics
+nnoremap [d <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d <cmd>lua vim.diagnostic.goto_next()<CR>
+
+" Show all diagnostics in location list
+nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
+
+"-- Show diagnostic in floating window
+"vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+"
+"-- Navigate diagnostics
+"vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+"vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+"
+"-- Show all diagnostics in location list
+"vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
+" Avante
+lua require('avante-config')
 
 " Auto resize splits
 "autocmd VimResized * wincmd =
@@ -260,6 +322,7 @@ augroup filetype_vim
     autocmd BufEnter *.wxs set ft=xml
     autocmd FileType go setlocal noexpandtab
     autocmd FileType json syntax match Comment +\/\/.\+$+
+    autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
     " python folding
     autocmd FileType python setlocal foldmethod=indent
