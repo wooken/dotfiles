@@ -89,3 +89,6 @@ esac
 
 # ripgrep
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/ripgreprc
+
+# uv tools
+export PATH=$PATH:~/.local/bin
