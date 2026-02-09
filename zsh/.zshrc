@@ -63,15 +63,29 @@ export PATH=$PATH:~/.cargo/bin
 [ -d ~/bin ] && export PATH=~/bin:$PATH
 
 # fzf
-export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/*'"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type d --follow"
-#export FZF_ALT_C_COMMAND="fd --type d --follow --hidden --exclude '.git'"
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-# Remap CTRL-T to CTRL-F
-bindkey -r '^T'
-bindkey '^F' fzf-file-widget
+case "$(uname -s)" in
+    Linux*)
+        export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/*'"
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+        export FZF_ALT_C_COMMAND="fd --type d --follow"
+        #export FZF_ALT_C_COMMAND="fd --type d --follow --hidden --exclude '.git'"
+        [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+        [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+        # Remap CTRL-T to CTRL-F
+        bindkey -r '^T'
+        bindkey '^F' fzf-file-widget
+        ;;
+    Darwin*)
+        source <(fzf --zsh)
+        export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/*'"
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+        export FZF_ALT_C_COMMAND="fd --type d --follow"
+        bindkey -r '^T'
+        bindkey '^F' fzf-file-widget
+        bindkey '^T' fzf-cd-widget
+        ;;
+    *)
+esac
 
 # ripgrep
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/ripgreprc
