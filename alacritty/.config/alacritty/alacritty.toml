@@ -1,3 +1,9 @@
+[window]
+option_as_alt = "Both"   # Treats both left and right Option keys as Alt (for bindings)
+# Alternatives:
+# - "OnlyLeft"  (left Option = Alt; right = normal chars like €, ≈)
+# - "OnlyRight" (opposite)
+# - "None"      (default: normal macOS Option behavior)
 
 [colors.cursor]
 cursor = "CellForeground"
@@ -35,10 +41,28 @@ mods = "Control|Shift"
 enabled = true
 mods = "Control"
 
+#[[keyboard.bindings]]
+#action = "CreateNewWindow"
+#key = "N"
+#mods = "Command"
+
 [[keyboard.bindings]]
-action = "SpawnNewInstance"
+action = "CreateNewWindow"
 key = "N"
+mods = "Option"
+
+# disable macos window close to prevent accidentally closing unsaved documents
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mods = "Command"
+
+# disable macos window close to prevent accidentally closing unsaved documents
+[[keyboard.bindings]]
+action = "None"
+key = "q"
 mods = "Command"
 
 [general]
-import = ["/home/kennyw/.config/alacritty/themes/hardhacker.toml"]
+#import = ["/home/kennyw/.config/alacritty/themes/hardhacker.toml"]
+import = ["/Users/kennywoo/.config/alacritty/themes/hardhacker.toml"]
