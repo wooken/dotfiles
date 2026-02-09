@@ -33,6 +33,14 @@ export VISUAL=$EDITOR
 alias vi=$EDITOR
 alias vim=$EDITOR
 
+# eza
+if command -v eza &> /dev/null; then
+    alias ls='eza --group-directories-first'
+    alias ll='eza -l --group-directories-first'
+    alias la='eza -la --group-directories-first'
+fi
+export EZA_CONFIG_DIR=~/.config/eza
+
 # Do not remove suffix characters (after tab completion) with subsequent pipe character
 # https://superuser.com/questions/613685/how-stop-zsh-from-eating-space-before-pipe-symbol
 ZLE_REMOVE_SUFFIX_CHARS=""
