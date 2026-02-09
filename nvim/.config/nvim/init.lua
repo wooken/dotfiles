@@ -263,6 +263,16 @@ vim.api.nvim_create_user_command("Gblame", "Git blame", {})
 
 vim.g.cheat40_use_default = 0  -- disable default cheat40 mappings
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "sh", "zsh", "bash", "shell" },
+  callback = function()
+    vim.opt_local.expandtab = true
+    vim.opt_local.shiftwidth = 4   -- or 4 — pick your poison
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
+
 -- to migrate
 -- Plug 'wooken/url-ghrey-tea', {'do': ':UpdateRemotePlugins'}
 -- nnoremap <LEADER>ggo :GHOpenUrl<CR>
