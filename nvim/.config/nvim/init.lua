@@ -40,6 +40,9 @@ vim.opt.synmaxcol = 0  -- disable maximum syntax highlighting character limit
 vim.opt.laststatus = 3  -- global statusline (Avante recommended)
 vim.opt.undolevels = 1000  -- maximum number of changes that can be undone
 vim.opt.tabstop = 4 -- tabs are visually 4 spaces
+vim.opt.expandtab = true -- tab key inserts spaces, not \t
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 
 vim.opt.list = true  -- show invisible characters
 vim.opt.listchars = {
@@ -128,55 +131,13 @@ require("lazy").setup({
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp-signature-help" },
 
-    -- Avante
+    -- Markdown Rendering
     {
-      "yetone/avante.nvim",
-      -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-      -- ⚠️ must add this setting! ! !
-      build = vim.fn.has("win32") ~= 0
-          and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-          or "make",
-      event = "VeryLazy",
-      version = false, -- Never set this value to "*"! Never!
-      ---@module 'avante'
-      ---@type avante.Config
+      'MeanderingProgrammer/render-markdown.nvim',
       opts = {
-        -- add any opts here
+        file_types = { "markdown" },
       },
-      config = function()
-        require("avante-config")  -- load additional config
-      end,
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-        --- The below dependencies are optional,
-        "ibhagwan/fzf-lua", -- for file_selector provider fzf
-        {
-          -- support for image pasting
-          "HakonHarnes/img-clip.nvim",
-          event = "VeryLazy",
-          opts = {
-            -- recommended settings
-            default = {
-              embed_image_as_base64 = false,
-              prompt_for_file_name = false,
-              drag_and_drop = {
-                insert_mode = true,
-              },
-              -- required for Windows users
-              use_absolute_path = true,
-            },
-          },
-        },
-        {
-          -- Make sure to set this up properly if you have lazy=true
-          'MeanderingProgrammer/render-markdown.nvim',
-          opts = {
-            file_types = { "markdown", "Avante" },
-          },
-          ft = { "markdown", "Avante" },
-        },
-      },
+      ft = { "markdown" },
     },
 
     {
@@ -254,6 +215,8 @@ require("lualine").setup {
   },
 }
 
+require("gitlinker").setup()
+
 -- telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', builtin.commands, { desc = 'Telescope: Commands' })
@@ -272,6 +235,9 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.softtabstop = 4
   end,
 })
+
+-- don't hide quotes in json
+vim.g.vim_json_conceal = 0
 
 -- to migrate
 -- Plug 'wooken/url-ghrey-tea', {'do': ':UpdateRemotePlugins'}
