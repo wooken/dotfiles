@@ -35,9 +35,9 @@ alias vim=$EDITOR
 
 # eza
 if command -v eza &> /dev/null; then
-    alias ls='eza --group-directories-first'
-    alias ll='eza -l --group-directories-first'
-    alias la='eza -la --group-directories-first'
+    alias ls='eza --group-directories-first --icons'
+    alias ll='ls -l'
+    alias la='ll -a'
 fi
 export EZA_CONFIG_DIR=~/.config/eza
 
