@@ -1,0 +1,46 @@
+# ================== Font ==================
+font-family = IosevkaTerm Nerd Font Mono
+#font-family-bold = IosevkaTerm NFM Bold
+#font-family-italic = IosevkaTerm NFM Italic
+font-size = 16
+font-thicken = true
+bold-color = bright
+#font-style-bold = bold
+
+quit-after-last-window-closed = true
+
+# Bold & Italic (Ghostty usually picks them automatically if installed)
+#font-style-bold = bold
+#font-style-italic = italic
+
+# ================== macOS Option key ==================
+# Treat both Option keys as Alt (same as your option_as_alt = "Both")
+macos-option-as-alt = true
+
+keybind = option+n=new_window
+
+# ================== Window / Behavior ==================
+# Disable Cmd+W and Cmd+Q (same protection as you had)
+#keybind = cmd+w=unbind
+#keybind = cmd+q=unbind
+#
+# New window with Option+N (like your binding)
+#keybind = opt+n=new_window
+#
+# Return + Shift sends proper escape sequence (your binding)
+#keybind = shift+return=esc:\r
+
+# ================== Cursor ==================
+#cursor-style = block
+#cursor-color = text
+
+# ================== Theme ==================
+# Replace with your hardhacker theme if you have one
+theme = hardhacker
+# Or just use a built-in dark one for now:
+#theme = dark
+
+# ================== Other nice minimal defaults ==================
+#window-padding-x = 8
+#window-padding-y = 8
+#background-opacity = 1.0
